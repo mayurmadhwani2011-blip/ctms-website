@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="CTMS by Appscrafter">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c0d18"/><stop offset="100%" stop-color="#171a30"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6f7ff0"/><stop offset="52%" stop-color="#9d6bf5"/><stop offset="100%" stop-color="#cd63f2"/>
+    </linearGradient>
+    <linearGradient id="logo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5b6de1"/><stop offset="55%" stop-color="#7c4be8"/><stop offset="100%" stop-color="#b33adf"/>
+    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap');
+      .h{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;fill:#edeef8}
+      .m{font-family:"IBM Plex Mono",monospace;font-weight:500;fill:#a4a6c6;letter-spacing:4px}
+      .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;fill:#a4a6c6}
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- faint grid -->
+  <g opacity=".5" stroke="#1a1b30" stroke-width="1">
+    <path d="M0 90H1200M0 180H1200M0 270H1200M0 360H1200M0 450H1200M0 540H1200"/>
+    <path d="M120 0V630M240 0V630M360 0V630M480 0V630M600 0V630M720 0V630M840 0V630M960 0V630M1080 0V630"/>
+  </g>
+  <!-- glow -->
+  <ellipse cx="1000" cy="120" rx="360" ry="240" fill="url(#brand)" opacity=".16"/>
+  <!-- CTMS logo mark -->
+  <g transform="translate(96,150)">
+    <rect width="132" height="132" rx="30" fill="url(#logo)"/>
+    <rect x="53" y="18" width="26" height="96" rx="13" fill="#f4f5fb"/>
+    <rect x="18" y="53" width="96" height="26" rx="13" fill="#f4f5fb"/>
+    <path d="M66 82C66 82 49 70 49 58C49 51 55 47 61 50C63 51 65 54 66 56C67 54 69 51 71 50C77 47 83 51 83 58C83 70 66 82 66 82Z" fill="#e46bb4"/>
+  </g>
+  <text x="252" y="212" class="h" font-size="52">CTMS</text>
+  <text x="254" y="252" class="m" font-size="20">BY APPSCRAFTER</text>
+  <!-- headline -->
+  <text x="96" y="380" class="h" font-size="76">Run the whole clinic</text>
+  <text x="96" y="462" class="h" font-size="76" fill="url(#brand)">from one screen.</text>
+  <!-- subline -->
+  <text x="96" y="524" class="lead" font-size="27">Patients · Billing · Pharmacy · Payroll · P&amp;L — one system.</text>
+  <!-- pills -->
+  <g font-family="IBM Plex Mono, monospace" font-size="20" fill="#c7c9e6">
+    <rect x="96" y="556" width="230" height="42" rx="21" fill="#181a2e" stroke="#282a49"/>
+    <text x="120" y="583">Built for the Gulf</text>
+    <rect x="342" y="556" width="210" height="42" rx="21" fill="#181a2e" stroke="#282a49"/>
+    <text x="366" y="583">Works offline</text>
+    <rect x="568" y="556" width="210" height="42" rx="21" fill="#181a2e" stroke="#282a49"/>
+    <text x="592" y="583">Multi-branch</text>
+  </g>
+</svg>

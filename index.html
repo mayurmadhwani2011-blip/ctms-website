@@ -1,0 +1,1529 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTMS — Clinic Top Management System | Appscrafter</title>
+<meta name="description" content="CTMS (Clinic Top Management System) by Appscrafter — all-in-one clinic management software for Gulf clinics: patients, appointments, billing, pharmacy inventory, payroll and profit & loss in one system. Arabic-ready, works offline, multi-branch. Book a demo.">
+<meta name="keywords" content="CTMS, Clinic Top Management System, clinic management software, clinic management system, practice management software, clinic software Kuwait, clinic software Gulf, medical clinic software, pharmacy management, patient management system, clinic billing software, clinic payroll, EMR, EHR, Appscrafter, نظام إدارة العيادات, برنامج إدارة العيادات">
+<meta name="author" content="Appscrafter">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ctms.website/">
+<meta property="og:url" content="https://ctms.website/">
+<meta name="theme-color" content="#7c4be8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%235b6de1'/%3E%3Cstop offset='55%25' stop-color='%237c4be8'/%3E%3Cstop offset='100%25' stop-color='%23b33adf'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='96' fill='url(%23g)'/%3E%3Crect x='206' y='70' width='100' height='372' rx='50' fill='%23f4f5fb'/%3E%3Crect x='68' y='206' width='376' height='100' rx='50' fill='%23f4f5fb'/%3E%3Cpath d='M256 310C256 310 192 266 192 222C192 194 214 178 237 191C244 195 250 204 256 214C262 204 268 195 275 191C298 178 320 194 320 222C320 266 256 310 256 310Z' fill='%23e46bb4'/%3E%3C/svg%3E">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="CTMS — Clinic Top Management System">
+<meta property="og:description" content="Run the whole clinic from one screen. Patients, billing, pharmacy, payroll and P&L in one platform by Appscrafter.">
+<meta property="og:site_name" content="Appscrafter">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="og-image.svg">
+<meta name="twitter:image" content="og-image.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "CTMS — Clinic Top Management System",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Clinic / Practice Management",
+  "operatingSystem": "Windows, Web",
+  "description": "All-in-one clinic operations platform: patients, appointments, billing, pharmacy inventory, payroll and profit & loss in one system. Runs on your own hardware, online or offline. Built for Gulf clinics with Arabic support.",
+  "inLanguage": ["en", "ar"],
+  "featureList": ["Patients & records", "Appointments", "Prescriptions", "Billing & payments", "Pharmacy & inventory", "Payroll", "Reports & P&L", "Multi-branch", "Role-based access control"],
+  "offers": { "@type": "Offer", "priceCurrency": "KWD", "availability": "https://schema.org/InStock" },
+  "brand": { "@type": "Brand", "name": "Appscrafter" },
+  "publisher": { "@type": "Organization", "name": "Appscrafter" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Appscrafter",
+  "url": "https://ctms.website/",
+  "email": "info@appscrafter.com",
+  "description": "Appscrafter builds practical software for clinics and real-world operations. Maker of CTMS — the Clinic Top Management System.",
+  "makesOffer": { "@type": "Offer", "itemOffered": { "@type": "SoftwareApplication", "name": "CTMS — Clinic Top Management System" } }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Cairo:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  /* light theme — clean clinical instrument */
+  --bg:#f3f3fa; --bg-grid:#e6e6f4;
+  --surface:#ffffff; --surface-2:#f6f6fc; --surface-3:#eeeef8;
+  --border:#e4e3f1; --border-strong:#d2d1e6;
+  --ink:#141528; --muted:#54566f; --faint:#8688a5;
+  --accent:#7c4be8; --accent-2:#b33adf; --accent-3:#5b6de1;
+  --accent-soft:#f0eafd; --heart:#d8539f;
+  --good:#0f9d6b; --good-soft:#e4f6ee; --warn:#c07d10; --warn-soft:#fbf1dc;
+  --grad:linear-gradient(120deg,#5b6de1 0%,#7c4be8 52%,#b33adf 100%);
+  --grad-soft:linear-gradient(120deg,#5b6de11a,#b33adf1a);
+  --shadow:0 1px 2px rgba(20,21,40,.05),0 12px 32px -12px rgba(72,40,140,.18);
+  --shadow-lg:0 24px 70px -28px rgba(72,40,140,.35);
+  --ring:rgba(124,75,232,.45);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c0d18; --bg-grid:#1a1b30;
+    --surface:#15172b; --surface-2:#1b1d36; --surface-3:#222442;
+    --border:#282a49; --border-strong:#393c63;
+    --ink:#edeef8; --muted:#a4a6c6; --faint:#6f7196;
+    --accent:#8f6ff2; --accent-2:#c95cf0; --accent-3:#7e8dff;
+    --accent-soft:#211d3d; --heart:#f07bc0;
+    --good:#3ecf8e; --good-soft:#123329; --warn:#f5b344; --warn-soft:#33280f;
+    --grad:linear-gradient(120deg,#6f7ff0 0%,#9d6bf5 52%,#cd63f2 100%);
+    --grad-soft:linear-gradient(120deg,#6f7ff01f,#cd63f21f);
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 18px 44px -16px rgba(0,0,0,.6);
+    --shadow-lg:0 34px 90px -30px rgba(0,0,0,.75);
+    --ring:rgba(143,111,242,.55);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c0d18; --bg-grid:#1a1b30;
+  --surface:#15172b; --surface-2:#1b1d36; --surface-3:#222442;
+  --border:#282a49; --border-strong:#393c63;
+  --ink:#edeef8; --muted:#a4a6c6; --faint:#6f7196;
+  --accent:#8f6ff2; --accent-2:#c95cf0; --accent-3:#7e8dff;
+  --accent-soft:#211d3d; --heart:#f07bc0;
+  --good:#3ecf8e; --good-soft:#123329; --warn:#f5b344; --warn-soft:#33280f;
+  --grad:linear-gradient(120deg,#6f7ff0 0%,#9d6bf5 52%,#cd63f2 100%);
+  --grad-soft:linear-gradient(120deg,#6f7ff01f,#cd63f21f);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 18px 44px -16px rgba(0,0,0,.6);
+  --shadow-lg:0 34px 90px -30px rgba(0,0,0,.75);
+  --ring:rgba(143,111,242,.55);
+}
+
+/* ============ BASE ============ */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Manrope",system-ui,-apple-system,sans-serif;
+  font-size:1.0625rem; line-height:1.65; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque","Manrope",sans-serif;font-weight:600;line-height:1.05;letter-spacing:-.02em;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.section{padding:clamp(4.5rem,9vw,8rem) 0;position:relative}
+.section-head{max-width:44ch;margin-bottom:3rem}
+.section-head h2{font-size:clamp(1.9rem,3.6vw,2.9rem);margin:.9rem 0 .8rem}
+.section-head p{color:var(--muted);font-size:1.12rem}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:"Manrope";font-weight:600;font-size:.98rem;padding:.8rem 1.35rem;border-radius:11px;border:1px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease;white-space:nowrap}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 26px -10px var(--ring)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px -10px var(--ring)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--border-strong)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn-sm{padding:.55rem 1rem;font-size:.9rem;border-radius:9px}
+
+/* ============ NAV ============ */
+header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--border)}
+.nav-in{display:flex;align-items:center;gap:1.5rem;height:70px}
+.brand{display:flex;align-items:center;gap:.65rem;font-family:"Bricolage Grotesque";font-weight:700;font-size:1.28rem;letter-spacing:-.02em}
+.brand svg{width:34px;height:34px;border-radius:9px;flex:none;box-shadow:0 6px 16px -6px var(--ring)}
+.brand small{display:block;font-family:"IBM Plex Mono";font-size:.6rem;font-weight:500;letter-spacing:.14em;color:var(--faint);text-transform:uppercase;margin-top:1px}
+.nav-links{display:flex;gap:.35rem;margin-left:auto}
+.nav-links a{padding:.5rem .85rem;border-radius:9px;color:var(--muted);font-weight:500;font-size:.95rem;transition:color .18s,background .18s}
+.nav-links a:hover{color:var(--ink);background:var(--surface-2)}
+.nav-tools{display:flex;align-items:center;gap:.6rem}
+.iconbtn{width:40px;height:40px;display:grid;place-items:center;border-radius:10px;border:1px solid var(--border-strong);background:var(--surface);color:var(--muted);cursor:pointer;transition:.18s}
+.iconbtn:hover{color:var(--accent);border-color:var(--accent)}
+.lang{font-family:"IBM Plex Mono";font-size:.78rem;font-weight:600;letter-spacing:.04em;padding:.5rem .7rem;border-radius:10px;border:1px solid var(--border-strong);background:var(--surface);color:var(--muted);cursor:default}
+.lang b{color:var(--accent)}
+.menu-toggle{display:none}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding-top:clamp(3rem,6vw,5rem);padding-bottom:clamp(4rem,8vw,7rem);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(60% 55% at 78% 8%,var(--grad-soft),transparent 70%),
+  linear-gradient(var(--bg-grid) 1px,transparent 1px),
+  linear-gradient(90deg,var(--bg-grid) 1px,transparent 1px);
+  background-size:auto,44px 44px,44px 44px;
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 0,#000 40%,transparent 78%);
+  mask-image:radial-gradient(120% 90% at 50% 0,#000 40%,transparent 78%);
+  opacity:.6;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+.hero-copy{max-width:36rem}
+.tagline{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .75rem .4rem .5rem;border:1px solid var(--border-strong);background:var(--surface);border-radius:100px;font-family:"IBM Plex Mono";font-size:.72rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;box-shadow:var(--shadow)}
+.tagline .dot{width:7px;height:7px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px color-mix(in srgb,var(--good) 25%,transparent)}
+.hero h1{font-size:clamp(2.55rem,5.6vw,4.35rem);font-weight:700;margin:1.4rem 0 0;line-height:1.01}
+.hero .ar{font-family:"IBM Plex Mono";direction:rtl;color:var(--muted);font-size:1.05rem;margin-top:.9rem;letter-spacing:0}
+.hero .lead{color:var(--muted);font-size:1.2rem;line-height:1.6;margin-top:1.3rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.hero-meta div{display:flex;flex-direction:column}
+.hero-meta b{font-family:"Bricolage Grotesque";font-size:1.5rem;font-weight:700;letter-spacing:-.02em}
+.hero-meta span{font-size:.82rem;color:var(--faint);font-family:"IBM Plex Mono";letter-spacing:.03em}
+
+/* dashboard mock */
+.mock{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow-lg);padding:1.1rem;transform:rotate(.4deg)}
+.mock-bar{display:flex;align-items:center;gap:.45rem;padding:.2rem .3rem .9rem}
+.mock-bar i{width:10px;height:10px;border-radius:50%;background:var(--surface-3);display:block}
+.mock-bar span{margin-left:auto;font-family:"IBM Plex Mono";font-size:.68rem;color:var(--faint);letter-spacing:.06em}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.tile{background:var(--surface-2);border:1px solid var(--border);border-radius:13px;padding:.85rem .9rem}
+.tile .lab{font-family:"IBM Plex Mono";font-size:.63rem;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:.4rem}
+.tile .val{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.5rem;margin-top:.35rem;letter-spacing:-.02em}
+.tile .val small{font-size:.72rem;color:var(--muted);font-family:"IBM Plex Mono";font-weight:400}
+.trend{font-family:"IBM Plex Mono";font-size:.7rem;padding:.1rem .4rem;border-radius:6px;font-weight:600}
+.trend.up{color:var(--good);background:var(--good-soft)}
+.trend.warn{color:var(--warn);background:var(--warn-soft)}
+.mock-row{margin-top:.7rem;background:var(--surface-2);border:1px solid var(--border);border-radius:13px;padding:.85rem .9rem}
+.mock-row h4{font-size:.82rem;font-family:"IBM Plex Mono";font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:.6rem}
+.appt{display:flex;align-items:center;gap:.6rem;padding:.4rem 0;font-size:.86rem;border-top:1px solid var(--border)}
+.appt:first-of-type{border-top:0}
+.appt .t{font-family:"IBM Plex Mono";color:var(--muted);font-size:.78rem;width:52px;flex:none}
+.appt .who{font-weight:600}
+.appt .st{margin-left:auto;font-family:"IBM Plex Mono";font-size:.66rem;padding:.12rem .45rem;border-radius:100px}
+.st.done{color:var(--good);background:var(--good-soft)}
+.st.wait{color:var(--warn);background:var(--warn-soft)}
+.st.now{color:#fff;background:var(--accent)}
+.pulse-card{position:absolute;left:-26px;bottom:26px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-lg);padding:.7rem .9rem;width:190px}
+.pulse-card .lab{font-family:"IBM Plex Mono";font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.pulse-card .big{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.35rem;color:var(--good)}
+.ekg{width:100%;height:34px;display:block;margin-top:.2rem}
+.ekg path{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.ekg .lead-dot{fill:var(--heart)}
+
+/* ============ MARQUEE STRIP ============ */
+.strip{border-block:1px solid var(--border);background:var(--surface);overflow:hidden}
+.strip-track{display:flex;gap:2.6rem;padding:1rem 0;white-space:nowrap;width:max-content;animation:slide 34s linear infinite}
+@media (prefers-reduced-motion:reduce){.strip-track{animation:none;flex-wrap:wrap;width:auto;justify-content:center;padding:1rem 5vw}}
+.strip:hover .strip-track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.strip-track span{font-family:"IBM Plex Mono";font-size:.82rem;color:var(--muted);letter-spacing:.04em;display:inline-flex;align-items:center;gap:.6rem}
+.strip-track span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+
+/* ============ MODULES ============ */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.mod{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.4rem;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.mod:hover{transform:translateY(-4px);border-color:var(--border-strong);box-shadow:var(--shadow)}
+.mod-ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);margin-bottom:1.05rem}
+.mod-ic svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.mod h3{font-size:1.12rem;font-weight:700;font-family:"Manrope";letter-spacing:-.01em}
+.mod p{color:var(--muted);font-size:.95rem;margin-top:.4rem}
+.mod .tag{font-family:"IBM Plex Mono";font-size:.66rem;color:var(--faint);letter-spacing:.05em;margin-top:.9rem;display:block}
+
+/* ============ DIFFERENTIATORS ============ */
+.why{background:var(--surface);border-block:1px solid var(--border)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
+.feat{position:relative;border:1px solid var(--border);border-radius:18px;padding:1.9rem;background:var(--bg);overflow:hidden}
+.feat::after{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--grad)}
+.feat .k{font-family:"IBM Plex Mono";font-size:.72rem;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+.feat h3{font-size:1.4rem;margin:.7rem 0 .6rem;font-weight:600}
+.feat p{color:var(--muted);font-size:1rem}
+.feat ul{list-style:none;padding:0;margin:1.1rem 0 0;display:flex;flex-direction:column;gap:.5rem}
+.feat li{display:flex;gap:.6rem;font-size:.92rem;color:var(--ink)}
+.feat li svg{width:18px;height:18px;flex:none;margin-top:2px;stroke:var(--good);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ DEPLOY BAND ============ */
+.deploy{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.dcard{border:1px solid var(--border);border-radius:16px;padding:1.6rem;background:var(--surface)}
+.dcard .n{font-family:"IBM Plex Mono";font-size:.8rem;color:var(--accent);letter-spacing:.08em}
+.dcard h3{font-size:1.18rem;margin:.6rem 0 .5rem;font-weight:700;font-family:"Manrope"}
+.dcard p{color:var(--muted);font-size:.94rem}
+
+/* ============ PRICING ============ */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;align-items:stretch}
+.plan{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1.9rem 1.7rem;position:relative}
+.plan.feat-plan{border-color:transparent;box-shadow:var(--shadow-lg)}
+.plan.feat-plan::before{content:"";position:absolute;inset:0;border-radius:18px;padding:1.5px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.plan .badge{position:absolute;top:-12px;left:1.7rem;background:var(--grad);color:#fff;font-family:"IBM Plex Mono";font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border-radius:100px}
+.plan .pname{font-family:"IBM Plex Mono";font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.plan .cost{font-family:"Bricolage Grotesque";font-weight:700;font-size:2.6rem;letter-spacing:-.03em;margin:.7rem 0 .1rem;line-height:1}
+.plan .cost small{font-size:.9rem;color:var(--faint);font-family:"IBM Plex Mono";font-weight:400;letter-spacing:0}
+.plan .desc{color:var(--muted);font-size:.92rem;min-height:2.6em;margin-bottom:1.2rem}
+.plan ul{list-style:none;padding:0;margin:0 0 1.6rem;display:flex;flex-direction:column;gap:.62rem;flex:1}
+.plan li{display:flex;gap:.55rem;font-size:.92rem}
+.plan li svg{width:17px;height:17px;flex:none;margin-top:2px;stroke:var(--accent);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.price-note{text-align:center;color:var(--faint);font-family:"IBM Plex Mono";font-size:.78rem;margin-top:1.6rem;letter-spacing:.02em}
+.billwrap{display:flex;justify-content:center;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:2.2rem}
+.cursel{font-family:"Manrope";font-weight:600;font-size:.88rem;padding:.6rem 2.1rem .6rem .95rem;border:1px solid var(--border-strong);border-radius:100px;background-color:var(--surface);color:var(--ink);cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a8ba6' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .75rem center;background-size:14px}
+[dir="rtl"] .cursel{padding:.6rem .95rem .6rem 2.1rem;background-position:left .75rem center}
+.billtoggle{display:inline-flex;gap:.25rem;padding:.3rem;border:1px solid var(--border-strong);border-radius:100px;background:var(--surface)}
+.bt{border:0;background:transparent;color:var(--muted);font-family:"Manrope";font-weight:600;font-size:.9rem;padding:.5rem 1.15rem;border-radius:100px;cursor:pointer;transition:.18s;display:inline-flex;align-items:center;gap:.35rem}
+.bt.active{background:var(--grad);color:#fff}
+.bt .save{font-family:"IBM Plex Mono";font-size:.72rem;opacity:.85}
+.bill{font-family:"IBM Plex Mono";font-size:.73rem;color:var(--good);margin:-.05rem 0 .2rem;min-height:1.1em}
+[dir="rtl"] .bill,[dir="rtl"] .bt{font-family:"Cairo",sans-serif;letter-spacing:0}
+.addons{margin-top:1.6rem;display:flex;justify-content:center}
+.addon{display:flex;align-items:center;gap:1rem;max-width:580px;width:100%;background:var(--surface);border:1px dashed var(--border-strong);border-radius:16px;padding:1.1rem 1.4rem;box-shadow:var(--shadow)}
+.addon-ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex:none}
+.addon-ic svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.addon .txt{flex:1}
+.addon .txt b{font-size:1.05rem;display:flex;align-items:center;gap:.5rem}
+.addon-tag{font-family:"IBM Plex Mono";font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:.2rem .5rem;border-radius:100px}
+.addon .txt p{color:var(--muted);font-size:.9rem;margin-top:.2rem}
+.addon-price{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.4rem;flex:none;letter-spacing:-.02em}
+.addon-price small{font-size:.72rem;color:var(--faint);font-family:"IBM Plex Mono";font-weight:400}
+@media (max-width:560px){.addon{flex-wrap:wrap}.addon-price{width:100%}}
+/* ============ WHATSAPP FLOATING BUTTON ============ */
+.wa-fab{position:fixed;right:20px;bottom:20px;z-index:60;display:inline-flex;align-items:center;gap:.55rem;background:#25d366;color:#fff;padding:.8rem 1.15rem;border-radius:100px;box-shadow:0 14px 32px -8px rgba(37,211,102,.55);font-family:"Manrope";font-weight:700;font-size:.95rem;transition:transform .2s ease,box-shadow .2s ease}
+.wa-fab:hover{transform:translateY(-2px);box-shadow:0 18px 40px -8px rgba(37,211,102,.65);color:#fff}
+.wa-fab svg{width:24px;height:24px;fill:#fff;flex:none}
+[dir="rtl"] .wa-fab{right:auto;left:20px}
+@media (max-width:600px){.wa-fab .wa-txt{display:none}.wa-fab{padding:.95rem;border-radius:50%}}
+
+/* ============ CTA / DEMO ============ */
+.cta{position:relative;border-radius:26px;overflow:hidden;padding:clamp(2.5rem,5vw,4rem);background:var(--surface);border:1px solid var(--border)}
+.cta::before{content:"";position:absolute;inset:0;background:var(--grad-soft);pointer-events:none}
+.cta-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+.cta h2{font-size:clamp(1.9rem,3.5vw,2.7rem);font-weight:700}
+.cta p{color:var(--muted);font-size:1.1rem;margin-top:.9rem}
+.contact-list{margin-top:1.6rem;display:flex;flex-direction:column;gap:.7rem}
+.contact-list a{display:flex;align-items:center;gap:.7rem;color:var(--ink);font-weight:600;font-size:.98rem}
+.contact-list .ic{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;flex:none}
+.contact-list .ic svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.contact-list small{display:block;color:var(--faint);font-weight:400;font-family:"IBM Plex Mono";font-size:.72rem}
+form.demo{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:1.6rem;box-shadow:var(--shadow)}
+form.demo label{display:block;font-family:"IBM Plex Mono";font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:.9rem 0 .35rem}
+form.demo label:first-child{margin-top:0}
+form.demo input,form.demo textarea{width:100%;background:var(--surface-2);border:1px solid var(--border-strong);border-radius:10px;padding:.7rem .8rem;color:var(--ink);font-family:"Manrope";font-size:.95rem;transition:border-color .18s}
+form.demo input:focus,form.demo textarea:focus{outline:none;border-color:var(--accent)}
+form.demo textarea{resize:vertical;min-height:70px}
+form.demo button{width:100%;margin-top:1.2rem;justify-content:center}
+.form-ok{display:none;text-align:center;padding:1.5rem .5rem}
+.form-ok.show{display:block}
+.form-ok .check{width:54px;height:54px;border-radius:50%;background:var(--good-soft);color:var(--good);display:grid;place-items:center;margin:0 auto 1rem}
+.form-ok .check svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.form-ok h4{font-size:1.2rem;margin-bottom:.4rem}
+.form-ok p{color:var(--muted);font-size:.94rem}
+
+/* ============ COMPANY ============ */
+.company{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+.company .logo-lockup{display:flex;align-items:center;gap:.9rem;margin-bottom:1.4rem}
+/* AppsCrafter wordmark — inline, theme-adaptive (phone + "pps" follow --ink) */
+.ac-logo{width:auto;color:var(--ink);display:block}
+.ac-logo text{font-family:"Baloo 2","Trebuchet MS",system-ui,sans-serif;font-weight:800;font-size:132px;letter-spacing:-3px;text-transform:none}
+.company .logo-lockup .ac-logo{height:58px;flex:none}
+.foot-by{display:flex;align-items:center;gap:.6rem;margin-top:1.2rem;color:var(--faint);font-family:"IBM Plex Mono";font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.foot-by .ac-logo{height:26px;flex:none}
+.company h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:1rem}
+.company p{color:var(--muted);font-size:1.05rem;margin-bottom:1rem}
+.stat-row{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
+.stat-row div b{font-family:"Bricolage Grotesque";font-size:1.9rem;display:block;letter-spacing:-.02em}
+.stat-row div span{font-family:"IBM Plex Mono";font-size:.74rem;color:var(--faint);letter-spacing:.03em}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--border);background:var(--surface);padding:3rem 0 2rem}
+.foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start}
+.foot-brand{max-width:22rem}
+.foot-brand .brand{margin-bottom:.8rem}
+.foot-brand p{color:var(--muted);font-size:.92rem}
+.foot-cols{display:flex;gap:3rem;flex-wrap:wrap}
+.foot-col h5{font-family:"IBM Plex Mono";font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0 0 .8rem}
+.foot-col a{display:block;color:var(--muted);font-size:.92rem;padding:.28rem 0;transition:color .15s}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;color:var(--faint);font-family:"IBM Plex Mono";font-size:.76rem}
+.foot-bottom .ar{direction:rtl}
+
+/* ============ INTERACTIVE DEMO ============ */
+.demo-shell{background:var(--surface);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow-lg);overflow:hidden}
+.tabs{display:flex;gap:.3rem;padding:.7rem;border-bottom:1px solid var(--border);background:var(--surface-2);overflow-x:auto}
+.tab{flex:none;display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1rem;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--muted);font-family:"Manrope";font-weight:600;font-size:.9rem;cursor:pointer;transition:.18s;white-space:nowrap}
+.tab:hover{color:var(--ink);background:var(--surface-3)}
+.tab[aria-selected="true"]{background:var(--grad);color:#fff;box-shadow:0 8px 20px -8px var(--ring)}
+.tab svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.screens{padding:clamp(1rem,2.5vw,1.6rem);min-height:430px}
+.screen{display:none}
+.screen.active{display:block;animation:scrIn .5s cubic-bezier(.2,.7,.2,1)}
+@keyframes scrIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.screen.active{animation:none}}
+.scr-head{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;flex-wrap:wrap}
+.scr-head h3{font-family:"Manrope";font-weight:700;font-size:1.05rem}
+.scr-head .crumb{font-family:"IBM Plex Mono";font-size:.68rem;color:var(--faint);letter-spacing:.05em}
+.scr-head .spacer{margin-left:auto}
+.chip{font-family:"IBM Plex Mono";font-size:.66rem;padding:.25rem .55rem;border-radius:100px;letter-spacing:.03em}
+.chip.ok{color:var(--good);background:var(--good-soft)} .chip.warn{color:var(--warn);background:var(--warn-soft)}
+.chip.info{color:var(--accent);background:var(--accent-soft)}
+.scr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;margin-bottom:.9rem}
+.dtable{width:100%;border-collapse:collapse;font-size:.86rem}
+.dtable th{font-family:"IBM Plex Mono";font-size:.64rem;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);font-weight:500;text-align:left;padding:.55rem .6rem;border-bottom:1px solid var(--border)}
+.dtable td{padding:.6rem;border-bottom:1px solid var(--border)}
+.dtable tr:last-child td{border-bottom:0}
+.dtable .r{text-align:right;font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono"}
+.dtable .who{font-weight:600}
+.barrow{display:flex;align-items:center;gap:.8rem;padding:.5rem .6rem}
+.barrow .lbl{width:120px;flex:none;font-size:.85rem;color:var(--muted)}
+.bartrack{flex:1;height:9px;background:var(--surface-3);border-radius:100px;overflow:hidden}
+.barfill{height:100%;background:var(--grad);border-radius:100px;transition:width 1s cubic-bezier(.2,.7,.2,1)}
+.barrow .amt{width:96px;flex:none;text-align:right;font-family:"IBM Plex Mono";font-size:.8rem;font-variant-numeric:tabular-nums}
+.pl-row{display:flex;justify-content:space-between;padding:.5rem .2rem;border-bottom:1px dashed var(--border);font-size:.9rem}
+.pl-row.tot{border-bottom:0;border-top:2px solid var(--border-strong);margin-top:.3rem;font-weight:700;font-family:"Bricolage Grotesque"}
+.pl-row .v{font-family:"IBM Plex Mono";font-variant-numeric:tabular-nums}
+.pl-row .v.pos{color:var(--good)} .pl-row .v.neg{color:var(--heart)}
+
+/* ============ COMPARISON ============ */
+.cmp-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:18px;background:var(--surface)}
+.cmp{width:100%;border-collapse:collapse;min-width:640px}
+.cmp th,.cmp td{padding:1rem 1.1rem;text-align:left;border-bottom:1px solid var(--border)}
+.cmp thead th{font-family:"IBM Plex Mono";font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:500}
+.cmp thead th.us{color:var(--accent)}
+.cmp tbody td:first-child{font-weight:600;font-size:.95rem}
+.cmp td.col{text-align:center;width:130px}
+.cmp tbody tr:last-child td{border-bottom:0}
+.cmp .us-col{background:var(--accent-soft)}
+.cmp .yes,.cmp .no,.cmp .mid{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%}
+.cmp .yes{color:var(--good);background:var(--good-soft)}
+.cmp .no{color:var(--heart)} .cmp .mid{color:var(--warn)}
+.cmp .yes svg,.cmp .no svg,.cmp .mid svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ FAQ ============ */
+.faq-list{max-width:800px;margin-inline:auto;display:flex;flex-direction:column;gap:.7rem}
+.faq{border:1px solid var(--border);border-radius:14px;background:var(--surface);overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:1.15rem 1.3rem;display:flex;align-items:center;gap:1rem;font-weight:600;font-size:1.02rem;font-family:"Manrope"}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .q{flex:1}
+.faq summary .ic{width:24px;height:24px;flex:none;color:var(--accent);transition:transform .25s}
+.faq summary .ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.faq[open] summary .ic{transform:rotate(45deg)}
+.faq .a{padding:0 1.3rem 1.2rem;color:var(--muted);font-size:.96rem;line-height:1.6}
+
+/* ============ FEATURE STORIES ============ */
+.stories{display:flex;flex-direction:column;gap:clamp(3rem,6vw,5.5rem)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4.5vw,4rem);align-items:center}
+.story:nth-child(even) .story-media{order:-1}
+.story .st-eyebrow{font-family:"IBM Plex Mono";font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.story h3{font-size:clamp(1.55rem,3vw,2.25rem);margin:.7rem 0 .8rem;font-weight:600}
+.story .lead2{color:var(--muted);font-size:1.08rem;line-height:1.6}
+.story ul{list-style:none;padding:0;margin:1.2rem 0 0;display:flex;flex-direction:column;gap:.55rem}
+.story li{display:flex;gap:.6rem;font-size:.96rem}
+.story li svg{width:18px;height:18px;flex:none;margin-top:3px;stroke:var(--good);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.story-media{background:var(--surface);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow-lg);padding:1.2rem;direction:ltr}
+.story-media h4{font-family:"IBM Plex Mono";font-weight:500;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem}
+.story-media .sp{margin-left:auto}
+
+/* ============ SECURITY GRID ============ */
+.sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.sec{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:1.5rem}
+.sec .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);margin-bottom:1rem}
+.sec .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sec h3{font-size:1.05rem;font-weight:700;font-family:"Manrope"}
+.sec p{color:var(--muted);font-size:.92rem;margin-top:.35rem}
+
+/* ============ INTEGRATIONS ============ */
+.intg{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;max-width:820px;margin-inline:auto}
+.intg .pin{display:inline-flex;align-items:center;gap:.55rem;padding:.7rem 1.15rem;border:1px solid var(--border);background:var(--surface);border-radius:100px;font-weight:600;font-size:.92rem;box-shadow:var(--shadow)}
+.intg .pin svg{width:18px;height:18px;fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.intg .pin.more{background:transparent;box-shadow:none;color:var(--faint);font-family:"IBM Plex Mono";font-size:.8rem}
+
+/* ============ TESTIMONIALS ============ */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.quote{background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:1.7rem;display:flex;flex-direction:column;gap:1rem}
+.quote .stars{color:#f5b83d;letter-spacing:2px;font-size:.9rem}
+.quote .qt{color:var(--ink);font-size:1rem;line-height:1.6;flex:1}
+.quote .who{display:flex;align-items:center;gap:.7rem}
+.quote .av{width:42px;height:42px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-family:"Bricolage Grotesque";font-weight:700;font-size:.95rem;flex:none}
+.quote .who b{display:block;font-size:.95rem}
+.quote .who span{font-size:.8rem;color:var(--faint);font-family:"IBM Plex Mono"}
+
+/* ============ WHO IT'S FOR ============ */
+.whofor{display:grid;grid-template-columns:repeat(6,1fr);gap:.8rem}
+.wfor{border:1px solid var(--border);background:var(--surface);border-radius:14px;padding:1.2rem .8rem;text-align:center}
+.wfor .ic{width:40px;height:40px;margin:0 auto .65rem;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.wfor .ic svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wfor span{font-size:.86rem;font-weight:600}
+
+@media (max-width:960px){
+  .story{grid-template-columns:1fr}
+  .story:nth-child(even) .story-media{order:0}
+  .sec-grid{grid-template-columns:1fr 1fr}
+  .quotes{grid-template-columns:1fr}
+  .whofor{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:640px){
+  .sec-grid{grid-template-columns:1fr}
+  .whofor{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ============ RTL / ARABIC ============ */
+.lang{cursor:pointer;font-family:"IBM Plex Mono"}
+.lang:hover{color:var(--accent);border-color:var(--accent)}
+[dir="rtl"] body{font-family:"Cairo","Manrope",sans-serif}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] h4,[dir="rtl"] .cost,[dir="rtl"] .hero-meta b,[dir="rtl"] .tile .val,[dir="rtl"] .stat-row div b{font-family:"Cairo","Manrope",sans-serif;letter-spacing:0}
+[dir="rtl"] .eyebrow,[dir="rtl"] .k,[dir="rtl"] .n,[dir="rtl"] .pname,[dir="rtl"] .tab,[dir="rtl"] .foot-col h5,[dir="rtl"] .strip-track span,[dir="rtl"] .badge,[dir="rtl"] .price-note,[dir="rtl"] .hero-meta span,[dir="rtl"] .foot-by{font-family:"Cairo",sans-serif;letter-spacing:0;text-transform:none}
+[dir="rtl"] .feat::after{left:auto;right:0}
+[dir="rtl"] .nav-links{margin-left:0;margin-right:auto}
+[dir="rtl"] .plan .badge{left:auto;right:1.7rem}
+[dir="rtl"] .cmp th,[dir="rtl"] .cmp td{text-align:right}
+[dir="rtl"] .cmp td.col{text-align:center}
+[dir="rtl"] .dtable th,[dir="rtl"] .dtable td{text-align:right}
+[dir="rtl"] .dtable .r{text-align:left}
+[dir="rtl"] .hero .ar{display:none}
+[dir="rtl"] .foot-bottom .ar{direction:rtl}
+.demo-shell,.mock,.scr[dir="ltr"]{direction:ltr}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .mock{margin-top:1rem;transform:none}
+  .pulse-card{left:auto;right:14px;bottom:-18px}
+  .mods{grid-template-columns:repeat(2,1fr)}
+  .why-grid,.deploy,.price-grid,.cta-grid,.company{grid-template-columns:1fr}
+  .plan.feat-plan{order:-1}
+}
+@media (max-width:640px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 5vw;gap:.2rem}
+  .menu-toggle{display:grid}
+  .mods{grid-template-columns:1fr}
+  .hero-meta{gap:1.1rem}
+  .tiles{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="CTMS home">
+      <svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5b6de1"/><stop offset="55%" stop-color="#7c4be8"/><stop offset="100%" stop-color="#b33adf"/></linearGradient></defs><rect width="512" height="512" rx="96" fill="url(#bg)"/><rect x="206" y="70" width="100" height="372" rx="50" fill="#f4f5fb" opacity=".95"/><rect x="68" y="206" width="376" height="100" rx="50" fill="#f4f5fb" opacity=".95"/><path d="M256 310C256 310 192 266 192 222C192 194 214 178 237 191C244 195 250 204 256 214C262 204 268 195 275 191C298 178 320 194 320 222C320 266 256 310 256 310Z" fill="#e46bb4"/></svg>
+      <span>CTMS<small>by Appscrafter</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#modules" data-i18n="nav_modules">Modules</a>
+      <a href="#demo-showcase" data-i18n="nav_demo">Live demo</a>
+      <a href="#why" data-i18n="nav_why">Why CTMS</a>
+      <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="lang iconbtn" id="langBtn" style="width:auto;padding:0 .7rem" aria-label="Switch language" title="English / العربية"><b>EN</b>&nbsp;/&nbsp;ع</button>
+      <button class="iconbtn" id="themeBtn" aria-label="Toggle theme" title="Toggle light / dark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+      </button>
+      <a href="#demo" class="btn btn-primary btn-sm" data-i18n="cta_demo">Request a Demo</a>
+      <button class="iconbtn menu-toggle" id="menuBtn" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="tagline"><span class="dot"></span><span data-i18n="hero_eyebrow">Clinic Operations Platform · Built for the Gulf</span></span>
+      <h1 data-i18n-html="hero_h1">Run the <span class="grad-text">whole clinic</span> from one screen.</h1>
+      <p class="ar" dir="rtl">منظومة إدارة العيادات المتكاملة — من آبسكرافتر</p>
+      <p class="lead" data-i18n="hero_lead">CTMS unifies patients, appointments, billing, pharmacy stock, payroll and full profit &amp; loss into a single system — running on your own hardware, online or completely offline.</p>
+      <div class="hero-cta">
+        <a href="#demo" class="btn btn-primary" data-i18n="cta_demo">Request a Demo</a>
+        <a href="#demo-showcase" class="btn btn-ghost" data-i18n="hero_cta2">See it in action</a>
+      </div>
+      <div class="hero-meta">
+        <div><b data-count="10" data-suffix="+">10+</b><span data-i18n="hero_m1">integrated modules</span></div>
+        <div><b data-i18n="hero_m2b">Multi-branch</b><span data-i18n="hero_m2">per-location P&amp;L</span></div>
+        <div><b data-i18n="hero_m3b">Offline-first</b><span data-i18n="hero_m3">your data, your machine</span></div>
+      </div>
+    </div>
+
+    <!-- dashboard mock -->
+    <div class="mock" aria-hidden="true">
+      <div class="mock-bar"><i></i><i></i><i></i><span>CTMS · Al Salam Clinic — Today</span></div>
+      <div class="tiles">
+        <div class="tile">
+          <div class="lab">Today's revenue</div>
+          <div class="val">1,840 <small>KWD</small></div>
+          <div style="margin-top:.5rem"><span class="trend up">▲ 12% vs avg</span></div>
+        </div>
+        <div class="tile">
+          <div class="lab">Appointments</div>
+          <div class="val">37 <small>/ 42</small></div>
+          <div style="margin-top:.5rem"><span class="trend up">31 seen</span></div>
+        </div>
+        <div class="tile">
+          <div class="lab">Pharmacy stock</div>
+          <div class="val">6 <small>low</small></div>
+          <div style="margin-top:.5rem"><span class="trend warn">reorder due</span></div>
+        </div>
+        <div class="tile">
+          <div class="lab">Payroll cycle</div>
+          <div class="val">Aug <small>ready</small></div>
+          <div style="margin-top:.5rem"><span class="trend up">14 staff</span></div>
+        </div>
+      </div>
+      <div class="mock-row">
+        <h4>Live queue</h4>
+        <div class="appt"><span class="t num">09:20</span><span class="who">Fatima A.</span><span class="st done">done</span></div>
+        <div class="appt"><span class="t num">09:40</span><span class="who">Yousef M.</span><span class="st now">in room</span></div>
+        <div class="appt"><span class="t num">10:00</span><span class="who">Layla H.</span><span class="st wait">waiting</span></div>
+      </div>
+      <div class="pulse-card">
+        <div class="lab">Net margin · MTD</div>
+        <div class="big num">+38.6%</div>
+        <svg class="ekg" viewBox="0 0 200 34" preserveAspectRatio="none">
+          <path id="ekgPath" d="M0 17 H54 l6 -11 l7 22 l6 -11 H120 l7 -14 l7 27 l6 -13 H200"/>
+          <circle class="lead-dot" id="ekgDot" r="3" cx="0" cy="17"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STRIP ============================ -->
+<div class="strip" aria-label="Key capabilities">
+  <div class="strip-track" id="strip">
+    <span data-i18n="cap1">Civil ID duplicate detection</span><span data-i18n="cap2">Automatic encrypted backups</span><span data-i18n="cap3">Role-based access control</span><span data-i18n="cap4">Per-branch profit &amp; loss</span><span data-i18n="cap5">Full Arabic &amp; RTL interface</span><span data-i18n="cap6">Runs offline as a Windows service</span><span data-i18n="cap7">Multi-payment split billing</span><span data-i18n="cap8">Stock-take &amp; write-offs</span>
+    <span data-i18n="cap1">Civil ID duplicate detection</span><span data-i18n="cap2">Automatic encrypted backups</span><span data-i18n="cap3">Role-based access control</span><span data-i18n="cap4">Per-branch profit &amp; loss</span><span data-i18n="cap5">Full Arabic &amp; RTL interface</span><span data-i18n="cap6">Runs offline as a Windows service</span><span data-i18n="cap7">Multi-payment split billing</span><span data-i18n="cap8">Stock-take &amp; write-offs</span>
+  </div>
+</div>
+
+<!-- ============================ INTERACTIVE DEMO ============================ -->
+<section class="section" id="demo-showcase">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="demo_eyebrow">See it in action</span>
+      <h2 data-i18n="demo_h2">The actual workflow, not a slideshow.</h2>
+      <p data-i18n="demo_p">Click through the screens your team lives in every day. These are representative CTMS screens with demo data for “Al Salam Clinic.”</p>
+    </div>
+    <div class="demo-shell reveal">
+      <div class="tabs" role="tablist" aria-label="CTMS screens">
+        <button class="tab" role="tab" aria-selected="true" data-scr="s-dash"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="11" width="7" height="10" rx="1.5"/><rect x="3" y="15" width="7" height="6" rx="1.5"/></svg><span data-i18n="tab_dash">Dashboard</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-scr="s-bill"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/></svg><span data-i18n="tab_bill">Billing</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-scr="s-pharm"><svg viewBox="0 0 24 24"><path d="M3.5 7 12 3l8.5 4v10L12 21l-8.5-4V7z"/><path d="M3.5 7 12 11l8.5-4M12 11v10"/></svg><span data-i18n="tab_pharm">Pharmacy</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-scr="s-pay"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5M16 5.2A3.2 3.2 0 0 1 16 11M21 20c0-3-1.8-4.6-4.5-5"/></svg><span data-i18n="tab_pay">Payroll</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-scr="s-rep"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><span data-i18n="tab_rep">Reports &amp; P&amp;L</span></button>
+      </div>
+      <div class="screens">
+
+        <!-- DASHBOARD -->
+        <div class="screen active" id="s-dash" dir="ltr">
+          <div class="scr-head"><h3>Today</h3><span class="crumb">Al Salam Clinic · Tue 19 Aug</span><span class="spacer"></span><span class="chip ok">● Live</span></div>
+          <div class="scr-grid">
+            <div class="tile"><div class="lab">Revenue</div><div class="val">1,840 <small>KWD</small></div><div style="margin-top:.4rem"><span class="trend up">▲ 12%</span></div></div>
+            <div class="tile"><div class="lab">Appointments</div><div class="val">37 <small>/ 42</small></div><div style="margin-top:.4rem"><span class="trend up">31 seen</span></div></div>
+            <div class="tile"><div class="lab">Low stock</div><div class="val">6 <small>items</small></div><div style="margin-top:.4rem"><span class="trend warn">reorder</span></div></div>
+            <div class="tile"><div class="lab">Collected</div><div class="val">1,610 <small>KWD</small></div><div style="margin-top:.4rem"><span class="trend up">88%</span></div></div>
+          </div>
+          <table class="dtable">
+            <thead><tr><th>Time</th><th>Patient</th><th>Doctor</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>09:20</td><td class="who">Fatima A.</td><td>Dr. Khaled</td><td><span class="chip ok">Done</span></td></tr>
+              <tr><td>09:40</td><td class="who">Yousef M.</td><td>Dr. Huda</td><td><span class="chip info">In room</span></td></tr>
+              <tr><td>10:00</td><td class="who">Layla H.</td><td>Dr. Khaled</td><td><span class="chip warn">Waiting</span></td></tr>
+              <tr><td>10:20</td><td class="who">Omar S.</td><td>Dr. Huda</td><td><span class="chip warn">Waiting</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- BILLING -->
+        <div class="screen" id="s-bill" dir="ltr">
+          <div class="scr-head"><h3>Invoice INV-20841</h3><span class="crumb">Fatima A. · Tue 19 Aug</span><span class="spacer"></span><span class="chip ok">Paid</span></div>
+          <table class="dtable">
+            <thead><tr><th>Service</th><th>Doctor</th><th class="r">Qty</th><th class="r">Amount</th></tr></thead>
+            <tbody>
+              <tr><td class="who">Consultation</td><td>Dr. Khaled</td><td class="r">1</td><td class="r">12.000</td></tr>
+              <tr><td class="who">Dental scaling</td><td>Dr. Khaled</td><td class="r">1</td><td class="r">25.000</td></tr>
+              <tr><td class="who">Amoxicillin 500mg</td><td>—</td><td class="r">2</td><td class="r">3.500</td></tr>
+            </tbody>
+          </table>
+          <div style="max-width:320px;margin-left:auto;margin-top:1rem">
+            <div class="pl-row"><span>Subtotal</span><span class="v">40.500</span></div>
+            <div class="pl-row"><span>Discount (10%)</span><span class="v neg">−4.050</span></div>
+            <div class="pl-row tot"><span>Total</span><span class="v">36.450 KWD</span></div>
+            <div class="pl-row" style="border:0;margin-top:.5rem"><span class="chip info">KNET 26.450</span><span class="chip info">Cash 10.000</span></div>
+          </div>
+        </div>
+
+        <!-- PHARMACY -->
+        <div class="screen" id="s-pharm" dir="ltr">
+          <div class="scr-head"><h3>Inventory</h3><span class="crumb">Store · main branch</span><span class="spacer"></span><span class="chip warn">6 low</span></div>
+          <table class="dtable">
+            <thead><tr><th>Product</th><th class="r">On hand</th><th class="r">Reorder at</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td class="who">Amoxicillin 500mg</td><td class="r">18</td><td class="r">40</td><td><span class="chip warn">Low</span></td></tr>
+              <tr><td class="who">Surgical gloves (M)</td><td class="r">6</td><td class="r">30</td><td><span class="chip warn">Reorder</span></td></tr>
+              <tr><td class="who">Paracetamol 500mg</td><td class="r">240</td><td class="r">60</td><td><span class="chip ok">OK</span></td></tr>
+              <tr><td class="who">Dental anaesthetic</td><td class="r">52</td><td class="r">20</td><td><span class="chip ok">OK</span></td></tr>
+            </tbody>
+          </table>
+          <div class="pl-row" style="border:0;margin-top:.8rem"><span class="crumb">PO-1043 drafted · 4 items · awaiting approval</span><span class="chip info">Draft</span></div>
+        </div>
+
+        <!-- PAYROLL -->
+        <div class="screen" id="s-pay" dir="ltr">
+          <div class="scr-head"><h3>Payroll — August</h3><span class="crumb">14 staff · cycle open</span><span class="spacer"></span><span class="chip ok">Ready to run</span></div>
+          <table class="dtable">
+            <thead><tr><th>Employee</th><th>Role</th><th class="r">Net (KWD)</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td class="who">Dr. Khaled I.</td><td>Dentist</td><td class="r">1,450.000</td><td><span class="chip ok">Approved</span></td></tr>
+              <tr><td class="who">Dr. Huda R.</td><td>GP</td><td class="r">1,280.000</td><td><span class="chip ok">Approved</span></td></tr>
+              <tr><td class="who">Mariam T.</td><td>Reception</td><td class="r">420.000</td><td><span class="chip info">Review</span></td></tr>
+              <tr><td class="who">Ahmed N.</td><td>Pharmacist</td><td class="r">610.000</td><td><span class="chip ok">Approved</span></td></tr>
+            </tbody>
+          </table>
+          <div style="max-width:320px;margin-left:auto;margin-top:1rem">
+            <div class="pl-row"><span>Gross</span><span class="v">4,120.000</span></div>
+            <div class="pl-row"><span>Deductions</span><span class="v neg">−360.000</span></div>
+            <div class="pl-row tot"><span>Net payout</span><span class="v">3,760.000 KWD</span></div>
+          </div>
+        </div>
+
+        <!-- REPORTS -->
+        <div class="screen" id="s-rep" dir="ltr">
+          <div class="scr-head"><h3>Profit &amp; Loss — August</h3><span class="crumb">All branches</span><span class="spacer"></span><span class="chip ok">+38.6% margin</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.4rem">
+            <div>
+              <div class="pl-row"><span>Revenue</span><span class="v pos">24,900</span></div>
+              <div class="pl-row"><span>Cost of goods</span><span class="v neg">−3,150</span></div>
+              <div class="pl-row"><span>Salaries</span><span class="v neg">−9,860</span></div>
+              <div class="pl-row"><span>Rent &amp; utilities</span><span class="v neg">−2,300</span></div>
+              <div class="pl-row tot"><span>Net profit</span><span class="v pos">9,590 KWD</span></div>
+            </div>
+            <div>
+              <div class="crumb" style="margin-bottom:.5rem">Revenue by service</div>
+              <div class="barrow"><span class="lbl">Dental</span><span class="bartrack"><span class="barfill" style="width:78%"></span></span><span class="amt">9,700</span></div>
+              <div class="barrow"><span class="lbl">Consults</span><span class="bartrack"><span class="barfill" style="width:60%"></span></span><span class="amt">7,450</span></div>
+              <div class="barrow"><span class="lbl">Pharmacy</span><span class="bartrack"><span class="barfill" style="width:38%"></span></span><span class="amt">4,700</span></div>
+              <div class="barrow"><span class="lbl">Packages</span><span class="bartrack"><span class="barfill" style="width:24%"></span></span><span class="amt">3,050</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FEATURE STORIES ============================ -->
+<section class="section why" id="stories">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="stories_eyebrow">The payoff</span>
+      <h2 data-i18n="stories_h2">Three ways CTMS pays for itself.</h2>
+    </div>
+    <div class="stories">
+
+      <!-- Story A: P&L -->
+      <div class="story reveal">
+        <div>
+          <span class="st-eyebrow" data-i18n="sa_k">Finance, automatic</span>
+          <h3 data-i18n="sa_h">Every dinar reconciled by itself.</h3>
+          <p class="lead2" data-i18n="sa_p">Post a sale, return a product, run payroll — CTMS threads each one into your P&amp;L and the right branch ledger the same day. Close the month in minutes, not days.</p>
+          <ul>
+            <li data-i18n="sa_a"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Revenue split per service &amp; per doctor</li>
+            <li data-i18n="sa_b"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Stock cost &amp; write-offs flow into COGS</li>
+            <li data-i18n="sa_c"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Owner Insights across the whole group</li>
+          </ul>
+        </div>
+        <div class="story-media">
+          <h4>Profit &amp; Loss · August<span class="sp"></span><span class="chip ok">+38.6%</span></h4>
+          <div class="pl-row"><span>Revenue</span><span class="v pos">24,900</span></div>
+          <div class="pl-row"><span>Cost of goods</span><span class="v neg">−3,150</span></div>
+          <div class="pl-row"><span>Salaries</span><span class="v neg">−9,860</span></div>
+          <div class="pl-row"><span>Rent &amp; utilities</span><span class="v neg">−2,300</span></div>
+          <div class="pl-row tot"><span>Net profit</span><span class="v pos">9,590 KWD</span></div>
+        </div>
+      </div>
+
+      <!-- Story B: own data / offline / backups -->
+      <div class="story reveal">
+        <div>
+          <span class="st-eyebrow" data-i18n="sb_k">Yours, and safe</span>
+          <h3 data-i18n="sb_h">Runs when the internet doesn't — and backs itself up.</h3>
+          <p class="lead2" data-i18n="sb_p">CTMS lives on your hardware as a Windows service. The front desk keeps working offline, and encrypted snapshots protect you around the clock — no cloud lock-in, no ransom over your own records.</p>
+          <ul>
+            <li data-i18n="sb_a"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Fully offline Windows service</li>
+            <li data-i18n="sb_b"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Automatic encrypted backups &amp; snapshots</li>
+            <li data-i18n="sb_c"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Pre-update safety guard + one-click restore</li>
+          </ul>
+        </div>
+        <div class="story-media">
+          <h4>Backup status<span class="sp"></span><span class="chip ok">● Offline-ready</span></h4>
+          <div class="pl-row"><span>Last backup</span><span class="v">Today · 02:00</span></div>
+          <div class="pl-row"><span>Snapshots kept</span><span class="v">30</span></div>
+          <div class="pl-row"><span>Encryption</span><span class="v pos">AES · verified</span></div>
+          <div class="pl-row"><span>Restore point</span><span class="v">1-click</span></div>
+          <div class="pl-row tot"><span>Status</span><span class="v pos">Healthy</span></div>
+        </div>
+      </div>
+
+      <!-- Story C: multi-branch -->
+      <div class="story reveal">
+        <div>
+          <span class="st-eyebrow" data-i18n="sc_k">Built to grow</span>
+          <h3 data-i18n="sc_h">One owner view across every branch.</h3>
+          <p class="lead2" data-i18n="sc_p">Add locations without changing systems. Each branch keeps its own books and stock, and rolls up into a single consolidated view — so you see the group and the details at once.</p>
+          <ul>
+            <li data-i18n="sc_a"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Per-branch P&amp;L and inventory</li>
+            <li data-i18n="sc_b"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Mirrored setup for new branches in minutes</li>
+            <li data-i18n="sc_c"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Consolidated Owner Insights roll-up</li>
+          </ul>
+        </div>
+        <div class="story-media">
+          <h4>Branches · this month<span class="sp"></span><span class="chip info">3 active</span></h4>
+          <table class="dtable">
+            <tbody>
+              <tr><td class="who">Al Salam — Salmiya</td><td class="r">11,200</td><td><span class="chip ok">+9%</span></td></tr>
+              <tr><td class="who">Al Salam — Hawally</td><td class="r">8,450</td><td><span class="chip ok">+4%</span></td></tr>
+              <tr><td class="who">Al Salam — Jahra</td><td class="r">5,250</td><td><span class="chip warn">−2%</span></td></tr>
+            </tbody>
+          </table>
+          <div class="pl-row tot"><span>Group total</span><span class="v pos">24,900 KWD</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ MODULES ============================ -->
+<section class="section" id="modules">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="mod_eyebrow">One system · every corner of the clinic</span>
+      <h2 data-i18n="mod_h2">Everything a clinic runs on, finally under one roof.</h2>
+      <p data-i18n="mod_p">No more juggling spreadsheets, a separate pharmacy app, and a payroll book. CTMS connects the front desk to the back office so a single action flows everywhere it should.</p>
+    </div>
+    <div class="mods">
+      <div class="mod reveal">
+        <div class="mod-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
+        <h3 data-i18n="m_pat">Patients &amp; Records</h3>
+        <p data-i18n="m_pat_d">Full patient files with history, documents and photos — with Civil ID and phone duplicate detection built in.</p>
+        <span class="tag">registry · history · attachments</span>
+      </div>
+      <div class="mod reveal">
+        <div class="mod-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4M8 13h3M8 16.5h6"/></svg></div>
+        <h3 data-i18n="m_appt">Appointments</h3>
+        <p data-i18n="m_appt_d">Calendar and drag-and-drop scheduler with doctor departments, schedules and live status tracking.</p>
+        <span class="tag">calendar · scheduler · queue</span>
+      </div>
+      <div class="mod reveal">
+        <div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M8 3h8l-1 4H9L8 3z"/><path d="M9 7v3l-3 8a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-3-8V7"/><path d="M8 15h8"/></svg></div>
+        <h3 data-i18n="m_presc">Prescriptions &amp; Follow-ups</h3>
+        <p data-i18n="m_presc_d">Write prescriptions per visit, capture pre-consult notes, and schedule follow-ups that never slip.</p>
+        <span class="tag">Rx · notes · recall</span>
+      </div>
+      <div class="mod reveal">
+        <div class="mod-ic"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6 15h4"/></svg></div>
+        <h3 data-i18n="m_bill">Billing &amp; Payments</h3>
+        <p data-i18n="m_bill_d">Itemised bills with multi-payment splits, per-line doctor, per-service revenue split, discounts and refunds.</p>
+        <span class="tag">invoices · splits · refunds</span>
+      </div>
+      <div class="mod reveal">
+        <div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M3.5 7 12 3l8.5 4v10L12 21l-8.5-4V7z"/><path d="M3.5 7 12 11l8.5-4M12 11v10"/></svg></div>
+        <h3 data-i18n="m_pharm">Pharmacy &amp; Inventory</h3>
+        <p data-i18n="m_pharm_d">Products, units of measure, purchase orders, stock-takes, sales returns and write-offs — costed automatically.</p>
+        <span class="tag">store · PO · stock-take</span>
+      </div>
+      <div class="mod reveal">
+        <div class="mod-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 9h6M7 13h10M7 17h4"/></svg></div>
+        <h3 data-i18n="m_pay">Payroll</h3>
+        <p data-i18n="m_pay_d">The deepest module in CTMS — salaries, cycles, deductions and payslips, with its own backup-health safeguards.</p>
+        <span class="tag">salaries · cycles · payslips</span>
+      </div>
+      <div class="mod reveal">
+        <div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div>
+        <h3 data-i18n="m_rep">Reports &amp; P&amp;L</h3>
+        <p data-i18n="m_rep_d">Profit &amp; loss, branch P&amp;L, revenue and Owner Insights — exportable as clean, paginated PDF documents.</p>
+        <span class="tag">P&amp;L · insights · PDF</span>
+      </div>
+      <div class="mod reveal">
+        <div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg></div>
+        <h3 data-i18n="m_acc">Access Control</h3>
+        <p data-i18n="m_acc_d">Granular role-based permissions — right down to a single report — so every staff member sees exactly what they should.</p>
+        <span class="tag">roles · permissions · access</span>
+      </div>
+      <div class="mod reveal">
+        <div class="mod-ic"><svg viewBox="0 0 24 24"><path d="M3 21V8l6-4 6 4v13M15 21V11l6-3v13M3 21h18M7 12h0M7 16h0M11 12h0M11 16h0"/></svg></div>
+        <h3 data-i18n="m_multi">Multi-Branch</h3>
+        <p data-i18n="m_multi_d">Run many locations from one install — mirrored setups, per-branch ledgers and consolidated owner insights.</p>
+        <span class="tag">locations · ledgers · roll-up</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WHY ============================ -->
+<section class="section why" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="why_eyebrow">Why clinics choose CTMS</span>
+      <h2 data-i18n="why_h2">Built the way a clinic actually operates.</h2>
+      <p data-i18n="why_p">Four decisions that separate CTMS from generic practice software.</p>
+    </div>
+    <div class="why-grid">
+      <div class="feat reveal">
+        <div class="k" data-i18n="why1_k">Ownership</div>
+        <h3 data-i18n="why1_h">Your data stays yours.</h3>
+        <p data-i18n="why1_p">CTMS runs on your own machine as a Windows service — no clinic data held hostage in someone else's cloud.</p>
+        <ul>
+          <li data-i18n="why1_a"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Works fully offline; syncs when you want</li>
+          <li data-i18n="why1_b"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Automatic encrypted backups &amp; safety snapshots</li>
+          <li data-i18n="why1_c"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>One-click restore and pre-update safety guard</li>
+        </ul>
+      </div>
+      <div class="feat reveal">
+        <div class="k" data-i18n="why2_k">Finance</div>
+        <h3 data-i18n="why2_h">Money is never a mystery.</h3>
+        <p data-i18n="why2_p">Every service, sale, write-off and payroll run flows straight into your profit &amp; loss and per-branch ledgers — the same day, automatically.</p>
+        <ul>
+          <li data-i18n="why2_a"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Revenue split per service and per doctor</li>
+          <li data-i18n="why2_b"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Inventory cost &amp; write-offs land in COGS</li>
+          <li data-i18n="why2_c"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Owner Insights dashboard for the whole group</li>
+        </ul>
+      </div>
+      <div class="feat reveal">
+        <div class="k" data-i18n="why3_k">Scale</div>
+        <h3 data-i18n="why3_h">Grows from one room to many branches.</h3>
+        <p data-i18n="why3_p">Start with a single clinic and add locations without changing systems — each with its own P&amp;L, rolled up for the owner.</p>
+        <ul>
+          <li data-i18n="why3_a"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Per-branch profit &amp; loss and stock</li>
+          <li data-i18n="why3_b"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Mirrored location setup in minutes</li>
+          <li data-i18n="why3_c"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Consolidated group reporting</li>
+        </ul>
+      </div>
+      <div class="feat reveal">
+        <div class="k" data-i18n="why4_k">Local fit</div>
+        <h3 data-i18n="why4_h">Made for Gulf clinics.</h3>
+        <p data-i18n="why4_p">The details that matter here are already handled — from Civil ID to a full Arabic interface — no plug-ins, no workarounds.</p>
+        <ul>
+          <li data-i18n="why4_a"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Civil ID &amp; phone duplicate detection</li>
+          <li data-i18n="why4_b"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Full Arabic &amp; right-to-left interface</li>
+          <li data-i18n="why4_c"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>KWD-first billing and reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SECURITY & COMPLIANCE ============================ -->
+<section class="section" id="security">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="sec_eyebrow">Security &amp; compliance</span>
+      <h2 data-i18n="sec_h2">Serious about your clinic's data.</h2>
+      <p data-i18n="sec_p">Everything you need to keep records safe and stay compliant is built in — not sold as an add-on.</p>
+    </div>
+    <div class="sec-grid">
+      <div class="sec reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3z"/></svg></div>
+        <h3 data-i18n="sec1_h">Data on your hardware</h3>
+        <p data-i18n="sec1_p">Records stay on your machine or private server — never in someone else's cloud unless you choose it.</p>
+      </div>
+      <div class="sec reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+        <h3 data-i18n="sec2_h">Encrypted backups</h3>
+        <p data-i18n="sec2_p">Automatic, scheduled, encrypted backups with verified safety snapshots and one-click restore.</p>
+      </div>
+      <div class="sec reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="3"/><path d="M11 12h10M18 12v3M15 12v2"/></svg></div>
+        <h3 data-i18n="sec3_h">Role-based access</h3>
+        <p data-i18n="sec3_p">Granular permissions down to a single report, so staff see only what their role allows.</p>
+      </div>
+      <div class="sec reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg></div>
+        <h3 data-i18n="sec4_h">Audit &amp; activity logs</h3>
+        <p data-i18n="sec4_p">Every sensitive action is logged, so you always know who did what and when.</p>
+      </div>
+      <div class="sec reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9.5 14l1.6 1.6L15 12"/></svg></div>
+        <h3 data-i18n="sec5_h">Compliance module</h3>
+        <p data-i18n="sec5_p">Store consents, licences and documents against each record, with expiry tracking.</p>
+      </div>
+      <div class="sec reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5m2-3v5h-5"/><path d="M20 12a8 8 0 0 1-14 5m-2 3v-5h5"/></svg></div>
+        <h3 data-i18n="sec6_h">Safe updates</h3>
+        <p data-i18n="sec6_p">A pre-update safety guard snapshots your data before any upgrade — so nothing is ever at risk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ INTEGRATIONS ============================ -->
+<section class="section why" id="integrations">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-inline:auto;text-align:center;max-width:46ch">
+      <span class="eyebrow" data-i18n="intg_eyebrow">Connected</span>
+      <h2 data-i18n="intg_h2">Works with the tools your clinic already uses.</h2>
+      <p data-i18n="intg_p">CTMS integrates with the essentials — and we keep adding more.</p>
+    </div>
+    <div class="intg reveal">
+      <span class="pin"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 3.2 6.4L4 20l1.6-3.2A8 8 0 0 1 4 12z"/></svg><span data-i18n="intg_p1">WhatsApp</span></span>
+      <span class="pin"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg><span data-i18n="intg_p2">KNET &amp; cards</span></span>
+      <span class="pin"><svg viewBox="0 0 24 24"><path d="M7 9V3h10v6M7 18H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v6H7z"/></svg><span data-i18n="intg_p3">Thermal receipt printers</span></span>
+      <span class="pin"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span data-i18n="intg_p4">PDF reports</span></span>
+      <span class="pin"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M13 10h5M13 14h5"/></svg><span data-i18n="intg_p5">Civil ID</span></span>
+      <span class="pin"><svg viewBox="0 0 24 24"><path d="M3 21V8l6-4 6 4v13M15 21V11l6-3v13M3 21h18"/></svg><span data-i18n="intg_p6">Multi-branch sync</span></span>
+      <span class="pin more" data-i18n="intg_more">…and more</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DEPLOY ============================ -->
+<section class="section" id="deploy">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="dep_eyebrow">Deployment</span>
+      <h2 data-i18n="dep_h2">Install it your way — and keep it safe.</h2>
+      <p data-i18n="dep_p">CTMS is engineered to be resilient. It backs itself up, guards its own updates, and keeps running when the internet doesn't.</p>
+    </div>
+    <div class="deploy">
+      <div class="dcard reveal">
+        <div class="n mono" data-i18n="dep1_n">01 · On-premise</div>
+        <h3 data-i18n="dep1_h">On your own hardware</h3>
+        <p data-i18n="dep1_p">Runs as a managed Windows service on a clinic PC or local server. Staff open it in any browser on the network.</p>
+      </div>
+      <div class="dcard reveal">
+        <div class="n mono" data-i18n="dep2_n">02 · Cloud</div>
+        <h3 data-i18n="dep2_h">Or hosted for you</h3>
+        <p data-i18n="dep2_p">Prefer no hardware to manage? CTMS deploys to the cloud with the same features and access controls.</p>
+      </div>
+      <div class="dcard reveal">
+        <div class="n mono" data-i18n="dep3_n">03 · Always protected</div>
+        <h3 data-i18n="dep3_h">Backups &amp; safe updates</h3>
+        <p data-i18n="dep3_p">Scheduled encrypted backups, verified snapshots, and a pre-update safety guard so an upgrade never risks your data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ COMPARISON ============================ -->
+<section class="section" id="compare">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="cmp_eyebrow">How it compares</span>
+      <h2 data-i18n="cmp_h2">Why not just spreadsheets?</h2>
+      <p data-i18n="cmp_p">Spreadsheets and single-purpose apps each cover a slice. CTMS is the one system where a sale, a stock movement and a payslip all reconcile to the same books.</p>
+    </div>
+    <div class="cmp-wrap reveal">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th data-i18n="cmp_cap">Capability</th>
+            <th class="col" data-i18n="cmp_sheets">Spreadsheets</th>
+            <th class="col" data-i18n="cmp_generic">Generic software</th>
+            <th class="col us" data-i18n="cmp_us">CTMS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-i18n="cmp_r1">Patient records &amp; history</td><td class="col"><span class="mid"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></span></td><td class="col"><span class="yes"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span></td><td class="col us-col"><span class="yes"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span></td></tr>
+          <tr><td data-i18n="cmp_r2">Billing, pharmacy &amp; payroll in one</td><td class="col"><span class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td><td class="col"><span class="mid"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></span></td><td class="col us-col"><span class="yes"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span></td></tr>
+          <tr><td data-i18n="cmp_r3">Automatic profit &amp; loss</td><td class="col"><span class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td><td class="col"><span class="mid"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></span></td><td class="col us-col"><span class="yes"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span></td></tr>
+          <tr><td data-i18n="cmp_r4">Per-branch P&amp;L &amp; group roll-up</td><td class="col"><span class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td><td class="col"><span class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td><td class="col us-col"><span class="yes"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span></td></tr>
+          <tr><td data-i18n="cmp_r5">Works offline, on your hardware</td><td class="col"><span class="mid"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></span></td><td class="col"><span class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td><td class="col us-col"><span class="yes"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span></td></tr>
+          <tr><td data-i18n="cmp_r6">Automatic encrypted backups</td><td class="col"><span class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td><td class="col"><span class="mid"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></span></td><td class="col us-col"><span class="yes"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span></td></tr>
+          <tr><td data-i18n="cmp_r7">Arabic / RTL &amp; Civil ID</td><td class="col"><span class="mid"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></span></td><td class="col"><span class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></span></td><td class="col us-col"><span class="yes"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PRICING ============================ -->
+<section class="section why" id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal" style="max-width:52ch">
+      <span class="eyebrow" data-i18n="pr_eyebrow">Pricing</span>
+      <h2 data-i18n="pr_h2">Simple plans that grow with the clinic.</h2>
+      <p data-i18n="pr_p">Every plan includes backups, Arabic support and role-based access. Prices below are placeholders — set your own before launch.</p>
+    </div>
+    <div class="billwrap reveal">
+      <div class="billtoggle" id="billToggle" role="tablist">
+        <button class="bt" data-mode="m" role="tab" aria-selected="false" data-i18n="bill_monthly">Monthly</button>
+        <button class="bt active" data-mode="y" role="tab" aria-selected="true"><span data-i18n="bill_annual">Annual</span><span class="save" data-i18n="bill_save">save 20%</span></button>
+      </div>
+      <select id="curSel" class="cursel" aria-label="Currency"></select>
+    </div>
+    <div class="price-grid">
+      <div class="plan reveal">
+        <div class="pname" data-i18n="pr1_name">Starter</div>
+        <div class="cost" data-m="29"><span class="cur">KWD</span> <span class="amt">29</span><small data-i18n="pr_mo">/mo</small></div>
+        <div class="bill"></div>
+        <div class="desc" data-i18n="pr1_desc">For a single practitioner or a new clinic finding its feet.</div>
+        <ul>
+          <li data-i18n="pr1_a"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Patients, appointments &amp; prescriptions</li>
+          <li data-i18n="pr1_b"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Basic billing &amp; receipts</li>
+          <li data-i18n="pr1_c"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Daily revenue reports</li>
+          <li data-i18n="pr1_d"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>1 location · up to 3 users</li>
+        </ul>
+        <a href="#demo" class="btn btn-ghost" style="justify-content:center" data-i18n="cta_demo">Request a Demo</a>
+      </div>
+      <div class="plan feat-plan reveal">
+        <span class="badge" data-i18n="pr_badge">Most popular</span>
+        <div class="pname" data-i18n="pr2_name">Clinic</div>
+        <div class="cost" data-m="49"><span class="cur">KWD</span> <span class="amt">49</span><small data-i18n="pr_mo">/mo</small></div>
+        <div class="bill"></div>
+        <div class="desc" data-i18n="pr2_desc">The full suite for a busy single-branch clinic.</div>
+        <ul>
+          <li data-i18n="pr2_a"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Everything in Starter</li>
+          <li data-i18n="pr2_b"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Pharmacy, inventory &amp; purchase orders</li>
+          <li data-i18n="pr2_c"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Discounts, refunds &amp; sales returns</li>
+          <li data-i18n="pr2_d"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Full P&amp;L, packages &amp; role-based permissions</li>
+          <li data-i18n="pr2_e"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Unlimited users</li>
+        </ul>
+        <a href="#demo" class="btn btn-primary" style="justify-content:center" data-i18n="cta_demo">Request a Demo</a>
+      </div>
+      <div class="plan reveal">
+        <div class="pname" data-i18n="pr3_name">Multi-Branch</div>
+        <div class="cost" data-m="79"><span class="cur">KWD</span> <span class="amt">79</span><small data-i18n="pr_mo">/mo</small></div>
+        <div class="bill"></div>
+        <div class="desc" data-i18n="pr3_desc">For groups running two or more locations.</div>
+        <ul>
+          <li data-i18n="pr3_a"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Everything in Clinic</li>
+          <li data-i18n="pr3_b"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Unlimited branches &amp; per-branch P&amp;L</li>
+          <li data-i18n="pr3_c"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Owner Insights &amp; group roll-up</li>
+          <li data-i18n="pr3_d"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>Priority support &amp; onboarding</li>
+        </ul>
+        <a href="#demo" class="btn btn-ghost" style="justify-content:center" data-i18n="pr_sales">Talk to Sales</a>
+      </div>
+    </div>
+    <div class="addons reveal">
+      <div class="addon">
+        <div class="addon-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 9h6M7 13h10M7 17h4"/></svg></div>
+        <div class="txt">
+          <b><span data-i18n="addon_name">Payroll</span><span class="addon-tag" data-i18n="addon_tag">Add-on</span></b>
+          <p data-i18n="addon_desc">Salaries, cycles, deductions &amp; payslips — add to any plan.</p>
+        </div>
+        <div class="addon-price" data-m="15"><span class="cur">KWD</span> <span class="amt">15</span><small data-i18n="pr_mo">/mo</small></div>
+      </div>
+    </div>
+    <p class="price-note" data-i18n="pr_note">Per clinic, per month in KWD. Pay for the year up front and save 20%.</p>
+  </div>
+</section>
+
+<!-- ============================ WHO IT'S FOR ============================ -->
+<section class="section why" id="whofor-sec">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-inline:auto;text-align:center;max-width:44ch">
+      <span class="eyebrow" data-i18n="wf_eyebrow">A fit for</span>
+      <h2 data-i18n="wf_h2">Made for every kind of clinic.</h2>
+    </div>
+    <div class="whofor reveal">
+      <div class="wfor"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 3c-2.2 0-4 1.6-4 5 0 2.8 1 6 1.7 9 .3 1.4 1.6 1.4 1.9 0L9 13c.2-1 1.8-1 2 0l1.4 4c.3 1.4 1.6 1.4 1.9 0C15 14 16 10.8 16 8c0-3.4-1.8-5-4-5-1 0-1.5.5-2 .5S9 3 8 3z"/></svg></div><span data-i18n="wf1">Dental</span></div>
+      <div class="wfor"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3v5a4 4 0 0 0 8 0V3M5 3h2m5 0h2M10 16a6 6 0 0 0 8 0v-3"/><circle cx="19" cy="11" r="2"/></svg></div><span data-i18n="wf2">General practice</span></div>
+      <div class="wfor"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.7 4L18 8.5l-4.3 1.5L12 14l-1.7-4L6 8.5 10.3 7 12 3zM18 14l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8.8-1.9z"/></svg></div><span data-i18n="wf3">Derma &amp; aesthetics</span></div>
+      <div class="wfor"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21V6l8-3 8 3v15M9 21v-4h6v4M8 9h.01M12 9h.01M16 9h.01M8 13h.01M12 13h.01M16 13h.01"/></svg></div><span data-i18n="wf4">Polyclinic</span></div>
+      <div class="wfor"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 4 7l8 4 8-4-8-4zM4 12l8 4 8-4M4 17l8 4 8-4"/></svg></div><span data-i18n="wf5">Multi-specialty</span></div>
+      <div class="wfor"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div><span data-i18n="wf6">Physiotherapy</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="section why" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-inline:auto;text-align:center">
+      <span class="eyebrow" data-i18n="faq_eyebrow">Questions</span>
+      <h2 data-i18n="faq_h2">Frequently asked.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq reveal"><summary><span class="q" data-i18n="q1">Does CTMS work without an internet connection?</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a" data-i18n="a1">Yes. CTMS runs as a Windows service on your own machine and works fully offline — the front desk keeps billing and booking even when the internet is down. Cloud hosting is available if you prefer it.</div></details>
+      <details class="faq reveal"><summary><span class="q" data-i18n="q2">Where is our data kept, and who can see it?</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a" data-i18n="a2">Your data stays on your hardware — it is never held in someone else's cloud unless you choose hosting. CTMS makes automatic encrypted backups and verified safety snapshots, and every screen is gated by granular, role-based permissions.</div></details>
+      <details class="faq reveal"><summary><span class="q" data-i18n="q3">Can it run more than one branch?</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a" data-i18n="a3">Yes. Add locations whenever you grow — each branch keeps its own profit &amp; loss and stock, consolidated into a single Owner Insights view for the group.</div></details>
+      <details class="faq reveal"><summary><span class="q" data-i18n="q4">Do you support Arabic?</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a" data-i18n="a4">Fully — a complete Arabic, right-to-left interface, along with Civil ID duplicate detection and KWD-first billing and reporting. This very page has an EN ⇄ عربية switch in the top bar.</div></details>
+      <details class="faq reveal"><summary><span class="q" data-i18n="q5">How do we move our existing data in?</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a" data-i18n="a5">We handle migration during onboarding — patients, services, staff and stock — so you go live with your real data rather than starting from an empty system.</div></details>
+      <details class="faq reveal"><summary><span class="q" data-i18n="q6">How much does it cost?</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="a" data-i18n="a6">Pricing depends on how many branches and which modules you need. Request a demo and we'll put together a plan that fits your clinic.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA / DEMO ============================ -->
+<section class="section" id="demo">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div class="cta-grid">
+        <div>
+          <span class="eyebrow" data-i18n="cta_eyebrow">Request a demo</span>
+          <h2 style="margin-top:.7rem" data-i18n="cta_h2">See CTMS running on a clinic like yours.</h2>
+          <p data-i18n="cta_p">Book a walkthrough and we'll show you the exact workflow for your front desk, pharmacy and back office — then help you migrate.</p>
+          <div class="contact-list">
+            <a href="mailto:info@appscrafter.com">
+              <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+              info@appscrafter.com<small data-i18n="contact_email_ph">Sales &amp; support</small>
+            </a>
+            <a href="tel:+96565127782">
+              <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l-1 4-2 2c-8 0-15-7-15-15l2-2z"/></svg></span>
+              +965 6512 7782<small data-i18n="contact_phone_ph">Call or WhatsApp</small>
+            </a>
+          </div>
+        </div>
+        <form class="demo" id="demoForm" action="https://formsubmit.co/mayur.madhwani2011@gmail.com" method="POST" novalidate>
+          <div id="formFields">
+            <input type="hidden" name="_subject" value="New CTMS demo request">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+            <label for="f-name" data-i18n="f_name">Your name</label>
+            <input id="f-name" name="name" type="text" placeholder="Dr. Sara Al-…" data-i18n-ph="ph_name" autocomplete="name" required>
+            <label for="f-clinic" data-i18n="f_clinic">Clinic name</label>
+            <input id="f-clinic" name="clinic" type="text" placeholder="Al Salam Medical Center" data-i18n-ph="ph_clinic" required>
+            <label for="f-email" data-i18n="f_email">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="you@clinic.com" data-i18n-ph="ph_email" autocomplete="email" required>
+            <label for="f-msg" data-i18n-html="f_msg">What would you like to see? <span style="text-transform:none;letter-spacing:0;color:var(--faint)">(optional)</span></label>
+            <textarea id="f-msg" name="msg" placeholder="We run 2 branches and need payroll + pharmacy…" data-i18n-ph="ph_msg"></textarea>
+            <button type="submit" class="btn btn-primary" data-i18n="f_submit">Request my demo</button>
+          </div>
+          <div class="form-ok" id="formOk">
+            <div class="check"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            <h4 data-i18n="ok_h">Thanks — request received.</h4>
+            <p data-i18n="ok_p">We'll reach out within one business day to set up your walkthrough.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ COMPANY ============================ -->
+<section class="section why" id="company">
+  <div class="wrap company">
+    <div class="reveal">
+      <div class="logo-lockup">
+        <svg class="ac-logo" viewBox="0 0 774 190" role="img" aria-label="AppsCrafter">
+          <path d="M4 148 C34 126 74 130 116 150 C86 168 40 170 4 154 Z" fill="#c3e8f9" opacity=".65"/>
+          <rect x="16" y="19" width="106" height="152" rx="24" fill="currentColor"/>
+          <rect x="52" y="34" width="34" height="7" rx="3.5" fill="#3a3a3a"/>
+          <path d="M69 55 L104 157" fill="none" stroke="#1596d6" stroke-width="21" stroke-linecap="round"/>
+          <path d="M69 55 L34 157" fill="none" stroke="#4fc1ef" stroke-width="21" stroke-linecap="round"/>
+          <path d="M46 123 L92 123" fill="none" stroke="#1596d6" stroke-width="18" stroke-linecap="round"/>
+          <text x="132" y="137"><tspan fill="currentColor">pps</tspan><tspan fill="#f5871f">Crafter</tspan></text>
+        </svg>
+      </div>
+      <div class="stat-row">
+        <div><b class="grad-text">CTMS</b><span data-i18n="comp_s1">flagship product</span></div>
+        <div><b>Gulf</b><span data-i18n="comp_s2">market focus</span></div>
+        <div><b>2026</b><span data-i18n="comp_s3">launching</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="comp_eyebrow">The company</span>
+      <h2 data-i18n="comp_h2">Software crafted for how work really happens.</h2>
+      <p data-i18n="comp_p1">Appscrafter builds practical, dependable software for real operations — tools that people actually run their day on, not demos that look good and break under load.</p>
+      <p data-i18n="comp_p2">CTMS is our answer to a problem every clinic owner knows: the front desk, the pharmacy, the payroll and the books all living in different places, never quite agreeing. One system. One source of truth. Yours.</p>
+      <a href="#demo" class="btn btn-primary" style="margin-top:1rem" data-i18n="cta_demo">Request a Demo</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="CTMS home">
+          <svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5b6de1"/><stop offset="55%" stop-color="#7c4be8"/><stop offset="100%" stop-color="#b33adf"/></linearGradient></defs><rect width="512" height="512" rx="96" fill="url(#bg3)"/><rect x="206" y="70" width="100" height="372" rx="50" fill="#f4f5fb" opacity=".95"/><rect x="68" y="206" width="376" height="100" rx="50" fill="#f4f5fb" opacity=".95"/><path d="M256 310C256 310 192 266 192 222C192 194 214 178 237 191C244 195 250 204 256 214C262 204 268 195 275 191C298 178 320 194 320 222C320 266 256 310 256 310Z" fill="#e46bb4"/></svg>
+          <span>CTMS<small>by Appscrafter</small></span>
+        </a>
+        <p data-i18n="foot_tagline">The clinic operations platform — patients, billing, pharmacy, payroll and P&amp;L in one system that runs on your terms.</p>
+        <div class="foot-by">
+          <span data-i18n="foot_by">A product by</span>
+          <svg class="ac-logo" viewBox="0 0 774 190" role="img" aria-label="AppsCrafter">
+            <path d="M4 148 C34 126 74 130 116 150 C86 168 40 170 4 154 Z" fill="#c3e8f9" opacity=".65"/>
+            <rect x="16" y="19" width="106" height="152" rx="24" fill="currentColor"/>
+            <rect x="52" y="34" width="34" height="7" rx="3.5" fill="#3a3a3a"/>
+            <path d="M69 55 L104 157" fill="none" stroke="#1596d6" stroke-width="21" stroke-linecap="round"/>
+            <path d="M69 55 L34 157" fill="none" stroke="#4fc1ef" stroke-width="21" stroke-linecap="round"/>
+            <path d="M46 123 L92 123" fill="none" stroke="#1596d6" stroke-width="18" stroke-linecap="round"/>
+            <text x="132" y="137"><tspan fill="currentColor">pps</tspan><tspan fill="#f5871f">Crafter</tspan></text>
+          </svg>
+        </div>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5 data-i18n="foot_product">Product</h5>
+          <a href="#modules" data-i18n="nav_modules">Modules</a>
+          <a href="#why" data-i18n="nav_why">Why CTMS</a>
+          <a href="#deploy" data-i18n="foot_deployment">Deployment</a>
+          <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+        </div>
+        <div class="foot-col">
+          <h5 data-i18n="foot_company">Company</h5>
+          <a href="#company" data-i18n="foot_about">About Appscrafter</a>
+          <a href="#demo" data-i18n="foot_reqdemo">Request a demo</a>
+          <a href="mailto:info@appscrafter.com" data-i18n="foot_contact">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h5 data-i18n="foot_start">Get started</h5>
+          <a href="#demo" data-i18n="foot_book">Book a walkthrough</a>
+          <a href="#pricing" data-i18n="foot_plans">See plans</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr">2026</span> Appscrafter · CTMS — Clinic Top Management System</span>
+      <span class="ar">واجهة عربية كاملة · دعم الكتابة من اليمين لليسار</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp floating chat button -->
+<a class="wa-fab" id="waFab" href="https://wa.me/96565127782?text=Hi%2C%20I'd%20like%20a%20demo%20of%20CTMS." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.18-2.85.83.86-2.78-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.25-.13-1.48-.73-1.7-.81-.23-.09-.4-.13-.56.13-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.13.17 1.77 2.7 4.3 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.48-.6 1.69-1.19.21-.58.21-1.08.14-1.19-.06-.1-.23-.16-.48-.29z"/></svg>
+  <span class="wa-txt" data-i18n="wa_label">Chat with us</span>
+</a>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // storage can throw (private mode / data: URLs) — never let it break the page
+  var store={get:function(k){try{return localStorage.getItem(k);}catch(e){return null;}},set:function(k,v){try{localStorage.setItem(k,v);}catch(e){}}};
+
+  /* ---------- theme (persisted) ---------- */
+  var themeBtn=document.getElementById('themeBtn');
+  var savedTheme=store.get('ctms-theme');
+  if(savedTheme) root.setAttribute('data-theme',savedTheme);
+  themeBtn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    store.set('ctms-theme',next);
+  });
+
+  /* ---------- mobile menu ---------- */
+  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navlinks');
+  mb&&mb.addEventListener('click',function(){nl.classList.toggle('open');});
+  nl&&nl.addEventListener('click',function(e){if(e.target.tagName==='A')nl.classList.remove('open');});
+
+  /* ---------- year ---------- */
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  /* ---------- reveal + counters ---------- */
+  function runCount(el){
+    var target=+el.getAttribute('data-count'),suf=el.getAttribute('data-suffix')||'';
+    if(reduce){el.textContent=target+suf;return;}
+    var dur=1100,t0=null;
+    function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);el.textContent=Math.round(target*p)+(p>=1?suf:'');if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(!reduce&&'IntersectionObserver'in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el);});
+    var co=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){runCount(e.target);co.unobserve(e.target);}});},{threshold:.6});
+    document.querySelectorAll('[data-count]').forEach(function(el){co.observe(el);});
+  }else{
+    els.forEach(function(el){el.classList.add('in');});
+    document.querySelectorAll('[data-count]').forEach(runCount);
+  }
+
+  /* ---------- interactive demo tabs ---------- */
+  document.querySelectorAll('.tab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      var id=tab.getAttribute('data-scr'),shell=tab.closest('.demo-shell');
+      shell.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t===tab?'true':'false');});
+      shell.querySelectorAll('.screen').forEach(function(s){s.classList.toggle('active',s.id===id);});
+    });
+  });
+
+  /* ---------- FAQ accordion (single-open) ---------- */
+  var faqs=document.querySelectorAll('.faq');
+  faqs.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)faqs.forEach(function(o){if(o!==d)o.open=false;});});});
+
+  /* ---------- pricing: geo currency + monthly / annual ---------- */
+  var CUR={
+    KWD:{sym:'KWD',rate:1,dec:0,step:1,name:'Kuwait — KWD'},
+    USD:{sym:'$',rate:3.26,dec:0,step:1,name:'US Dollar — $'},
+    EUR:{sym:'€',rate:3.0,dec:0,step:1,name:'Euro — €'},
+    GBP:{sym:'£',rate:2.56,dec:0,step:1,name:'British Pound — £'},
+    SAR:{sym:'SAR',rate:12.2,dec:0,step:5,name:'Saudi Riyal — SAR'},
+    AED:{sym:'AED',rate:11.98,dec:0,step:5,name:'UAE Dirham — AED'},
+    QAR:{sym:'QAR',rate:11.87,dec:0,step:5,name:'Qatari Riyal — QAR'},
+    BHD:{sym:'BHD',rate:1.23,dec:1,step:0.5,name:'Bahraini Dinar — BHD'},
+    OMR:{sym:'OMR',rate:1.25,dec:1,step:0.5,name:'Omani Rial — OMR'},
+    EGP:{sym:'EGP',rate:160,dec:0,step:50,name:'Egyptian Pound — EGP'},
+    INR:{sym:'₹',rate:285,dec:0,step:50,name:'Indian Rupee — ₹'}
+  };
+  var TZ={'Asia/Kuwait':'KWD','Asia/Riyadh':'SAR','Asia/Dubai':'AED','Asia/Qatar':'QAR','Asia/Bahrain':'BHD','Asia/Muscat':'OMR','Africa/Cairo':'EGP','Asia/Kolkata':'INR','Asia/Calcutta':'INR','Europe/London':'GBP'};
+  var CC={KW:'KWD',SA:'SAR',AE:'AED',QA:'QAR',BH:'BHD',OM:'OMR',EG:'EGP',IN:'INR',GB:'GBP',US:'USD',DE:'EUR',FR:'EUR',ES:'EUR',IT:'EUR',NL:'EUR',IE:'EUR',PT:'EUR',BE:'EUR',AT:'EUR'};
+  function detectCur(){
+    try{
+      var tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';
+      if(TZ[tz])return TZ[tz];
+      if(tz.indexOf('Europe/')===0)return 'EUR';
+      if(tz.indexOf('America/')===0)return 'USD';
+      var ls=navigator.languages||[navigator.language||''];
+      for(var i=0;i<ls.length;i++){var mm=/[-_]([A-Za-z]{2})$/.exec(ls[i]||'');if(mm){var cc=mm[1].toUpperCase();if(CC[cc])return CC[cc];}}
+    }catch(e){}
+    return 'USD';
+  }
+  var curCode=store.get('ctms-cur')||detectCur(); if(!CUR[curCode])curCode='USD';
+  var pricingMode='y';
+  function fmt(kwd){var c=CUR[curCode];var v=Math.round((kwd*c.rate)/c.step)*c.step;return v.toFixed(c.dec);}
+  function setCA(el,kwd){var cur=el.querySelector('.cur'),amt=el.querySelector('.amt');if(cur)cur.textContent=CUR[curCode].sym;if(amt)amt.textContent=fmt(kwd);}
+  function renderPricing(){
+    var annual=pricingMode==='y', ar=root.getAttribute('dir')==='rtl', sym=CUR[curCode].sym;
+    document.querySelectorAll('#pricing .plan').forEach(function(plan){
+      var cost=plan.querySelector('.cost'); if(!cost)return;
+      var m=+cost.getAttribute('data-m'), bill=plan.querySelector('.bill');
+      setCA(cost, annual? m*0.8 : m);
+      if(bill){ if(annual){var yr=fmt(m*0.8*12); bill.textContent= ar?('يُدفع سنوياً · '+sym+' '+yr+'/سنة'):('billed annually · '+sym+' '+yr+'/yr');} else bill.textContent=''; }
+    });
+    var ad=document.querySelector('.addon-price'); if(ad)setCA(ad,+ad.getAttribute('data-m'));
+  }
+  document.querySelectorAll('#billToggle .bt').forEach(function(b){
+    b.addEventListener('click',function(){
+      pricingMode=b.getAttribute('data-mode');
+      document.querySelectorAll('#billToggle .bt').forEach(function(x){var on=x===b;x.classList.toggle('active',on);x.setAttribute('aria-selected',on?'true':'false');});
+      renderPricing();
+    });
+  });
+  var curSel=document.getElementById('curSel');
+  if(curSel){
+    Object.keys(CUR).forEach(function(code){var op=document.createElement('option');op.value=code;op.textContent=CUR[code].name;curSel.appendChild(op);});
+    curSel.value=curCode;
+    curSel.addEventListener('change',function(){curCode=curSel.value;store.set('ctms-cur',curCode);renderPricing();});
+  }
+  renderPricing();
+
+  /* ---------- demo form (front-end only) ---------- */
+  var form=document.getElementById('demoForm');
+  form&&form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    var btn=form.querySelector('button[type=submit]'), orig=btn?btn.textContent:'';
+    if(btn){btn.disabled=true;btn.textContent='Sending…';}
+    var ok=function(){document.getElementById('formFields').style.display='none';document.getElementById('formOk').classList.add('show');};
+    var fail=function(){if(btn){btn.disabled=false;btn.textContent=orig;}alert('Sorry — the message could not be sent. Please email info@appscrafter.com or use the WhatsApp button.');};
+    fetch('https://formsubmit.co/ajax/mayur.madhwani2011@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        name:document.getElementById('f-name').value,
+        clinic:document.getElementById('f-clinic').value,
+        email:document.getElementById('f-email').value,
+        message:document.getElementById('f-msg').value,
+        _subject:'New CTMS demo request'
+      })
+    }).then(function(r){return r.ok?r.json():Promise.reject();}).then(ok).catch(fail);
+  });
+
+  /* ---------- EKG pulse ---------- */
+  var path=document.getElementById('ekgPath'),dot=document.getElementById('ekgDot');
+  if(path&&dot&&path.getTotalLength&&!reduce){
+    var len=path.getTotalLength(),t=0;
+    (function tick(){t=(t+1.4)%len;var p=path.getPointAtLength(t);dot.setAttribute('cx',p.x);dot.setAttribute('cy',p.y);requestAnimationFrame(tick);})();
+  }
+
+  /* ============ i18n : English ⇄ Arabic (RTL) ============ */
+  var AR={
+    nav_modules:"الوحدات",nav_demo:"عرض حي",nav_why:"لماذا CTMS",nav_pricing:"الأسعار",nav_faq:"الأسئلة الشائعة",cta_demo:"اطلب عرضاً",
+    hero_eyebrow:"منصة إدارة العيادات · مصمّمة للخليج",
+    hero_lead:"يجمع CTMS المرضى والمواعيد والفوترة ومخزون الصيدلية والرواتب وحسابات الأرباح والخسائر في نظام واحد — يعمل على أجهزتك، أونلاين أو دون اتصال بالكامل.",
+    hero_cta2:"شاهده أثناء العمل",hero_m1:"وحدة متكاملة",hero_m2b:"متعدد الفروع",hero_m2:"أرباح وخسائر لكل فرع",hero_m3b:"يعمل دون اتصال",hero_m3:"بياناتك على جهازك",
+    cap1:"كشف تكرار البطاقة المدنية",cap2:"نسخ احتياطي مشفّر تلقائي",cap3:"صلاحيات حسب الدور",cap4:"أرباح وخسائر لكل فرع",cap5:"واجهة عربية كاملة",cap6:"يعمل دون اتصال كخدمة ويندوز",cap7:"فوترة بدفعات متعددة",cap8:"جرد المخزون والإهلاك",
+    demo_eyebrow:"شاهده أثناء العمل",demo_h2:"سير عمل حقيقي، لا مجرد شرائح.",demo_p:"تنقّل بين الشاشات التي يستخدمها فريقك يومياً. هذه شاشات تمثيلية من CTMS ببيانات تجريبية لـ«عيادة السلام».",
+    tab_dash:"الرئيسية",tab_bill:"الفوترة",tab_pharm:"الصيدلية",tab_pay:"الرواتب",tab_rep:"التقارير والأرباح",
+    mod_eyebrow:"نظام واحد · لكل ركن في العيادة",mod_h2:"كل ما تحتاجه العيادة، أخيراً تحت سقف واحد.",mod_p:"لا مزيد من التنقّل بين جداول البيانات وتطبيق صيدلية منفصل ودفتر رواتب. يربط CTMS الاستقبال بالإدارة الخلفية بحيث ينساب أي إجراء إلى حيث يجب.",
+    m_pat:"المرضى والسجلات",m_pat_d:"ملفات مرضى كاملة مع التاريخ والمستندات والصور — مع كشف تكرار البطاقة المدنية ورقم الهاتف.",
+    m_appt:"المواعيد",m_appt_d:"تقويم وجدولة بالسحب والإفلات مع أقسام الأطباء والجداول وتتبّع الحالة مباشرةً.",
+    m_presc:"الوصفات والمتابعات",m_presc_d:"اكتب الوصفات لكل زيارة، وسجّل ملاحظات ما قبل الكشف، وحدّد مواعيد متابعة لا تفوت.",
+    m_bill:"الفوترة والمدفوعات",m_bill_d:"فواتير مفصّلة بدفعات متعددة، وطبيب لكل بند، وتقسيم الإيراد لكل خدمة، وخصومات ومرتجعات.",
+    m_pharm:"الصيدلية والمخزون",m_pharm_d:"منتجات ووحدات قياس وأوامر شراء وجرد ومرتجعات مبيعات وإهلاك — بتكلفة محسوبة تلقائياً.",
+    m_pay:"الرواتب",m_pay_d:"أعمق وحدة في CTMS — رواتب ودورات وخصومات وقسائم رواتب، مع ضمانات لسلامة النسخ الاحتياطي.",
+    m_rep:"التقارير والأرباح والخسائر",m_rep_d:"أرباح وخسائر، وأرباح لكل فرع، وإيرادات ورؤى المالك — قابلة للتصدير كملفات PDF نظيفة ومقسّمة.",
+    m_acc:"التحكم بالصلاحيات",m_acc_d:"صلاحيات دقيقة حسب الدور — حتى مستوى تقرير واحد — بحيث يرى كل موظف ما يخصّه فقط.",
+    m_multi:"تعدد الفروع",m_multi_d:"أدر عدة مواقع من تثبيت واحد — إعدادات متطابقة، ودفاتر لكل فرع، ورؤى موحّدة للمالك.",
+    why_eyebrow:"لماذا تختار العيادات CTMS",why_h2:"مبني بالطريقة التي تعمل بها العيادة فعلاً.",why_p:"أربعة قرارات تميّز CTMS عن البرامج التقليدية.",
+    why1_k:"الملكية",why1_h:"بياناتك تبقى ملكك.",why1_p:"يعمل CTMS على جهازك كخدمة ويندوز — لا بيانات عيادة محتجزة في سحابة شخص آخر.",why1_a:"يعمل دون اتصال بالكامل؛ ويتزامن وقت ما تريد",why1_b:"نسخ احتياطي مشفّر تلقائي ولقطات أمان",why1_c:"استعادة بنقرة وحارس أمان قبل التحديث",
+    why2_k:"المالية",why2_h:"المال لم يعد لغزاً.",why2_p:"كل خدمة وبيع وإهلاك ودورة رواتب تنساب مباشرةً إلى أرباحك وخسائرك ودفاتر كل فرع — في اليوم نفسه، تلقائياً.",why2_a:"تقسيم الإيراد لكل خدمة ولكل طبيب",why2_b:"تكلفة المخزون والإهلاك تُدرج في تكلفة البضاعة",why2_c:"لوحة رؤى المالك لكامل المجموعة",
+    why3_k:"التوسّع",why3_h:"ينمو من غرفة واحدة إلى فروع عديدة.",why3_p:"ابدأ بعيادة واحدة وأضف مواقع دون تغيير الأنظمة — لكلٍّ أرباحها وخسائرها، مجمّعة للمالك.",why3_a:"أرباح وخسائر ومخزون لكل فرع",why3_b:"إعداد فرع متطابق خلال دقائق",why3_c:"تقارير موحّدة للمجموعة",
+    why4_k:"الملاءمة المحلية",why4_h:"مصمّم لعيادات الخليج.",why4_p:"التفاصيل المهمة هنا مُعالجة مسبقاً — من البطاقة المدنية إلى واجهة عربية كاملة — دون إضافات أو حلول التفافية.",why4_a:"كشف تكرار البطاقة المدنية والهاتف",why4_b:"واجهة عربية كاملة من اليمين لليسار",why4_c:"فوترة وتقارير بالدينار الكويتي أولاً",
+    dep_eyebrow:"التشغيل",dep_h2:"ثبّته بالطريقة التي تناسبك — واحفظ بياناتك آمنة.",dep_p:"صُمّم CTMS ليكون صامداً. ينسخ نفسه احتياطياً، ويحمي تحديثاته، ويستمر بالعمل عند انقطاع الإنترنت.",
+    dep1_n:"٠١ · محلي",dep1_h:"على أجهزتك الخاصة",dep1_p:"يعمل كخدمة ويندوز مُدارة على جهاز العيادة أو خادم محلي. يفتحه الموظفون من أي متصفح على الشبكة.",
+    dep2_n:"٠٢ · سحابي",dep2_h:"أو مستضاف لك",dep2_p:"تفضّل ألا تدير أجهزة؟ يُنشر CTMS سحابياً بالمزايا وضوابط الوصول نفسها.",
+    dep3_n:"٠٣ · محمي دائماً",dep3_h:"نسخ احتياطي وتحديثات آمنة",dep3_p:"نسخ احتياطي مشفّر مجدول، ولقطات موثّقة، وحارس أمان قبل التحديث بحيث لا يعرّض أي ترقية بياناتك للخطر.",
+    cmp_eyebrow:"المقارنة",cmp_h2:"لماذا لا تكتفي بجداول البيانات؟",cmp_p:"تغطّي جداول البيانات والتطبيقات المفردة جزءاً فقط. أما CTMS فهو النظام الوحيد الذي تتوافق فيه المبيعات وحركة المخزون وقسيمة الراتب مع الدفاتر نفسها.",
+    cmp_cap:"الميزة",cmp_sheets:"جداول البيانات",cmp_generic:"برامج عامة",cmp_us:"CTMS",
+    cmp_r1:"سجلات المرضى والتاريخ",cmp_r2:"الفوترة والصيدلية والرواتب في نظام واحد",cmp_r3:"أرباح وخسائر تلقائية",cmp_r4:"أرباح لكل فرع وتجميع للمجموعة",cmp_r5:"يعمل دون اتصال، على أجهزتك",cmp_r6:"نسخ احتياطي مشفّر تلقائي",cmp_r7:"العربية وواجهة RTL والبطاقة المدنية",
+    pr_eyebrow:"الأسعار",pr_h2:"خطط بسيطة تنمو مع عيادتك.",pr_p:"كل خطة تشمل النسخ الاحتياطي والدعم العربي والصلاحيات حسب الدور. الأسعار أدناه مبدئية — حدّد أسعارك قبل الإطلاق.",pr_mo:"‏/شهرياً",
+    pr1_name:"المبتدئة",pr1_desc:"لطبيب فردي أو عيادة جديدة في بداياتها.",pr1_a:"المرضى والمواعيد والوصفات",pr1_b:"فوترة وإيصالات أساسية",pr1_c:"تقارير إيراد يومية",pr1_d:"موقع واحد · حتى ٣ مستخدمين",
+    pr_badge:"الأكثر شيوعاً",pr2_name:"العيادة",pr2_desc:"الحزمة الكاملة لعيادة مزدحمة بفرع واحد.",pr2_a:"كل ما في المبتدئة",pr2_b:"الصيدلية والمخزون وأوامر الشراء",pr2_c:"الخصومات والمرتجعات ومرتجعات المبيعات",addon_name:"الرواتب",addon_tag:"إضافة",addon_desc:"رواتب ودورات وخصومات وقسائم رواتب — تُضاف إلى أي خطة.",wa_label:"تواصل معنا",pr2_d:"أرباح وخسائر كاملة وباقات وصلاحيات",pr2_e:"مستخدمون بلا حدود",
+    pr3_name:"متعدد الفروع",pr3_desc:"للمجموعات التي تدير موقعين أو أكثر.",pr3_a:"كل ما في العيادة",pr3_b:"فروع بلا حدود وأرباح لكل فرع",pr3_c:"رؤى المالك وتجميع المجموعة",pr3_d:"دعم وأولوية في التهيئة",
+    pr_sales:"تحدّث إلى المبيعات",pr_note:"لكل عيادة شهرياً بالدينار الكويتي. ادفع قيمة السنة كاملة مقدماً ووفّر ٢٠٪.",bill_monthly:"شهري",bill_annual:"سنوي",bill_save:"وفّر ٢٠٪",
+    faq_eyebrow:"أسئلة",faq_h2:"الأسئلة الشائعة.",
+    q1:"هل يعمل CTMS دون اتصال بالإنترنت؟",a1:"نعم. يعمل CTMS كخدمة ويندوز على جهازك ويعمل دون اتصال بالكامل — يواصل الاستقبال الفوترة والحجز حتى عند انقطاع الإنترنت. الاستضافة السحابية متاحة إن فضّلتها.",
+    q2:"أين تُحفظ بياناتنا، ومن يمكنه رؤيتها؟",a2:"تبقى بياناتك على أجهزتك — ولا تُحفظ في سحابة أحد إلا إن اخترت الاستضافة. ينشئ CTMS نسخاً احتياطية مشفّرة تلقائياً ولقطات أمان موثّقة، وكل شاشة محكومة بصلاحيات دقيقة حسب الدور.",
+    q3:"هل يمكنه إدارة أكثر من فرع؟",a3:"نعم. أضف مواقع كلما نموت — يحتفظ كل فرع بأرباحه وخسائره ومخزونه، مجمّعة في رؤية واحدة للمالك.",
+    q4:"هل تدعمون العربية؟",a4:"بالكامل — واجهة عربية كاملة من اليمين لليسار، مع كشف تكرار البطاقة المدنية وفوترة بالدينار الكويتي أولاً. حتى هذه الصفحة بها زر تبديل بين الإنجليزية والعربية في الأعلى.",
+    q5:"كيف ننقل بياناتنا الحالية؟",a5:"نتولّى الترحيل أثناء التهيئة — المرضى والخدمات والطاقم والمخزون — لتنطلق ببياناتك الحقيقية بدل نظام فارغ.",
+    q6:"كم التكلفة؟",a6:"تعتمد الأسعار على عدد الفروع والوحدات التي تحتاجها. اطلب عرضاً وسنعدّ خطة تناسب عيادتك.",
+    cta_eyebrow:"اطلب عرضاً",cta_h2:"شاهد CTMS يعمل على عيادة مثل عيادتك.",cta_p:"احجز جولة تعريفية وسنعرض عليك سير العمل الدقيق لاستقبالك وصيدليتك وإدارتك الخلفية — ثم نساعدك على الترحيل.",
+    contact_email_ph:"المبيعات والدعم",contact_phone_ph:"اتصال أو واتساب",
+    f_name:"اسمك",f_clinic:"اسم العيادة",f_email:"البريد الإلكتروني",ph_name:"د. سارة العلي…",ph_clinic:"مركز السلام الطبي",ph_email:"you@clinic.com",ph_msg:"لدينا فرعان ونحتاج الرواتب والصيدلية…",f_submit:"اطلب عرضي",ok_h:"شكراً — تم استلام طلبك.",ok_p:"سنتواصل معك خلال يوم عمل واحد لترتيب جولتك.",
+    comp_s1:"المنتج الرئيسي",comp_s2:"التركيز السوقي",comp_s3:"الإطلاق",comp_eyebrow:"الشركة",comp_h2:"برمجيات مصمّمة لطريقة العمل الحقيقية.",comp_p1:"تبني Appscrafter برمجيات عملية وموثوقة لعمليات حقيقية — أدوات يدير بها الناس يومهم فعلاً، لا عروضاً تبدو جميلة وتنهار تحت الضغط.",comp_p2:"CTMS هو جوابنا لمشكلة يعرفها كل صاحب عيادة: الاستقبال والصيدلية والرواتب والدفاتر في أماكن متفرقة لا تتفق. نظام واحد. مصدر واحد للحقيقة. ملكك.",
+    foot_tagline:"منصة إدارة العيادات — المرضى والفوترة والصيدلية والرواتب والأرباح في نظام واحد يعمل بشروطك.",foot_by:"منتج من",foot_product:"المنتج",foot_company:"الشركة",foot_start:"ابدأ",foot_deployment:"التشغيل",foot_about:"عن Appscrafter",foot_reqdemo:"اطلب عرضاً",foot_contact:"تواصل",foot_book:"احجز جولة",foot_plans:"اطّلع على الخطط",
+    stories_eyebrow:"العائد",stories_h2:"ثلاث طرق يسدّد بها CTMS تكلفته.",
+    sa_k:"المالية، تلقائياً",sa_h:"كل دينار يُطابَق من تلقاء نفسه.",sa_p:"سجّل بيعاً، أرجِع منتجاً، شغّل الرواتب — يدرج CTMS كلاً منها في أرباحك وخسائرك ودفتر الفرع الصحيح في اليوم نفسه. أغلق الشهر في دقائق لا في أيام.",sa_a:"تقسيم الإيراد لكل خدمة ولكل طبيب",sa_b:"تكلفة المخزون والإهلاك تنساب إلى تكلفة البضاعة",sa_c:"رؤى المالك عبر المجموعة كاملة",
+    sb_k:"ملكك، وآمنة",sb_h:"يعمل عند انقطاع الإنترنت — وينسخ نفسه احتياطياً.",sb_p:"يعيش CTMS على أجهزتك كخدمة ويندوز. يواصل الاستقبال عمله دون اتصال، ولقطات مشفّرة تحميك على مدار الساعة — دون احتكار سحابي ولا احتجاز لسجلاتك.",sb_a:"خدمة ويندوز تعمل دون اتصال بالكامل",sb_b:"نسخ احتياطي مشفّر ولقطات تلقائية",sb_c:"حارس أمان قبل التحديث واستعادة بنقرة",
+    sc_k:"مبني للنمو",sc_h:"رؤية واحدة للمالك عبر كل فرع.",sc_p:"أضف مواقع دون تغيير الأنظمة. يحتفظ كل فرع بدفاتره ومخزونه، ويتجمّع في رؤية موحّدة — لترى المجموعة والتفاصيل في آن واحد.",sc_a:"أرباح وخسائر ومخزون لكل فرع",sc_b:"إعداد فرع جديد متطابق خلال دقائق",sc_c:"تجميع رؤى المالك الموحّد",
+    sec_eyebrow:"الأمان والامتثال",sec_h2:"جادّون بشأن بيانات عيادتك.",sec_p:"كل ما تحتاجه لحماية السجلات والالتزام بالمتطلبات مدمج — لا يُباع كإضافة.",
+    sec1_h:"البيانات على أجهزتك",sec1_p:"تبقى السجلات على جهازك أو خادمك الخاص — لا في سحابة أحد إلا إن اخترت ذلك.",sec2_h:"نسخ احتياطي مشفّر",sec2_p:"نسخ احتياطي تلقائي مجدول ومشفّر مع لقطات أمان موثّقة واستعادة بنقرة.",sec3_h:"صلاحيات حسب الدور",sec3_p:"صلاحيات دقيقة حتى مستوى تقرير واحد، فيرى الموظفون ما يسمح به دورهم فقط.",sec4_h:"سجلات التدقيق والنشاط",sec4_p:"يُسجَّل كل إجراء حسّاس، فتعرف دائماً من فعل ماذا ومتى.",sec5_h:"وحدة الامتثال",sec5_p:"احفظ الموافقات والتراخيص والمستندات مع كل سجل، مع تتبّع تواريخ الانتهاء.",sec6_h:"تحديثات آمنة",sec6_p:"حارس أمان يأخذ لقطة لبياناتك قبل أي ترقية — فلا شيء يتعرّض للخطر أبداً.",
+    intg_eyebrow:"مترابط",intg_h2:"يعمل مع الأدوات التي تستخدمها عيادتك.",intg_p:"يتكامل CTMS مع الأساسيات — ونضيف المزيد باستمرار.",intg_p1:"واتساب",intg_p2:"كي‑نت والبطاقات",intg_p3:"طابعات الإيصالات الحرارية",intg_p4:"تقارير PDF",intg_p5:"البطاقة المدنية",intg_p6:"مزامنة الفروع",intg_more:"…والمزيد",
+    tst_eyebrow:"الانطباعات الأولى",tst_h2:"ماذا تقول العيادات.",tst_note:"شهادات مبدئية — استبدلها باقتباسات حقيقية من عياداتك التجريبية قبل الإطلاق.",tq1:"أخيراً تتفق الفوترة والصيدلية والرواتب معاً. أصبح إغلاق الشهر من يومين إلى عشرين دقيقة.",tn1:"د. فاطمة العلي",tr1:"مالكة، عيادة السلام",tq2:"افتتحنا فرعاً ثانياً دون تغيير أي شيء. تعرض لوحة المالك كليهما دفعة واحدة.",tn2:"يوسف المطيري",tr2:"شريك إداري، مجمّع نور",tq3:"معرفتي أن البيانات على خادمنا وتُنسخ احتياطياً تلقائياً تجعلني أنام مطمئناً.",tn3:"ليلى الهاجري",tr3:"مديرة العيادة، رواء لطب الأسنان",
+    wf_eyebrow:"مناسب لـ",wf_h2:"مصمّم لكل نوع من العيادات.",wf1:"طب الأسنان",wf2:"الطب العام",wf3:"الجلدية والتجميل",wf4:"المجمّعات الطبية",wf5:"متعدد التخصصات",wf6:"العلاج الطبيعي"
+  };
+  var ARH={
+    hero_h1:'أدر <span class="grad-text">العيادة بالكامل</span> من شاشة واحدة.',
+    f_msg:'ما الذي تودّ رؤيته؟ <span style="text-transform:none;letter-spacing:0;color:var(--faint)">(اختياري)</span>'
+  };
+
+  function trailingText(el){
+    var kids=el.childNodes,lastEl=-1;
+    for(var i=0;i<kids.length;i++) if(kids[i].nodeType===1) lastEl=i;
+    if(lastEl<0) return el.textContent;
+    var s='';for(var j=lastEl+1;j<kids.length;j++) s+=kids[j].textContent;return s;
+  }
+  function setTrailing(el,val){
+    var kids=el.childNodes,lastEl=-1;
+    for(var i=0;i<kids.length;i++) if(kids[i].nodeType===1) lastEl=i;
+    if(lastEl<0){el.textContent=val;return;}
+    for(var j=kids.length-1;j>lastEl;j--) el.removeChild(kids[j]);
+    el.appendChild(document.createTextNode(val));
+  }
+  // capture English originals from the DOM
+  var EN={},ENH={},ENP={};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(!(k in EN))EN[k]=trailingText(el);});
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html');if(!(k in ENH))ENH[k]=el.innerHTML;});
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){var k=el.getAttribute('data-i18n-ph');if(!(k in ENP))ENP[k]=el.getAttribute('placeholder');});
+
+  var langBtn=document.getElementById('langBtn');
+  function applyLang(lang){
+    var ar=lang==='ar';
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');setTrailing(el, ar?(AR[k]||EN[k]):EN[k]);});
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){var k=el.getAttribute('data-i18n-html');el.innerHTML= ar?(ARH[k]||ENH[k]):ENH[k];});
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){var k=el.getAttribute('data-i18n-ph');el.setAttribute('placeholder', ar?(AR[k]||ENP[k]):ENP[k]);});
+    root.setAttribute('lang', ar?'ar':'en');
+    root.setAttribute('dir', ar?'rtl':'ltr');
+    langBtn.innerHTML = ar ? '<b>ع</b>&nbsp;/&nbsp;EN' : '<b>EN</b>&nbsp;/&nbsp;ع';
+    store.set('ctms-lang', lang);
+    if(typeof renderPricing==='function') renderPricing();
+  }
+  if(store.get('ctms-lang')==='ar') applyLang('ar');
+  langBtn.addEventListener('click',function(){applyLang(root.getAttribute('dir')==='rtl'?'en':'ar');});
+})();
+</script>
+</body>
+</html>

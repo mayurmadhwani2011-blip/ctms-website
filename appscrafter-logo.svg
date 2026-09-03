@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 774 190" role="img" aria-label="AppsCrafter">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&amp;display=swap');
+    .wm{font-family:"Baloo 2","Trebuchet MS",system-ui,sans-serif;font-weight:800;font-size:132px;letter-spacing:-3px}
+  </style>
+  <!-- subtle accent swoosh behind the mark -->
+  <path d="M4 148 C34 126 74 130 116 150 C86 168 40 170 4 154 Z" fill="#c3e8f9" opacity=".65"/>
+  <!-- phone -->
+  <rect x="16" y="19" width="106" height="152" rx="24" fill="#151515"/>
+  <rect x="52" y="34" width="34" height="7" rx="3.5" fill="#3a3a3a"/>
+  <!-- blue A inside phone -->
+  <path d="M69 55 L104 157" fill="none" stroke="#1596d6" stroke-width="21" stroke-linecap="round"/>
+  <path d="M69 55 L34 157" fill="none" stroke="#4fc1ef" stroke-width="21" stroke-linecap="round"/>
+  <path d="M46 123 L92 123" fill="none" stroke="#1596d6" stroke-width="18" stroke-linecap="round"/>
+  <!-- wordmark -->
+  <text x="132" y="137" class="wm"><tspan fill="#151515">pps</tspan><tspan fill="#f5871f">Crafter</tspan></text>
+</svg>
