@@ -151,6 +151,7 @@ header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);backgroun
 .lang{font-family:"IBM Plex Mono";font-size:.78rem;font-weight:600;letter-spacing:.04em;padding:.5rem .7rem;border-radius:10px;border:1px solid var(--border-strong);background:var(--surface);color:var(--muted);cursor:default}
 .lang b{color:var(--accent)}
 .menu-toggle{display:none}
+.nav-cta{display:none}
 
 /* ============ HERO ============ */
 .hero{position:relative;padding-top:clamp(3rem,6vw,5rem);padding-bottom:clamp(4rem,8vw,7rem);overflow:hidden}
@@ -491,6 +492,11 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:3rem
   .nav-links{display:none}
   .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--border);padding:.8rem 5vw;gap:.2rem}
   .menu-toggle{display:grid}
+  .nav-in{gap:.5rem}
+  .nav-tools{gap:.4rem}
+  .nav-tools .btn-primary{display:none}          /* redundant on mobile — CTA is in hero + menu */
+  .nav-links.open .nav-cta{display:inline-flex;justify-content:center;margin-top:.5rem}
+  .brand{font-size:1.12rem}
   .mods{grid-template-columns:1fr}
   .hero-meta{gap:1.1rem}
   .tiles{grid-template-columns:1fr 1fr}
@@ -512,6 +518,7 @@ footer{border-top:1px solid var(--border);background:var(--surface);padding:3rem
       <a href="#why" data-i18n="nav_why">Why CTMS</a>
       <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
       <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="#demo" class="btn btn-primary nav-cta" data-i18n="cta_demo">Request a Demo</a>
     </nav>
     <div class="nav-tools">
       <button class="lang iconbtn" id="langBtn" style="width:auto;padding:0 .7rem" aria-label="Switch language" title="English / العربية"><b>EN</b>&nbsp;/&nbsp;ع</button>
