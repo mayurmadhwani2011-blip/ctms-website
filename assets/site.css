@@ -319,8 +319,22 @@ html[dir="rtl"] .why{padding:28px 0 8px 24px}
 @media (max-width:560px){.why-grid{grid-template-columns:1fr}.why+.why{border-inline-start:0;padding-inline-start:0}}
 
 /* ---------- Proof (placeholders) ---------- */
-.proof-logos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.proof-logos div{height:72px;border-radius:14px;border:1px dashed var(--line-strong);display:grid;place-items:center;color:var(--faint);font-size:.8rem;font-weight:500;background:var(--surface-2)}
+.proof-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:900px;margin-inline:auto}
+.cl{height:144px;border-radius:18px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-xs);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px}
+.cl img{height:92px;max-width:80%;width:auto;object-fit:contain;border-radius:10px}
+/* client logos ship on white backgrounds: blend into the light card, sit on a white chip in dark mode */
+:root:not([data-theme="dark"]) .cl img{mix-blend-mode:multiply}
+:root[data-theme="dark"] .cl img{background:#fff;padding:4px 10px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cl img{mix-blend-mode:normal;background:#fff;padding:4px 10px}}
+.cl-name{font-size:1.35rem;font-weight:650;letter-spacing:-.02em;color:var(--ink)}
+.cl small{font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
+html[lang="ar"] .cl small{letter-spacing:0}
+.cl-next{border-style:dashed;border-color:var(--line-strong);background:var(--surface-2);box-shadow:none;transition:border-color .2s,transform .2s var(--ease)}
+.cl-next:hover{border-color:var(--brand);transform:translateY(-2px)}
+.cl-next small{color:var(--muted)}
+.cl-plus{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--brand-soft);color:var(--brand)}
+.cl-plus svg{width:18px;height:18px}
+@media (max-width:600px){.proof-logos{grid-template-columns:1fr 1fr}.cl-next{grid-column:1/-1;height:88px}}
 .proof-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}
 .proof-stats div{padding:22px;border-radius:16px;border:1px solid var(--line);background:var(--surface)}
 .proof-stats b{display:block;font-size:1.8rem;font-weight:650;color:var(--line-strong);letter-spacing:-.03em;line-height:1}
@@ -328,7 +342,7 @@ html[dir="rtl"] .why{padding:28px 0 8px 24px}
 .proof-q{margin-top:14px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:26px;border-radius:var(--r);border:1px dashed var(--line-strong);background:var(--surface-2)}
 .proof-q svg{width:34px;height:34px;color:var(--line-strong)}
 .proof-q p{margin:0;color:var(--muted)}
-@media (max-width:900px){.proof-logos{grid-template-columns:repeat(3,1fr)}.proof-stats{grid-template-columns:1fr 1fr}.proof-q{grid-template-columns:1fr}}
+@media (max-width:900px){.proof-stats{grid-template-columns:1fr 1fr}.proof-q{grid-template-columns:1fr}}
 
 /* ---------- Pricing ---------- */
 .bill-row{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:30px}
