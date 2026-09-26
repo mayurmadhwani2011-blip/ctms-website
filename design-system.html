@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTMS Design System</title>
+<meta name="description" content="Tokens and components of the CTMS design system: typography, colour, buttons, forms, cards, tables, tabs, accordions, tooltips, modals and product UI.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%235b6de1'/%3E%3Cstop offset='55%25' stop-color='%237c4be8'/%3E%3Cstop offset='100%25' stop-color='%23b33adf'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='96' fill='url(%23g)'/%3E%3Crect x='206' y='70' width='100' height='372' rx='50' fill='%23f4f5fb'/%3E%3Crect x='68' y='206' width='376' height='100' rx='50' fill='%23f4f5fb'/%3E%3Cpath d='M256 310C256 310 192 266 192 222C192 194 214 178 237 191C244 195 250 204 256 214C262 204 268 195 275 191C298 178 320 194 320 222C320 266 256 310 256 310Z' fill='%23e46bb4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/ctms.css">
+<script>try{var t=localStorage.getItem('ctms-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<style>
+.ds{max-width:1100px;margin-inline:auto;padding:40px var(--gutter) 120px}
+.ds-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.ds section{padding:56px 0;border-bottom:1px solid var(--line)}
+.ds h2{font-size:1.6rem;margin-bottom:6px}
+.ds .lead{color:var(--muted);margin:0 0 28px;max-width:62ch}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.sw div{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.sw i{display:block;height:64px}
+.sw span{display:block;padding:10px 12px;font-size:.8rem;color:var(--muted);font-family:var(--mono)}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.spec{font-family:var(--mono);font-size:.78rem;color:var(--faint)}
+.ty>*{margin:0 0 14px}
+.sp{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.sp i{display:block;background:var(--brand-soft);border:1px solid var(--brand);border-radius:4px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6L12 3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6L6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></symbol>
+<symbol id="logo" viewBox="0 0 512 512"><defs><linearGradient id="lg-brand" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5b6de1"/><stop offset="55%" stop-color="#7c4be8"/><stop offset="100%" stop-color="#b33adf"/></linearGradient></defs><rect width="512" height="512" rx="96" fill="url(#lg-brand)"/><rect x="206" y="70" width="100" height="372" rx="50" fill="#f4f5fb" opacity=".95"/><rect x="68" y="206" width="376" height="100" rx="50" fill="#f4f5fb" opacity=".95"/><path d="M256 310C256 310 192 266 192 222C192 194 214 178 237 191C244 195 250 204 256 214C262 204 268 195 275 191C298 178 320 194 320 222C320 266 256 310 256 310Z" fill="#e46bb4"/></symbol>
+</defs></svg>
+<main class="ds">
+  <div class="ds-top">
+    <a class="brand" href="./"><svg aria-hidden="true"><use href="#logo"/></svg><span class="bt">CTMS<small>Design System · v1.0</small></span></a>
+    <div class="row">
+      <button class="iconbtn" type="button" id="tt" aria-label="Toggle dark mode"><svg class="ico theme-moon"><use href="#i-moon"/></svg><svg class="ico theme-sun"><use href="#i-sun"/></svg></button>
+      <a class="btn btn-secondary btn-sm" href="./">Back to site</a>
+    </div>
+  </div>
+
+  <section>
+    <span class="eyebrow">Foundations</span>
+    <h2 class="t-h2" style="margin-top:12px">CTMS Design System</h2>
+    <p class="lead">A calm, precise system for a healthcare platform: warm neutral surfaces, deep navy type and the CTMS purple brand gradient. All tokens live in <code class="t-mono">assets/ctms.css</code>, adapt to dark mode, and use logical properties so every component works in Arabic (RTL).</p>
+  </section>
+
+  <section>
+    <h2>Colour</h2><p class="lead">Neutrals carry the interface; the brand purple marks action and data; status colours are reserved for meaning.</p>
+    <div class="sw">
+      <div><i style="background:var(--bg)"></i><span>--bg</span></div>
+      <div><i style="background:var(--surface)"></i><span>--surface</span></div>
+      <div><i style="background:var(--surface-3)"></i><span>--surface-3</span></div>
+      <div><i style="background:var(--ink)"></i><span>--ink</span></div>
+      <div><i style="background:var(--muted)"></i><span>--muted</span></div>
+      <div><i style="background:var(--line-strong)"></i><span>--line-strong</span></div>
+      <div><i style="background:var(--navy)"></i><span>--navy</span></div>
+      <div><i style="background:var(--brand)"></i><span>--brand</span></div>
+      <div><i style="background:var(--brand-soft)"></i><span>--brand-soft</span></div>
+      <div><i style="background:var(--ok)"></i><span>--ok</span></div>
+      <div><i style="background:var(--warn)"></i><span>--warn</span></div>
+      <div><i style="background:var(--bad)"></i><span>--bad</span></div>
+      <div><i style="background:var(--info)"></i><span>--info</span></div>
+      <div><i style="background:linear-gradient(90deg,var(--c1) 20%,var(--c2) 20% 40%,var(--c3) 40% 60%,var(--c4) 60% 80%,var(--c5) 80%)"></i><span>--c1 … --c5 (charts)</span></div>
+    </div>
+  </section>
+
+  <section class="ty">
+    <h2>Typography</h2><p class="lead">Geist for Latin, IBM Plex Sans Arabic for Arabic, Geist Mono for figures and codes. Headings use tight tracking; Arabic resets tracking to zero and opens line height.</p>
+    <div class="t-display">Display 5.1rem</div>
+    <div class="t-h2">Heading 2 · 3.3rem</div>
+    <div class="t-h3">Heading 3 · 1.6rem</div>
+    <p class="t-lead">Lead · for section introductions, never more than two lines.</p>
+    <p>Body · 17px / 1.6. Plain, direct sentences.</p>
+    <p class="t-small">Small · captions and helper text.</p>
+    <span class="eyebrow">Eyebrow label</span>
+    <p class="t-mono">KWD 1,284.500 · INV-2026-04812</p>
+    <p lang="ar" dir="rtl" style="font-family:var(--font-ar);font-size:1.4rem;font-weight:600">نظام التشغيل للعيادات الحديثة.</p>
+  </section>
+
+  <section>
+    <h2>Spacing &amp; radius</h2><p class="lead">A 4px base scale. Cards use 20–24px radius; controls 10–12px; pills are fully round.</p>
+    <div class="sp"><i style="width:4px;height:4px"></i><i style="width:8px;height:8px"></i><i style="width:12px;height:12px"></i><i style="width:16px;height:16px"></i><i style="width:24px;height:24px"></i><i style="width:32px;height:32px"></i><i style="width:48px;height:48px"></i><i style="width:64px;height:64px"></i></div>
+    <p class="spec" style="margin-top:12px">4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 &nbsp;|&nbsp; --r-xs 8 · --r-sm 12 · --r 20 · --r-lg 24</p>
+  </section>
+
+  <section>
+    <h2>Buttons</h2><p class="lead">One primary action per view. Secondary for alternatives; ghost for tertiary.</p>
+    <div class="row">
+      <button class="btn btn-primary">Book a Demo <svg class="ico arr"><use href="#i-arrow"/></svg></button>
+      <button class="btn btn-brand">Brand</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-ghost">Ghost</button>
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary btn-lg">Large</button>
+      <button class="btn btn-primary" disabled style="opacity:.5">Disabled</button>
+    </div>
+    <div class="row" style="margin-top:14px;padding:20px;border-radius:16px;background:#07111F">
+      <button class="btn btn-light">On dark</button><button class="btn btn-outline-light">Outline on dark</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Status &amp; badges</h2>
+    <div class="row">
+      <span class="badge">Neutral</span><span class="badge ok"><span class="dot live"></span>Live</span><span class="badge warn">Low stock</span><span class="badge bad">Overdue</span><span class="badge info">Checked in</span><span class="badge brand">Add-on</span>
+      <span class="chip"><svg class="ico"><use href="#i-shield"/></svg>Chip</span>
+      <span class="delta">▲ 12.4%</span><span class="delta down">▼ 3.1%</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Forms</h2>
+    <div class="card card-pad" style="max-width:640px">
+      <div class="form-grid">
+        <div class="field"><label for="a">Full name</label><input class="input" id="a" placeholder="Dr. Sara Al-Ali"></div>
+        <div class="field"><label for="b">Branches</label><select class="select" id="b"><option>1</option><option>2–3</option></select></div>
+        <div class="field full"><label for="c">Message <span class="opt">(optional)</span></label><textarea class="textarea" id="c"></textarea></div>
+        <div class="full"><button class="btn btn-primary btn-block">Submit</button><p class="form-note" style="margin:8px 0 0">Helper text sits under the control.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cards</h2>
+    <div class="demo-grid">
+      <div class="card card-pad"><span class="icon-tile"><svg class="ico"><use href="#i-shield"/></svg></span><h3 class="t-h4" style="margin-top:14px">Standard card</h3><p class="t-small">Surface, 1px border, subtle shadow.</p></div>
+      <div class="card card-pad card-hover"><h3 class="t-h4">Hover card</h3><p class="t-small">Lifts 3px on hover for interactive tiles.</p></div>
+      <div class="panel card-pad"><h3 class="t-h4">Panel</h3><p class="t-small">Recessed surface for grouped content.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tables</h2>
+    <div class="table-wrap"><table class="table"><thead><tr><th>Branch</th><th class="r">Revenue</th><th class="r">Profit</th><th>Status</th></tr></thead><tbody><tr><td>Salmiya</td><td class="r">24,610</td><td class="r">8,590</td><td><span class="badge ok">On target</span></td></tr><tr><td>Hawally</td><td class="r">18,340</td><td class="r">5,470</td><td><span class="badge ok">On target</span></td></tr><tr><td>Jahra</td><td class="r">14,980</td><td class="r">4,360</td><td><span class="badge warn">Watch</span></td></tr></tbody></table></div>
+  </section>
+
+  <section>
+    <h2>Tabs</h2>
+    <div class="row" style="gap:24px">
+      <div class="seg" role="tablist"><button role="tab" aria-selected="true">Monthly</button><button role="tab" aria-selected="false">Annual</button></div>
+      <div class="pilltabs" role="tablist"><button class="pilltab" role="tab" aria-selected="true">Dashboard</button><button class="pilltab" role="tab" aria-selected="false">Billing</button><button class="pilltab" role="tab" aria-selected="false">Pharmacy</button></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Accordion</h2>
+    <div class="acc" style="max-width:720px">
+      <details class="acc-item" open><summary><span>Can CTMS work without internet?</span><span class="pm"><svg class="ico"><use href="#i-plus"/></svg></span></summary><div class="acc-body">Yes, with on-premise or hybrid deployment.</div></details>
+      <details class="acc-item"><summary><span>Does CTMS support Arabic?</span><span class="pm"><svg class="ico"><use href="#i-plus"/></svg></span></summary><div class="acc-body">Fully, with a right-to-left interface.</div></details>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tooltip &amp; modal</h2>
+    <div class="row">
+      <button class="btn btn-secondary" data-tip="Tooltips explain, never instruct">Hover for tooltip</button>
+      <button class="btn btn-primary" id="om">Open modal</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Product UI kit</h2><p class="lead">Mock screens are built from <code class="t-mono">.ui-*</code> components, not screenshots, so they stay sharp, themeable and translatable.</p>
+    <div class="ui">
+      <div class="ui-top"><span class="ui-logo"><svg><use href="#logo"/></svg>CTMS</span><span class="ui-branch">Salmiya</span><span class="ui-av">SA</span></div>
+      <div class="ui-main">
+        <div class="ui-kpis"><div class="ui-kpi"><span>Revenue</span><b>1,284.500</b><em>▲ 12%</em></div><div class="ui-kpi"><span>Appointments</span><b>46</b></div><div class="ui-kpi"><span>Waiting</span><b>7</b></div><div class="ui-kpi"><span>Low stock</span><b>4</b><em class="down">items</em></div></div>
+        <div class="ui-row eq"><div class="ui-card"><h5>Queue</h5><div class="ui-li"><span class="av">FA</span><span class="tx"><b>Fatima Al-Enezi</b><small>Consultation</small></span><span class="pill brand">With doctor</span></div><div class="ui-li"><span class="av">YM</span><span class="tx"><b>Yousef Al-Mutairi</b><small>Dental</small></span><span class="pill warn">Waiting</span></div></div>
+        <div class="ui-card"><h5>Doctors</h5><div class="ui-hbars"><div class="ui-hb"><span>Dr. Ahmad</span><div class="ui-bar"><i style="width:90%"></i></div><b>612</b></div><div class="ui-hb"><span>Dr. Noura</span><div class="ui-bar"><i style="width:72%"></i></div><b>488</b></div></div></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="md" aria-hidden="true"><div class="modal-scrim" data-x></div><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="modal-head"><h3 class="t-h3" id="mt">Modal title</h3><button class="modal-x" data-x aria-label="Close"><svg class="ico"><use href="#i-x"/></svg></button></div><div class="modal-body"><p class="t-body" style="margin-top:0">Modals hold one focused task — like booking a demo. Escape or the scrim closes them. On phones they become a bottom sheet.</p><button class="btn btn-primary" data-x>Got it</button></div></div></div>
+<script>
+(function(){var r=document.documentElement,m=document.getElementById('md');
+document.getElementById('tt').onclick=function(){var c=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');var n=c==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('ctms-theme',n);}catch(e){}};
+document.getElementById('om').onclick=function(){m.classList.add('open');m.setAttribute('aria-hidden','false');};
+[].forEach.call(document.querySelectorAll('[data-x]'),function(b){b.onclick=function(){m.classList.remove('open');m.setAttribute('aria-hidden','true');};});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){m.classList.remove('open');}});
+[].forEach.call(document.querySelectorAll('[role=tablist]'),function(l){l.addEventListener('click',function(e){var b=e.target.closest('[role=tab]');if(!b)return;[].forEach.call(l.querySelectorAll('[role=tab]'),function(x){x.setAttribute('aria-selected',x===b?'true':'false');});});});
+})();
+</script>
+</body>
+</html>
