@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="no-js" data-page-lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CTMS — نظام إدارة العيادات في الكويت والخليج</title>
+<meta name="description" content="CTMS نظام متكامل لإدارة العيادات والمراكز الطبية في الكويت والخليج: المواعيد، السجل الطبي، الفوترة، الصيدلية والمخزون، الرواتب، الأرباح والخسائر، وتعدد الفروع. واجهة عربية كاملة، يعمل محلياً أو سحابياً. احجز عرضاً حياً.">
+<meta name="keywords" content="برنامج إدارة العيادات, نظام إدارة العيادات الكويت, برنامج عيادات, نظام عيادات أسنان, برنامج مجمع طبي, برنامج صيدلية, نظام فوترة طبي, سجل طبي إلكتروني, برنامج رواتب, CTMS, Appscrafter">
+<meta name="author" content="Appscrafter">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ctms.website/ar/">
+<link rel="alternate" hreflang="en" href="https://ctms.website/">
+<link rel="alternate" hreflang="ar" href="https://ctms.website/ar/">
+<link rel="alternate" hreflang="x-default" href="https://ctms.website/">
+<meta name="theme-color" content="#7c4be8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#08111F" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%235b6de1'/%3E%3Cstop offset='55%25' stop-color='%237c4be8'/%3E%3Cstop offset='100%25' stop-color='%23b33adf'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='96' fill='url(%23g)'/%3E%3Crect x='206' y='70' width='100' height='372' rx='50' fill='%23f4f5fb'/%3E%3Crect x='68' y='206' width='376' height='100' rx='50' fill='%23f4f5fb'/%3E%3Cpath d='M256 310C256 310 192 266 192 222C192 194 214 178 237 191C244 195 250 204 256 214C262 204 268 195 275 191C298 178 320 194 320 222C320 266 256 310 256 310Z' fill='%23e46bb4'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ctms.website/ar/">
+<meta property="og:site_name" content="CTMS by Appscrafter">
+<meta property="og:title" content="CTMS — نظام التشغيل للعيادات الحديثة">
+<meta property="og:description" content="المواعيد والسجل الطبي والفوترة والصيدلية والمخزون والرواتب والمالية وتعدد الفروع في منصة واحدة. مصمّم لعيادات الكويت والخليج.">
+<meta property="og:locale" content="ar_KW">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://ctms.website/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CTMS — The operating system for modern clinics">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ctms.website/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/ctms.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('ctms-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CTMS — Clinic Top Management System","applicationCategory":"BusinessApplication","applicationSubCategory":"Clinic management software","operatingSystem":"Windows, Web browser","inLanguage":["en","ar"],"description":"Clinic operating system for Kuwait and the GCC: appointments, patient records, billing, pharmacy, inventory, payroll, finance and multi-branch reporting.","url":"https://ctms.website/","offers":{"@type":"Offer","priceCurrency":"KWD","price":"29","availability":"https://schema.org/InStock"},"publisher":{"@type":"Organization","name":"Appscrafter","email":"info@appscrafter.com","telephone":"+965 9797 7275","areaServed":["KW","SA","AE","QA","BH","OM"]}}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18.5 14.8c1.7.7 2.8 2.4 3 5.2"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2.5 2.5 0 0 0-2.5 2.5v13A2.5 2.5 0 0 0 7 21h10a2.5 2.5 0 0 0 2.5-2.5V8.5L14 3z"/><path d="M14 3v5.5h5.5M12 11v6M9 14h6"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3z"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+    <symbol id="i-pill" viewBox="0 0 24 24"><rect x="2.8" y="8.5" width="18.4" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="M8.6 8.6l6.8 6.8"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5v-9z"/><path d="M3.5 7.5L12 12l8.5-4.5M12 12v9"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16.5" height="11.5" rx="2.5"/><path d="M16 13.8h.01"/></symbol>
+    <symbol id="i-payroll" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="9" cy="11" r="2.3"/><path d="M5.8 16.5c.5-1.6 1.7-2.4 3.2-2.4s2.7.8 3.2 2.4M14.5 10h3.5M14.5 13.5h3.5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3.5 16.5l5-5 4 4 8-8"/><path d="M15 7.5h5.5V13"/></symbol>
+    <symbol id="i-branch" viewBox="0 0 24 24"><path d="M3.5 20.5h17M5 20.5V10l4-3 4 3v10.5M13 20.5v-7l3.5-2.5 3.5 2.5v7"/><path d="M8 13h2M8 16.5h2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6L12 3z"/><path d="M8.8 12.2l2.2 2.2 4.2-4.4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14 9l2 2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.6 5.2 3.6 8.5s-1.2 6.1-3.6 8.5c-2.4-2.4-3.6-5.2-3.6-8.5S9.6 5.9 12 3.5z"/></symbol>
+    <symbol id="i-wifioff" viewBox="0 0 24 24"><path d="M3 3l18 18M8.5 16.5a5 5 0 0 1 7 0M5 12.8a10 10 0 0 1 4.3-2.4M19 12.8a10 10 0 0 0-2.6-1.8M2 9.2A15 15 0 0 1 7 6.2M22 9.2a15 15 0 0 0-10-3.7"/><circle cx="12" cy="19.5" r=".6"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="7" rx="2"/><rect x="3.5" y="13" width="17" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5h10.5a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.6 9.2 4.7 4.7 0 0 0 7 18.5z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3.5L3 8l9 4.5L21 8l-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24"><path d="M7 8V3.5h10V8"/><rect x="3.5" y="8" width="17" height="8.5" rx="2"/><path d="M7 14h10v6.5H7z"/></symbol>
+    <symbol id="i-pdf" viewBox="0 0 24 24"><path d="M14 3H7a2.5 2.5 0 0 0-2.5 2.5v13A2.5 2.5 0 0 0 7 21h10a2.5 2.5 0 0 0 2.5-2.5V8.5L14 3z"/><path d="M14 3v5.5h5.5M8.5 13.5h7M8.5 17h4.5"/></symbol>
+    <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M3.5 9h17M3.5 14.5h17M9.5 9v11.5"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19M6 15h4"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v4M15 3v4M6.5 7h11v3.5a5.5 5.5 0 0 1-11 0V7zM12 16v5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-steth" viewBox="0 0 24 24"><path d="M6 3.5v5a4 4 0 0 0 8 0v-5M5 3.5h2M13 3.5h2M10 12.5v2a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="10.5" r="2"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2.5"/><path d="M9 4.5V3h6v1.5M8.5 10h7M8.5 13.5h7M8.5 17h4"/></symbol>
+    <symbol id="i-rx" viewBox="0 0 24 24"><path d="M6 20V4h5.5a4 4 0 0 1 0 8H6M10.5 12l7.5 8.5M18 13l-5 6"/></symbol>
+    <symbol id="i-checkin" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.8"/><path d="M3.5 20c.7-3.8 3.3-5.6 6.5-5.6 1.4 0 2.6.3 3.7 1M15.5 18l2 2 4-4.5"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="6.5" rx="5.5" ry="2.5"/><path d="M3.5 6.5v4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4"/><path d="M9.5 16.5c.8.3 1.9.5 3 .5 3 0 5.5-1.1 5.5-2.5v-4M3.5 10.5v4c0 1.1 1.5 2 3.6 2.4"/><path d="M18 10.5c1.5.4 2.5 1.2 2.5 2v4c0 1.4-2.5 2.5-5.5 2.5-1.4 0-2.7-.2-3.6-.6"/></symbol>
+    <symbol id="i-ledger" viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5v-15z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3M9 7.5h6M9 11h6"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3.5 12a8.5 8.5 0 1 0 2.5-6L3.5 8.5"/><path d="M3.5 3.5v5h5M12 8v4.5l3 1.8"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.3-4.3L4 8.5M4 13a8 8 0 0 0 14.3 4.3L20 15.5"/><path d="M4 3.5v5h5M20 20.5v-5h-5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><circle cx="8.5" cy="11" r="2.2"/><path d="M5.5 16c.5-1.5 1.6-2.2 3-2.2s2.5.7 3 2.2M14.5 10h4M14.5 13.5h3"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-13M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 5 12 2.5-6h4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6L6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5-10-6.5z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15l1.5-2zM10 20.5a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.8"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3.5h3.5l2 5-2.5 1.5a11 11 0 0 0 6 6l1.5-2.5 5 2V19a2 2 0 0 1-2 2C10.5 21 3 13.5 3 5.5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 7.5C6.5 8.3 5 10.4 5 13.5V17h5v-5H7.5c0-1.6.8-2.6 2.5-3.2M19 7.5c-3 .8-4.5 2.9-4.5 6V17h5v-5H17c0-1.6.8-2.6 2.5-3.2"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5l1.8 5 5 1.8-5 1.8-1.8 5-1.8-5-5-1.8 5-1.8 1.8-5zM18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2z"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4.5h11l-2 4 2 4H5"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5M4.5 15v3a2.5 2.5 0 0 0 2.5 2.5h10a2.5 2.5 0 0 0 2.5-2.5v-3"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.18-2.85.83.86-2.78-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.25-.13-1.48-.73-1.7-.81-.23-.09-.4-.13-.56.13-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.03 2.6.13.17 1.77 2.7 4.3 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.48-.6 1.69-1.19.21-.58.21-1.08.14-1.19-.06-.1-.23-.16-.48-.29z"/></symbol>
+    <symbol id="logo" viewBox="0 0 512 512"><defs><linearGradient id="lg-brand" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5b6de1"/><stop offset="55%" stop-color="#7c4be8"/><stop offset="100%" stop-color="#b33adf"/></linearGradient></defs><rect width="512" height="512" rx="96" fill="url(#lg-brand)"/><rect x="206" y="70" width="100" height="372" rx="50" fill="#f4f5fb" opacity=".95"/><rect x="68" y="206" width="376" height="100" rx="50" fill="#f4f5fb" opacity=".95"/><path d="M256 310C256 310 192 266 192 222C192 194 214 178 237 191C244 195 250 204 256 214C262 204 268 195 275 191C298 178 320 194 320 222C320 266 256 310 256 310Z" fill="#e46bb4"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main" data-i18n="skip">تخطَّ إلى المحتوى</a>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <div class="nav-bar">
+    <a class="brand" href="#top" aria-label="CTMS home">
+      <svg aria-hidden="true"><use href="#logo"/></svg>
+      <span class="bt">CTMS<small data-i18n="brand_sub">من Appscrafter</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#platform" data-i18n="nav_platform">المنصة</a>
+      <a href="#roles" data-i18n="nav_solutions">الحلول</a>
+      <a href="#modules" data-i18n="nav_modules">الوحدات</a>
+      <a href="#security" data-i18n="nav_security">الأمان</a>
+      <a href="#integrations" data-i18n="nav_integrations">التكاملات</a>
+      <a href="#pricing" data-i18n="nav_pricing">الأسعار</a>
+      <a href="#faq" data-i18n="nav_resources">الموارد</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ar" class="ar" aria-pressed="false">العربية</button>
+      </div>
+      <button class="iconbtn theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+        <svg class="ico theme-moon"><use href="#i-moon"/></svg><svg class="ico theme-sun"><use href="#i-sun"/></svg>
+      </button>
+      <button class="btn btn-primary btn-sm" type="button" data-demo data-i18n="cta_book">احجز عرضاً</button>
+      <button class="iconbtn menu-btn" type="button" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" aria-hidden="true">
+  <div class="mnav-scrim" data-close-menu></div>
+  <div class="mnav-sheet" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mnav-top">
+      <a class="brand" href="#top" data-close-menu><svg aria-hidden="true"><use href="#logo"/></svg><span class="bt">CTMS</span></a>
+      <button class="iconbtn" type="button" data-close-menu aria-label="Close menu"><svg class="ico"><use href="#i-x"/></svg></button>
+    </div>
+    <nav class="mnav-links" aria-label="Mobile">
+      <a href="#platform" data-close-menu><span data-i18n="nav_platform">المنصة</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a href="#roles" data-close-menu><span data-i18n="nav_solutions">الحلول</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a href="#modules" data-close-menu><span data-i18n="nav_modules">الوحدات</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a href="#security" data-close-menu><span data-i18n="nav_security">الأمان</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a href="#integrations" data-close-menu><span data-i18n="nav_integrations">التكاملات</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a href="#pricing" data-close-menu><span data-i18n="nav_pricing">الأسعار</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a href="#faq" data-close-menu><span data-i18n="nav_resources">الموارد</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+    </nav>
+    <div class="mnav-foot">
+      <div class="mnav-row">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="ar" class="ar" aria-pressed="false">العربية</button>
+        </div>
+        <button class="iconbtn" type="button" data-theme-toggle aria-label="Toggle dark mode"><svg class="ico theme-moon"><use href="#i-moon"/></svg><svg class="ico theme-sun"><use href="#i-sun"/></svg></button>
+      </div>
+      <button class="btn btn-primary btn-block" type="button" data-demo data-close-menu data-i18n="cta_live">احجز عرضاً حياً</button>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+<!-- ============================ 2. HERO ============================ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="hero-tag reveal"><span class="flag" data-i18n="hero_flag">الكويت · الخليج</span><span data-i18n="hero_tag">مصمّم لعيادات الكويت والخليج</span></span>
+      <h1 class="t-display reveal d1"><span data-i18n="hero_h1a">نظام التشغيل</span> <span class="soft" data-i18n="hero_h1b">للعيادات الحديثة.</span></h1>
+      <p class="t-lead reveal d2" data-i18n="hero_lead">أدر المواعيد وسجلات المرضى والفوترة والمخزون والصيدلية والرواتب والمالية والفروع المتعددة من منصة ذكية واحدة.</p>
+      <div class="hero-ctas reveal d3">
+        <button class="btn btn-primary btn-lg" type="button" data-demo><span data-i18n="cta_live">احجز عرضاً حياً</span><svg class="ico arr"><use href="#i-arrow"/></svg></button>
+        <a class="btn btn-secondary btn-lg" href="#modules" data-i18n="cta_explore">اكتشف CTMS</a>
+      </div>
+      <div class="hero-meta reveal d3">
+        <span><svg class="ico"><use href="#i-globe"/></svg><span data-i18n="hm1">العربية والإنجليزية</span></span>
+        <span><svg class="ico"><use href="#i-wifioff"/></svg><span data-i18n="hm2">يعمل دون إنترنت، محلياً</span></span>
+        <span><svg class="ico"><use href="#i-branch"/></svg><span data-i18n="hm3">جاهز لتعدد الفروع</span></span>
+      </div>
+    </div>
+
+    <div class="stage reveal d2">
+      <div class="stage-glow" aria-hidden="true"></div>
+      <div class="ui hero-ui" role="img" aria-label="CTMS clinic dashboard showing revenue, live patient queue and today's appointments (demo data)">
+        <div class="ui-top">
+          <span class="ui-logo"><svg><use href="#logo"/></svg>CTMS</span>
+          <span class="ui-branch"><svg class="ico"><use href="#i-pin"/></svg><span data-i18n="d_branch1">السالمية</span><svg class="ico"><use href="#i-down"/></svg></span>
+          <span class="ui-search"><svg class="ico"><use href="#i-search"/></svg><span data-i18n="d_search">ابحث عن مريض أو فاتورة أو رقم مدني…</span></span>
+          <svg class="ico" style="width:17px;height:17px;color:var(--faint)"><use href="#i-bell"/></svg>
+          <span class="ui-av">SA</span>
+        </div>
+        <div class="ui-body">
+          <div class="ui-side" aria-hidden="true">
+            <i class="on"><svg class="ico"><use href="#i-grid"/></svg></i><i><svg class="ico"><use href="#i-cal"/></svg></i><i><svg class="ico"><use href="#i-users"/></svg></i><i><svg class="ico"><use href="#i-receipt"/></svg></i><i><svg class="ico"><use href="#i-pill"/></svg></i><i><svg class="ico"><use href="#i-box"/></svg></i><i><svg class="ico"><use href="#i-wallet"/></svg></i><i><svg class="ico"><use href="#i-chart"/></svg></i>
+          </div>
+          <div class="ui-main">
+            <div class="ui-h">
+              <div><b data-i18n="d_greet">صباح الخير، د. سارة</b><small data-i18n="d_date">الثلاثاء · ٢٣ سبتمبر ٢٠٢٦ · فرع السالمية</small></div>
+              <div style="display:flex;gap:6px"><span class="ui-btn sec" data-i18n="d_newappt">+ موعد</span><span class="ui-btn" data-i18n="d_newinv">+ فاتورة جديدة</span></div>
+            </div>
+            <div class="ui-kpis">
+              <div class="ui-kpi"><span data-i18n="d_k1">فواتير اليوم</span><b>58</b><em>+9 vs last Tue</em></div>
+              <div class="ui-kpi"><span data-i18n="d_k2">التحصيلات</span><b>1,106.250</b><em>KWD</em></div>
+              <div class="ui-kpi"><span data-i18n="d_k3">مرضى جدد</span><b>9</b><em>+3</em></div>
+              <div class="ui-kpi"><span data-i18n="d_k4">المستحقات</span><b>178.250</b><em class="down">KWD · 6 inv.</em></div>
+            </div>
+            <div class="ui-row">
+              <div class="ui-card">
+                <h5><span data-i18n="d_rev14">الإيراد · آخر ١٤ يوماً</span><span class="leg"><span><i style="background:var(--c1)"></i><span data-i18n="d_this">هذه الفترة</span></span><span><i style="background:var(--c5)"></i><span data-i18n="d_prev">السابقة</span></span></span></h5>
+                <svg class="chart" viewBox="0 0 520 170" aria-hidden="true">
+                  <defs><linearGradient id="ga" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--c1)" stop-opacity=".22"/><stop offset="1" stop-color="var(--c1)" stop-opacity="0"/></linearGradient></defs>
+                  <line class="gl" x1="0" x2="520" y1="30" y2="30"/><line class="gl" x1="0" x2="520" y1="70" y2="70"/><line class="gl" x1="0" x2="520" y1="110" y2="110"/><line class="gl" x1="0" x2="520" y1="150" y2="150"/>
+                  <path d="M0 124 L40 118 L80 120 L120 108 L160 112 L200 100 L240 104 L280 92 L320 96 L360 88 L400 90 L440 80 L480 84 L520 74" fill="none" stroke="var(--c5)" stroke-width="1.6" stroke-dasharray="4 4"/>
+                  <path d="M0 110 L40 96 L80 102 L120 84 L160 90 L200 70 L240 78 L280 60 L320 66 L360 52 L400 58 L440 42 L480 48 L520 30 L520 150 L0 150Z" fill="url(#ga)"/>
+                  <path d="M0 110 L40 96 L80 102 L120 84 L160 90 L200 70 L240 78 L280 60 L320 66 L360 52 L400 58 L440 42 L480 48 L520 30" fill="none" stroke="var(--c1)" stroke-width="2.2" stroke-linejoin="round"/>
+                  <circle cx="520" cy="30" r="4.5" fill="var(--surface)" stroke="var(--c1)" stroke-width="2.2"/>
+                  <text x="0" y="166">10 Sep</text><text x="240" y="166">16 Sep</text><text x="490" y="166">23 Sep</text>
+                </svg>
+              </div>
+              <div class="ui-card">
+                <h5><span data-i18n="d_queue">الانتظار المباشر</span><span class="pill ok"><span class="dot live"></span>7</span></h5>
+                <div class="ui-list">
+                  <div class="ui-li"><span class="av">FA</span><span class="tx"><b data-i18n="p1">فاطمة العنزي</b><small data-i18n="d_q1s">د. أحمد · استشارة</small></span><span class="pill brand" data-i18n="st_with">مع الطبيب</span></div>
+                  <div class="ui-li"><span class="av">YM</span><span class="tx"><b data-i18n="p2">يوسف المطيري</b><small data-i18n="d_q2s">د. نورة · أسنان</small></span><span class="pill warn" data-i18n="st_wait8">ينتظر ٨ د</span></div>
+                  <div class="ui-li"><span class="av">LH</span><span class="tx"><b data-i18n="p3">ليلى الهاجري</b><small data-i18n="d_q3s">د. أحمد · متابعة</small></span><span class="pill info" data-i18n="st_in">وصل</span></div>
+                  <div class="ui-li"><span class="av">KS</span><span class="tx"><b data-i18n="p4">خالد الصباح</b><small data-i18n="d_q4s">جلدية · جلسة ليزر</small></span><span class="pill ok" data-i18n="st_bill">عند المحاسبة</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stage-floats-m">
+        <div class="float f1"><div class="fl-h"><span class="fl-ic"><svg class="ico"><use href="#i-coins"/></svg></span><span data-i18n="fl1">إيراد اليوم</span></div><b>KWD 1,284.500</b><div class="fl-sub"><span class="delta">▲ 12.4%</span><span data-i18n="fl_vs">مقارنة بالثلاثاء الماضي</span></div></div>
+        <div class="float f2"><div class="fl-h"><span class="fl-ic info"><svg class="ico"><use href="#i-cal"/></svg></span><span data-i18n="fl2">المواعيد</span></div><b>46</b><div class="fl-sub"><span data-i18n="fl2s">٣٨ منجزة · ٣ غياب</span></div></div>
+        <div class="float f3"><div class="fl-h"><span class="fl-ic"><svg class="ico"><use href="#i-clock"/></svg></span><span data-i18n="fl3">مرضى بالانتظار</span></div><b>7</b><div class="fl-sub"><span data-i18n="fl3s">متوسط الانتظار ١١ دقيقة</span></div></div>
+        <div class="float f4"><div class="fl-h"><span class="fl-ic"><svg class="ico"><use href="#i-trend"/></svg></span><span data-i18n="fl6">صافي الربح · الشهر</span></div><b>KWD 18,420</b><div class="fl-sub"><span class="delta">31.8%</span><span data-i18n="fl6s">هامش</span></div></div>
+        <div class="float f5"><div class="fl-h"><span class="fl-ic info"><svg class="ico"><use href="#i-steth"/></svg></span><span data-i18n="fl5">أداء الأطباء</span></div>
+          <div class="ui-hbars" style="margin-top:8px">
+            <div class="ui-hb" style="grid-template-columns:62px 1fr 38px"><span data-i18n="doc1">د. أحمد</span><div class="ui-bar"><i style="width:92%"></i></div><b>612</b></div>
+            <div class="ui-hb" style="grid-template-columns:62px 1fr 38px"><span data-i18n="doc2">د. نورة</span><div class="ui-bar"><i style="width:74%"></i></div><b>488</b></div>
+            <div class="ui-hb" style="grid-template-columns:62px 1fr 38px"><span data-i18n="doc3">د. فيصل</span><div class="ui-bar"><i style="width:41%"></i></div><b>184</b></div>
+          </div>
+        </div>
+        <div class="float f6"><div class="fl-h"><span class="fl-ic warn"><svg class="ico"><use href="#i-box"/></svg></span><span data-i18n="fl4">مخزون منخفض</span></div><b style="font-size:14px" data-i18n="fl4b">أموكسيسيلين ٥٠٠ ملغ</b><div class="fl-sub"><span class="pill warn" data-i18n="fl4s">١٢ متبقية · أعد الطلب</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. TRUST STRIP ============================ -->
+<section class="trust" aria-label="Product summary">
+  <div class="wrap">
+    <div class="trust-row">
+      <div class="trust-item"><b class="big">10+</b><span data-i18n="tr1">وحدة متكاملة</span></div>
+      <div class="trust-item"><svg class="ico"><use href="#i-globe"/></svg><b data-i18n="tr2">العربية والإنجليزية</b><span data-i18n="tr2s">واجهة RTL كاملة</span></div>
+      <div class="trust-item"><svg class="ico"><use href="#i-branch"/></svg><b data-i18n="tr3">متعدد الفروع</b><span data-i18n="tr3s">رؤية موحّدة</span></div>
+      <div class="trust-item"><svg class="ico"><use href="#i-cloud"/></svg><b data-i18n="tr4">محلي + سحابي</b><span data-i18n="tr4s">حسب اختيارك</span></div>
+      <div class="trust-item"><svg class="ico"><use href="#i-key"/></svg><b data-i18n="tr5">صلاحيات حسب الدور</b><span data-i18n="tr5s">لكل موظف</span></div>
+      <div class="trust-item"><svg class="ico"><use href="#i-lock"/></svg><b data-i18n="tr6">نسخ احتياطي مشفّر</b><span data-i18n="tr6s">تلقائي</span></div>
+      <div class="trust-item"><svg class="ico"><use href="#i-activity"/></svg><b data-i18n="tr7">تقارير فورية</b><span data-i18n="tr7s">أرباح مباشرة</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 4. PROBLEM / SOLUTION ============================ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="ps_eb">المشكلة</span>
+      <h2 class="t-h2" data-i18n="ps_h2">لا يجب أن تحتاج عيادتك إلى خمسة أنظمة لتعمل.</h2>
+      <p class="t-lead" data-i18n="ps_p">حين يعمل كل قسم بأداته الخاصة لا يتطابق شيء — ويكون المالك آخر من يعلم.</p>
+    </div>
+    <div class="ps">
+      <div class="ps-card ps-before reveal">
+        <div class="ps-label" data-i18n="ps_before">اليوم، في معظم العيادات</div>
+        <ul class="ps-list">
+          <li><span class="x"><svg class="ico"><use href="#i-x"/></svg></span><span data-i18n="ps1">برنامج مواعيد منفصل</span><small data-i18n="ps1s">أداة ١</small></li>
+          <li><span class="x"><svg class="ico"><use href="#i-x"/></svg></span><span data-i18n="ps2">سجلات المرضى على Excel</span><small data-i18n="ps2s">أداة ٢</small></li>
+          <li><span class="x"><svg class="ico"><use href="#i-x"/></svg></span><span data-i18n="ps3">نظام مخزون منفصل</span><small data-i18n="ps3s">أداة ٣</small></li>
+          <li><span class="x"><svg class="ico"><use href="#i-x"/></svg></span><span data-i18n="ps4">محاسبة يدوية</span><small data-i18n="ps4s">أداة ٤</small></li>
+          <li><span class="x"><svg class="ico"><use href="#i-x"/></svg></span><span data-i18n="ps5">رواتب يدوية</span><small data-i18n="ps5s">أداة ٥</small></li>
+          <li><span class="x"><svg class="ico"><use href="#i-x"/></svg></span><span data-i18n="ps6">تقارير فروع غير مترابطة</span><small data-i18n="ps6s">مكالمات هاتفية</small></li>
+        </ul>
+      </div>
+      <div class="ps-mid reveal d1" aria-hidden="true"><span class="arrow"><svg class="ico"><use href="#i-arrow"/></svg></span></div>
+      <div class="ps-card ps-after reveal d2">
+        <div class="ps-label" style="color:var(--brand)" data-i18n="ps_after">مع CTMS</div>
+        <h3 class="t-h3" data-i18n="ps_h3">CTMS يربط كل شيء.</h3>
+        <svg class="hub" viewBox="0 0 400 328" role="img" aria-label="CTMS at the centre, connected to appointments, patients, billing, inventory, payroll and branches">
+          <g>
+            <path class="ln" d="M200 164 L78 52"/><path class="ln" d="M200 164 L322 52"/><path class="ln" d="M200 164 L40 164"/><path class="ln" d="M200 164 L360 164"/><path class="ln" d="M200 164 L78 276"/><path class="ln" d="M200 164 L322 276"/>
+            <path class="flow" d="M200 164 L78 52"/><path class="flow" d="M200 164 L322 52"/><path class="flow" d="M200 164 L40 164"/><path class="flow" d="M200 164 L360 164"/><path class="flow" d="M200 164 L78 276"/><path class="flow" d="M200 164 L322 276"/>
+          </g>
+          <g class="core"><circle class="c2" cx="200" cy="164" r="58"/><circle class="c2" cx="200" cy="164" r="76" stroke-dasharray="2 6"/><circle class="c1" cx="200" cy="164" r="42"/><text x="200" y="169" text-anchor="middle">CTMS</text></g>
+          <g class="node"><rect x="22" y="34" width="112" height="36" rx="12"/><text x="78" y="56" text-anchor="middle" data-i18n="hub1">المواعيد</text></g>
+          <g class="node"><rect x="266" y="34" width="112" height="36" rx="12"/><text x="322" y="56" text-anchor="middle" data-i18n="hub2">المرضى والسجل</text></g>
+          <g class="node"><rect x="0" y="146" width="84" height="36" rx="12"/><text x="42" y="168" text-anchor="middle" data-i18n="hub3">الفوترة</text></g>
+          <g class="node"><rect x="316" y="146" width="84" height="36" rx="12"/><text x="358" y="168" text-anchor="middle" data-i18n="hub4">المخزون</text></g>
+          <g class="node"><rect x="22" y="258" width="112" height="36" rx="12"/><text x="78" y="280" text-anchor="middle" data-i18n="hub5">المالية والأرباح</text></g>
+          <g class="node"><rect x="266" y="258" width="112" height="36" rx="12"/><text x="322" y="280" text-anchor="middle" data-i18n="hub6">الرواتب · الفروع</text></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 5. CONNECTED WORKFLOW ============================ -->
+<section class="section dark-sec" id="platform">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="wf_eb">سير عمل مترابط</span>
+      <h2 class="t-h2" data-i18n="wf_h2">زيارة واحدة. كل الدفاتر محدّثة.</h2>
+      <p class="t-lead" data-i18n="wf_p">تابع زيارة مريض واحدة. تُسجّل كل خطوة مرة واحدة — ويحدّث CTMS تلقائياً السجلات السريرية والتشغيلية والمالية المرتبطة بها.</p>
+    </div>
+    <div class="wf">
+      <ol class="wf-steps reveal" id="wfSteps"><span class="wf-prog" id="wfProg" aria-hidden="true"></span></ol>
+      <div class="wf-panel reveal d1">
+        <div class="wf-now" aria-live="polite">
+          <div class="k" id="wfK">STEP 01 / 10</div>
+          <h3 id="wfT">Appointment</h3>
+          <p id="wfD"></p>
+          <div class="wf-ctrl">
+            <button class="iconbtn" type="button" id="wfPlay" aria-label="Pause walkthrough"><svg class="ico"><use href="#i-pause"/></svg></button>
+            <div class="wf-bar"><i id="wfBar"></i></div>
+          </div>
+        </div>
+        <div class="ledger">
+          <div class="ledger-h"><b data-i18n="lg_h">السجلات التي حدّثتها هذه الزيارة</b><span>V-20931 · KWD 45.000</span></div>
+          <div id="ledger"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 6. MODULE EXPLORER ============================ -->
+<section class="section" id="modules">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="mx_eb">مستكشف الوحدات</span>
+      <h2 class="t-h2" data-i18n="mx_h2">كل قسم. منصة واحدة.</h2>
+      <p class="t-lead" data-i18n="mx_p">اختر وحدة لترى الشاشة التي سيستخدمها فريقك — وما تغيّره في عملك.</p>
+    </div>
+    <div class="pilltabs mx-tabs reveal" role="tablist" aria-label="CTMS modules" id="mxTabs"></div>
+    <div class="mx reveal" id="mxPanel" role="tabpanel" tabindex="0"></div>
+  </div>
+</section>
+
+<!-- ============================ 7. OWNER DASHBOARD ============================ -->
+<section class="section" style="background:var(--surface-2);border-block:1px solid var(--line)" id="owner">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="ow_eb">لمالكي العيادات</span>
+      <h2 class="t-h2" data-i18n="ow_h2">اعرف بدقة كيف تؤدي عيادتك.</h2>
+      <p class="t-lead" data-i18n="ow_p">الإيراد والربح والأطباء والخدمات والفروع والنقد — محدّثة لحظة بلحظة، لا في نهاية الشهر.</p>
+    </div>
+    <div class="owner reveal">
+      <div class="o-tile o-kpi hl span3"><h4 data-i18n="ow_k1">إيراد اليوم</h4><b><small>KWD</small>1,284.500</b><div class="sub"><span class="delta">▲ 12.4%</span><span data-i18n="ow_vs">مقارنة بالأسبوع الماضي</span></div></div>
+      <div class="o-tile o-kpi span3"><h4 data-i18n="ow_k2">الإيراد الشهري</h4><b><small>KWD</small>57,930</b><div class="sub"><span class="delta">▲ 8.1%</span><span data-i18n="ow_mtd">منذ بداية الشهر</span></div></div>
+      <div class="o-tile o-kpi span3"><h4 data-i18n="ow_k3">صافي الربح</h4><b><small>KWD</small>18,420</b><div class="sub"><span class="delta">▲ 5.6%</span><span data-i18n="ow_mtd">منذ بداية الشهر</span></div></div>
+      <div class="o-tile o-kpi span3"><h4 data-i18n="ow_k4">هامش الربح</h4><b>31.8%</b><div class="sub"><div class="ui-bar" style="flex:1"><i style="width:31.8%"></i></div></div></div>
+
+      <div class="o-tile span7">
+        <h4><span data-i18n="ow_doc">الإيراد حسب الطبيب</span><span class="badge" data-i18n="ow_this">هذا الشهر</span></h4>
+        <div class="hbars">
+          <div class="hbar"><span data-i18n="doc1">د. أحمد</span><div class="tr" data-tip="KWD 16,240 · 412 visits"><i style="width:100%"></i></div><b>16,240</b></div>
+          <div class="hbar"><span data-i18n="doc2">د. نورة</span><div class="tr" data-tip="KWD 13,880 · 298 visits"><i style="width:85%"></i></div><b>13,880</b></div>
+          <div class="hbar"><span data-i18n="doc4">د. مريم</span><div class="tr" data-tip="KWD 11,310 · 264 visits"><i style="width:70%"></i></div><b>11,310</b></div>
+          <div class="hbar"><span data-i18n="doc3">د. فيصل</span><div class="tr" data-tip="KWD 9,150 · 231 visits"><i style="width:56%"></i></div><b>9,150</b></div>
+          <div class="hbar"><span data-i18n="doc5">د. حصة</span><div class="tr" data-tip="KWD 7,350 · 188 visits"><i style="width:45%"></i></div><b>7,350</b></div>
+        </div>
+      </div>
+      <div class="o-tile span5">
+        <h4 data-i18n="ow_svc">الإيراد حسب الخدمة</h4>
+        <div class="donut-wrap">
+          <svg viewBox="0 0 42 42" role="img" aria-label="Revenue by service donut chart">
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--surface-3)" stroke-width="5"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--c1)" stroke-width="5" stroke-dasharray="38 62" stroke-dashoffset="25"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--c2)" stroke-width="5" stroke-dasharray="24 76" stroke-dashoffset="87"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--c3)" stroke-width="5" stroke-dasharray="18 82" stroke-dashoffset="63"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--c4)" stroke-width="5" stroke-dasharray="12 88" stroke-dashoffset="45"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--c5)" stroke-width="5" stroke-dasharray="8 92" stroke-dashoffset="33"/>
+          </svg>
+          <div class="donut-leg">
+            <div><i style="background:var(--c1)"></i><span data-i18n="sv1">الاستشارات</span><b>38%</b></div>
+            <div><i style="background:var(--c2)"></i><span data-i18n="sv2">الأسنان</span><b>24%</b></div>
+            <div><i style="background:var(--c3)"></i><span data-i18n="sv3">الجلدية والليزر</span><b>18%</b></div>
+            <div><i style="background:var(--c4)"></i><span data-i18n="sv4">الصيدلية</span><b>12%</b></div>
+            <div><i style="background:var(--c5)"></i><span data-i18n="sv5">المختبر وأخرى</span><b>8%</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="o-tile span6">
+        <h4><span data-i18n="ow_branch">مقارنة الفروع</span><span class="leg"><span><i style="background:var(--c1)"></i><span data-i18n="ow_rev">الإيراد</span></span><span><i style="background:var(--c5)"></i><span data-i18n="ow_exp">المصروفات</span></span></span></h4>
+        <div class="gbar">
+          <div class="g"><i style="height:92%" data-tip="Revenue KWD 24,610"></i><i class="b" style="height:60%;transition-delay:.1s" data-tip="Expenses KWD 16,020"></i><span data-i18n="d_branch1">السالمية</span></div>
+          <div class="g"><i style="height:70%;transition-delay:.15s" data-tip="Revenue KWD 18,340"></i><i class="b" style="height:48%;transition-delay:.2s" data-tip="Expenses KWD 12,870"></i><span data-i18n="br2">حولي</span></div>
+          <div class="g"><i style="height:52%;transition-delay:.25s" data-tip="Revenue KWD 14,980"></i><i class="b" style="height:40%;transition-delay:.3s" data-tip="Expenses KWD 10,620"></i><span data-i18n="br3">الجهراء</span></div>
+        </div>
+      </div>
+      <div class="o-tile span6">
+        <h4><span data-i18n="ow_expenses">المصروفات</span><b style="color:var(--ink);font-size:1rem">KWD 39,510</b></h4>
+        <div class="stack-bar"><i style="width:44%;background:var(--c2)"></i><i style="width:24%;background:var(--c1)"></i><i style="width:17%;background:var(--c3)"></i><i style="width:9%;background:var(--c4)"></i><i style="width:6%;background:var(--c5)"></i></div>
+        <div class="donut-leg" style="grid-template-columns:1fr 1fr;margin-top:16px;gap:10px 20px">
+          <div><i style="background:var(--c2)"></i><span data-i18n="ex1">الرواتب</span><b>44%</b></div>
+          <div><i style="background:var(--c1)"></i><span data-i18n="ex2">تكلفة البضاعة</span><b>24%</b></div>
+          <div><i style="background:var(--c3)"></i><span data-i18n="ex3">الإيجار</span><b>17%</b></div>
+          <div><i style="background:var(--c4)"></i><span data-i18n="ex4">المرافق</span><b>9%</b></div>
+          <div><i style="background:var(--c5)"></i><span data-i18n="ex5">أخرى</span><b>6%</b></div>
+        </div>
+      </div>
+
+      <div class="o-mini">
+        <div class="o-tile o-kpi"><h4 data-i18n="ow_m1">الذمم المستحقة</h4><b><small>KWD</small>3,215</b><div class="sub"><span class="badge warn" data-i18n="ow_m1s">٤١ فاتورة</span></div></div>
+        <div class="o-tile o-kpi"><h4 data-i18n="ow_m2">قيمة المخزون</h4><b><small>KWD</small>22,780</b><div class="sub" data-i18n="ow_m2s">بالتكلفة · ٣ فروع</div></div>
+        <div class="o-tile o-kpi"><h4 data-i18n="ow_m3">تكلفة الرواتب</h4><b><small>KWD</small>17,380</b><div class="sub" data-i18n="ow_m3s">الدورة الحالية</div></div>
+        <div class="o-tile o-kpi"><h4 data-i18n="ow_m4">تحويل المواعيد</h4><b>86%</b><div class="sub" data-i18n="ow_m4s">محجوز ← حضر</div></div>
+        <div class="o-tile o-kpi"><h4 data-i18n="ow_m5">زيارات المرضى</h4><b>1,393</b><div class="mini-mini" aria-hidden="true"><i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:84%"></i><i style="height:100%"></i></div></div>
+      </div>
+    </div>
+    <p class="t-small reveal" style="margin-top:16px;text-align:center" data-i18n="demo_note">بيانات تجريبية توضيحية. لا تُعرض على هذا الموقع أي معلومات حقيقية لمرضى أو عيادات.</p>
+  </div>
+</section>
+
+<!-- ============================ 8. ROLES ============================ -->
+<section class="section" id="roles">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="ro_eb">الحلول حسب الدور</span>
+      <h2 class="t-h2" data-i18n="ro_h2">مساحة العمل المناسبة لكل شخص في العيادة.</h2>
+      <p class="t-lead" data-i18n="ro_p">الجميع يدخل إلى النظام نفسه — ويرى فقط ما يحتاجه دوره.</p>
+    </div>
+    <div class="pilltabs reveal" role="tablist" aria-label="Roles" id="roTabs"></div>
+    <div class="roles reveal" id="roPanel" role="tabpanel" tabindex="0"></div>
+  </div>
+</section>
+
+<!-- ============================ 9. MULTI-BRANCH ============================ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap mb-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="mb_eb">إدارة الفروع المتعددة</span>
+      <h2 class="t-h2" style="margin-top:14px" data-i18n="mb_h2">رؤية واحدة لكل المواقع.</h2>
+      <p class="t-lead" style="margin-top:18px" data-i18n="mb_p">يعمل كل فرع باستقلالية — بجدوله ومخزونه وموظفيه ودفاتره — بينما يحصل المالك على تقارير موحّدة للمجموعة.</p>
+      <div class="mb-points">
+        <div class="mb-point"><span class="icon-tile"><svg class="ico"><use href="#i-pin"/></svg></span><div><h4 data-i18n="mb1">عمليات على مستوى الفرع</h4><p data-i18n="mb1p">مخزون وأسعار وموظفون وأرباح منفصلة لكل موقع.</p></div></div>
+        <div class="mb-point"><span class="icon-tile"><svg class="ico"><use href="#i-layers"/></svg></span><div><h4 data-i18n="mb2">رؤية موحّدة للمالك</h4><p data-i18n="mb2p">إيراد المجموعة وربحها وأداؤها في شاشة واحدة.</p></div></div>
+        <div class="mb-point"><span class="icon-tile"><svg class="ico"><use href="#i-key"/></svg></span><div><h4 data-i18n="mb3">صلاحيات حسب الموقع</h4><p data-i18n="mb3p">يصل الموظفون فقط إلى الفروع المعيّنين فيها.</p></div></div>
+      </div>
+    </div>
+    <div class="ui reveal d1" role="img" aria-label="Branch dashboard comparing revenue, appointments, profit, stock and staff across branches (demo data)">
+      <div class="ui-top"><span class="ui-logo"><svg><use href="#logo"/></svg>CTMS</span><span class="ui-branch"><svg class="ico"><use href="#i-layers"/></svg><span data-i18n="mb_all">كل الفروع</span><svg class="ico"><use href="#i-down"/></svg></span><span class="ui-search"><svg class="ico"><use href="#i-search"/></svg><span data-i18n="mb_mtd">سبتمبر ٢٠٢٦ · منذ بداية الشهر</span></span></div>
+      <div class="ui-main">
+        <div class="ui-kpis">
+          <div class="ui-kpi"><span data-i18n="mb_k1">إيراد المجموعة</span><b>57,930</b><em>KWD ▲ 8.1%</em></div>
+          <div class="ui-kpi"><span data-i18n="mb_k2">ربح المجموعة</span><b>18,420</b><em>KWD · 31.8%</em></div>
+          <div class="ui-kpi"><span data-i18n="mb_k3">المواعيد</span><b>1,612</b><em>▲ 6%</em></div>
+          <div class="ui-kpi"><span data-i18n="mb_k4">الموظفون المناوبون</span><b>64</b><em data-i18n="mb_k4s">٣ فروع</em></div>
+        </div>
+        <div class="ui-card" style="padding:4px 4px;overflow-x:auto">
+          <table class="ui-tbl">
+            <thead><tr><th data-i18n="th_branch">الفرع</th><th class="r" data-i18n="th_rev">الإيراد</th><th class="r" data-i18n="th_appt">المواعيد</th><th class="r" data-i18n="th_profit">الربح</th><th class="r" data-i18n="th_stock">قيمة المخزون</th><th class="r" data-i18n="th_staff">الموظفون</th><th data-i18n="th_perf">الأداء</th></tr></thead>
+            <tbody>
+              <tr><td data-i18n="d_branch1">السالمية</td><td class="r">24,610</td><td class="r">688</td><td class="r">8,590</td><td class="r">9,840</td><td class="r">27</td><td><span class="perf"><span class="ui-bar"><i style="width:92%"></i></span><span class="pill ok">A</span></span></td></tr>
+              <tr><td data-i18n="br2">حولي</td><td class="r">18,340</td><td class="r">524</td><td class="r">5,470</td><td class="r">7,110</td><td class="r">21</td><td><span class="perf"><span class="ui-bar"><i style="width:74%"></i></span><span class="pill ok">B+</span></span></td></tr>
+              <tr><td data-i18n="br3">الجهراء</td><td class="r">14,980</td><td class="r">400</td><td class="r">4,360</td><td class="r">5,830</td><td class="r">16</td><td><span class="perf"><span class="ui-bar"><i style="width:58%;background:var(--warn)"></i></span><span class="pill warn">B</span></span></td></tr>
+              <tr class="strong"><td data-i18n="mb_total">إجمالي المجموعة</td><td class="r">57,930</td><td class="r">1,612</td><td class="r">18,420</td><td class="r">22,780</td><td class="r">64</td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 10. GULF ============================ -->
+<section class="section gulf" id="gulf">
+  <div class="wrap gulf-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="gu_eb">الملاءمة المحلية</span>
+      <h2 class="t-h2" style="margin-top:14px" data-i18n="gu_h2">مصمّم لعيادات الخليج.</h2>
+      <p class="t-lead" style="margin-top:18px" data-i18n="gu_p">ليس منتجاً أجنبياً مترجماً. صُمّم CTMS حول الطريقة التي تسجّل بها عيادات الكويت والخليج المرضى وتفوتر وتدفع الرواتب وتعدّ التقارير.</p>
+      <div class="gulf-feats">
+        <div><svg class="ico"><use href="#i-globe"/></svg><span><b data-i18n="gu1">العربية + الإنجليزية</b><small data-i18n="gu1s">تبديل فوري لكل مستخدم</small></span></div>
+        <div><svg class="ico"><use href="#i-layers"/></svg><span><b data-i18n="gu2">واجهة كاملة من اليمين لليسار</b><small data-i18n="gu2s">الشاشات والإيصالات والتقارير</small></span></div>
+        <div><svg class="ico"><use href="#i-id"/></svg><span><b data-i18n="gu3">دعم الرقم المدني</b><small data-i18n="gu3s">كشف التكرار عند التسجيل</small></span></div>
+        <div><svg class="ico"><use href="#i-coins"/></svg><span><b data-i18n="gu4">فوترة بالدينار الكويتي</b><small data-i18n="gu4s">دقة ثلاث خانات عشرية</small></span></div>
+        <div><svg class="ico"><use href="#i-card"/></svg><span><b data-i18n="gu5">كي‑نت والبطاقة والنقد</b><small data-i18n="gu5s">تقسيم الدفع على فاتورة واحدة</small></span></div>
+        <div><svg class="ico"><use href="#i-branch"/></svg><span><b data-i18n="gu6">عمليات متعددة الفروع</b><small data-i18n="gu6s">عبر المحافظات والدول</small></span></div>
+        <div><svg class="ico"><use href="#i-payroll"/></svg><span><b data-i18n="gu7">ممارسات الرواتب المحلية</b><small data-i18n="gu7s">دورات وبدلات وخصومات مخصصة</small></span></div>
+        <div><svg class="ico"><use href="#i-users"/></svg><span><b data-i18n="gu8">تطبيق ودعم محلي</b><small data-i18n="gu8s">فريق في الكويت وتهيئة في الموقع</small></span></div>
+      </div>
+    </div>
+    <div class="rtl-demo reveal d1" lang="ar" dir="rtl">
+      <div class="ui" role="img" aria-label="Arabic right-to-left invoice screen in CTMS (demo data)">
+        <div class="ui-top"><span class="ui-logo"><svg><use href="#logo"/></svg>CTMS</span><span class="ui-branch"><svg class="ico"><use href="#i-pin"/></svg>فرع السالمية</span><span class="ui-search"><svg class="ico"><use href="#i-search"/></svg>ابحث بالاسم أو الرقم المدني…</span></div>
+        <div class="ui-main">
+          <div class="ui-h"><div><b>فاتورة ضريبية مبسطة</b><small>رقم <span class="receipt-num">INV-2026-04812</span> · ٢٣ سبتمبر ٢٠٢٦</small></div><span class="pill ok">مدفوعة</span></div>
+          <div class="ui-grid2">
+            <div class="ui-field"><span>المريض</span><div>فاطمة العنزي</div></div>
+            <div class="ui-field"><span>الرقم المدني</span><div class="receipt-num">2890•••••412</div></div>
+            <div class="ui-field"><span>الطبيب</span><div>د. أحمد الرشيد</div></div>
+            <div class="ui-field"><span>العيادة</span><div>الطب العام</div></div>
+          </div>
+          <div class="ui-card" style="padding:4px">
+            <table class="ui-tbl">
+              <thead><tr><th>الخدمة</th><th class="r">الكمية</th><th class="r">المبلغ (د.ك)</th></tr></thead>
+              <tbody>
+                <tr><td>استشارة طبية</td><td class="r">١</td><td class="r receipt-num">25.000</td></tr>
+                <tr><td>أموكسيسيلين ٥٠٠ ملغ</td><td class="r">١</td><td class="r receipt-num">4.750</td></tr>
+                <tr><td>تحليل دم شامل</td><td class="r">١</td><td class="r receipt-num">15.250</td></tr>
+                <tr class="strong"><td>الإجمالي</td><td></td><td class="r receipt-num">45.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ui-row eq">
+            <div class="ui-card"><h5>طرق الدفع</h5>
+              <div class="ui-li"><span class="tx"><b>كي‑نت</b></span><span class="amt receipt-num">30.000</span></div>
+              <div class="ui-li"><span class="tx"><b>نقداً</b></span><span class="amt receipt-num">15.000</span></div>
+            </div>
+            <div class="ui-card" style="display:flex;flex-direction:column;gap:8px;justify-content:center"><span class="ui-btn" style="justify-content:center">طباعة الإيصال</span><span class="ui-btn sec" style="justify-content:center">إرسال عبر واتساب</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 11. SECURITY ============================ -->
+<section class="section" id="security">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="reveal">
+        <span class="eyebrow" data-i18n="se_eb">الأمان وملكية البيانات</span>
+        <h2 class="t-h2" style="margin-top:14px" data-i18n="se_h2">بياناتك. خوادمك. قواعدك.</h2>
+        <p class="t-lead" style="margin-top:18px" data-i18n="se_p">صُمّم CTMS لتبقى بيانات العيادة تحت السيطرة وقابلة للاستعادة والمساءلة — سواء عمل داخل مبناك أو في السحابة.</p>
+        <div class="ui audit" role="img" aria-label="CTMS activity log showing recent user actions (demo data)">
+          <div class="ui-top"><span class="ui-logo"><svg><use href="#logo"/></svg><span data-i18n="se_log">سجل النشاط</span></span><span class="ui-search"><svg class="ico"><use href="#i-search"/></svg><span data-i18n="se_filter">تصفية حسب المستخدم أو الفرع أو الإجراء…</span></span></div>
+          <div class="ui-main" style="gap:0;padding:8px 14px">
+            <div class="ui-li"><span class="tm">09:42:18</span><span class="tx"><b data-i18n="au1">استرداد جزئي للفاتورة INV-04812</b><small data-i18n="au1s">ريم · الاستقبال · السالمية</small></span><span class="pill warn" data-i18n="au_fin">مالية</span></div>
+            <div class="ui-li"><span class="tm">09:37:05</span><span class="tx"><b data-i18n="au2">تعديل صلاحيات دور «صيدلي»</b><small data-i18n="au2s">المشرف · المكتب الرئيسي</small></span><span class="pill info" data-i18n="au_acc">صلاحيات</span></div>
+            <div class="ui-li"><span class="tm">09:30:00</span><span class="tx"><b data-i18n="au3">اكتمل نسخ احتياطي مشفّر · موثّق</b><small data-i18n="au3s">النظام · مجدول</small></span><span class="pill ok" data-i18n="au_sys">النظام</span></div>
+            <div class="ui-li"><span class="tm">09:12:47</span><span class="tx"><b data-i18n="au4">عرض سجل المريض P-10432</b><small data-i18n="au4s">د. أحمد · حولي</small></span><span class="pill" data-i18n="au_emr">السجل الطبي</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <div class="sec-list">
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-key"/></svg></span><b data-i18n="se1">التحكم بالوصول حسب الدور</b><small data-i18n="se1s">صلاحيات دقيقة حتى مستوى الشاشة والتقرير.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-history"/></svg></span><b data-i18n="se2">سجلات التدقيق</b><small data-i18n="se2s">تُسجّل الإجراءات الحساسة مع المستخدم والوقت والموقع.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-lock"/></svg></span><b data-i18n="se3">نسخ احتياطي مشفّر</b><small data-i18n="se3s">تُشفّر النسخ الاحتياطية قبل تخزينها.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-clock"/></svg></span><b data-i18n="se4">نسخ احتياطي تلقائي</b><small data-i18n="se4s">لقطات مجدولة دون تدخل من الموظفين.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-shield"/></svg></span><b data-i18n="se5">تحديثات آمنة</b><small data-i18n="se5s">لقطة أمان قبل كل ترقية.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-refresh"/></svg></span><b data-i18n="se6">استعادة البيانات</b><small data-i18n="se6s">استعد من لقطات موثّقة عند الحاجة.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-eye"/></svg></span><b data-i18n="se7">تتبّع نشاط المستخدمين</b><small data-i18n="se7s">اعرف من فعل ماذا ومتى في العيادة.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-pin"/></svg></span><b data-i18n="se8">صلاحيات على مستوى الموقع</b><small data-i18n="se8s">حدّد لكل مستخدم الفروع التي يعمل بها.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-cloud"/></svg></span><b data-i18n="se9">نشر على خادم خاص</b><small data-i18n="se9s">بيئة مخصصة لك وحدك.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-server"/></svg></span><b data-i18n="se10">تشغيل محلي</b><small data-i18n="se10s">شغّل CTMS بالكامل على أجهزة داخل عيادتك.</small></div>
+        </div>
+        <p class="sec-note"><svg class="ico"><use href="#i-shield"/></svg><span data-i18n="se_note">يوفر CTMS ضوابط تقنية تدعم التزاماتك في حماية البيانات. لا ندّعي شهادات من جهات خارجية لم نحصل عليها — اطلب منا وثائق الأمان الحالية.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 12. DEPLOYMENT ============================ -->
+<section class="section" style="padding-top:0" id="deployment">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="dp_eb">التشغيل</span>
+      <h2 class="t-h2" data-i18n="dp_h2">يُنشر بالطريقة التي تعمل بها عيادتك.</h2>
+    </div>
+    <div class="dep-grid">
+      <article class="card dep reveal">
+        <div class="dep-vis" aria-hidden="true">
+          <svg viewBox="0 0 260 140">
+            <rect class="st" x="8" y="8" width="244" height="124" rx="16" stroke-dasharray="4 4"/>
+            <text x="20" y="26" data-i18n="dv_clinic">عيادتك</text>
+            <rect class="sb" x="104" y="44" width="52" height="56" rx="10"/>
+            <g transform="translate(118 58)"><path class="ico-s" d="M2 4h20v8H2zM2 16h20v8H2zM6 8h.01M6 20h.01" stroke="var(--brand)"/></g>
+            <path class="ln" d="M104 72H62M156 72h42M130 100v18"/>
+            <path class="fl" d="M104 72H62M156 72h42M130 100v18"/>
+            <rect class="st" x="30" y="58" width="32" height="26" rx="6"/><rect class="st" x="198" y="58" width="32" height="26" rx="6"/><rect class="st" x="114" y="112" width="32" height="14" rx="4"/>
+            <text x="130" y="38" text-anchor="middle" data-i18n="dv_server">خادم CTMS</text>
+          </svg>
+        </div>
+        <div class="dep-body">
+          <span class="k">01</span>
+          <h3 class="t-h4" data-i18n="dp1">محلي</h3>
+          <p data-i18n="dp1p">يعمل CTMS كخدمة مُدارة على خادم أو جهاز داخل عيادتك، ويفتحه الموظفون من أي متصفح على الشبكة.</p>
+          <ul><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp1a">يستمر بالعمل عند انقطاع الإنترنت</span></li><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp1b">البيانات لا تغادر مقرّك</span></li></ul>
+        </div>
+      </article>
+      <article class="card dep reveal d1">
+        <div class="dep-vis" aria-hidden="true">
+          <svg viewBox="0 0 260 140">
+            <path class="sb" d="M96 66h68a18 18 0 0 0 2-35.8A26 26 0 0 0 116 26a20 20 0 0 0-20 40z"/>
+            <text x="130" y="52" text-anchor="middle" style="fill:var(--brand)">CTMS</text>
+            <path class="ln" d="M130 66v18M130 84H48v22M130 84h82v22M130 84v22"/>
+            <path class="fl" d="M130 66v18M130 84H48v22M130 84h82v22M130 84v22"/>
+            <rect class="st" x="28" y="106" width="40" height="26" rx="6"/><rect class="st" x="110" y="106" width="40" height="26" rx="6"/><rect class="st" x="192" y="106" width="40" height="26" rx="6"/>
+            <text x="48" y="100" text-anchor="middle" data-i18n="dv_b1">فرع</text><text x="212" y="100" text-anchor="middle" data-i18n="dv_mob">المالك</text>
+          </svg>
+        </div>
+        <div class="dep-body">
+          <span class="k">02</span>
+          <h3 class="t-h4" data-i18n="dp2">سحابي</h3>
+          <p data-i18n="dp2p">نستضيف CTMS ونديره لك على خادم خاص. ادخل بأمان من أي مكان دون أجهزة تديرها.</p>
+          <ul><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp2a">خادم خاص — غير مشترك</span></li><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp2b">التحديثات والنسخ الاحتياطي مُدارة لك</span></li></ul>
+        </div>
+      </article>
+      <article class="card dep reveal d2">
+        <div class="dep-vis" aria-hidden="true">
+          <svg viewBox="0 0 260 140">
+            <path class="sb" d="M104 48h52a14 14 0 0 0 1.5-27.9A20 20 0 0 0 119 17a15.5 15.5 0 0 0-15 31z"/>
+            <text x="130" y="36" text-anchor="middle" style="fill:var(--brand)" data-i18n="dv_owner">رؤية المالك</text>
+            <rect class="st" x="16" y="84" width="96" height="46" rx="10" stroke-dasharray="4 4"/><rect class="st" x="148" y="84" width="96" height="46" rx="10" stroke-dasharray="4 4"/>
+            <rect class="sb" x="30" y="96" width="26" height="22" rx="5"/><rect class="sb" x="162" y="96" width="26" height="22" rx="5"/>
+            <text x="64" y="111" data-i18n="dv_b1">فرع</text><text x="196" y="111" data-i18n="dv_b2">فرع</text>
+            <path class="ln" d="M64 84V66h132v18M130 48v18"/>
+            <path class="fl" d="M64 84V66h132v18M130 48v18"/>
+          </svg>
+        </div>
+        <div class="dep-body">
+          <span class="k">03</span>
+          <h3 class="t-h4" data-i18n="dp3">هجين / متعدد المواقع</h3>
+          <p data-i18n="dp3p">اجمع بين تثبيتات محلية في كل موقع ووصول مركزي للإدارة. نصمّم البنية حسب فروعك واتصالك.</p>
+          <ul><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp3a">سرعة ومرونة محلية لكل فرع</span></li><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp3b">تقارير موحّدة للمالك</span></li></ul>
+        </div>
+      </article>
+    </div>
+    <div class="offline reveal"><svg class="ico"><use href="#i-wifioff"/></svg><p><b data-i18n="off_b">انقطع الإنترنت؟ الاستقبال يواصل العمل.</b> <span data-i18n="off_p">في التشغيل المحلي والهجين يستمر CTMS بالعمل محلياً عند انقطاع الاتصال — فيستمر الحجز والفوترة والصرف كالمعتاد.</span></p></div>
+  </div>
+</section>
+
+<!-- ============================ 13. INTEGRATIONS ============================ -->
+<section class="section" style="padding-top:0" id="integrations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="in_eb">التكاملات</span>
+      <h2 class="t-h2" data-i18n="in_h2">يعمل مع الأدوات التي تستخدمها عيادتك.</h2>
+      <p class="t-lead" data-i18n="in_p">فقط ما يدعمه CTMS اليوم — دون وعود غير مؤكدة.</p>
+    </div>
+    <div class="int-grid">
+      <div class="card int reveal"><span class="logo" style="color:#1FA855"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg></span><div><h4 data-i18n="in1">واتساب</h4><p data-i18n="in1p">تذكيرات المواعيد وإشعارات المرضى تُرسل من CTMS.</p></div></div>
+      <div class="card int reveal d1"><span class="logo"><svg class="ico"><use href="#i-card"/></svg></span><div><h4 data-i18n="in2">كي‑نت والبطاقة والنقد</h4><p data-i18n="in2p">طرق دفع قابلة للإعداد مع تقسيم الدفع ومطابقة يومية.</p></div></div>
+      <div class="card int reveal d2"><span class="logo"><svg class="ico"><use href="#i-printer"/></svg></span><div><h4 data-i18n="in3">طابعات الإيصالات الحرارية</h4><p data-i18n="in3p">اطبع الإيصالات على طابعات حرارية ٨٠ ملم بتخطيط قابل للتعديل.</p></div></div>
+      <div class="card int reveal"><span class="logo"><svg class="ico"><use href="#i-pdf"/></svg></span><div><h4 data-i18n="in4">PDF</h4><p data-i18n="in4p">فواتير ووصفات وقسائم رواتب وتقارير بصيغة PDF نظيفة وقابلة للطباعة.</p></div></div>
+      <div class="card int reveal d1"><span class="logo"><svg class="ico"><use href="#i-sheet"/></svg></span><div><h4 data-i18n="in5">Excel / CSV</h4><p data-i18n="in5p">صدّر التقارير وقوائم المرضى، واستورد بيانات المرضى الحالية من جداول البيانات.</p></div></div>
+      <div class="card int ask reveal d2"><span class="logo"><svg class="ico"><use href="#i-plug"/></svg></span><div><h4 data-i18n="in6">المحاسبة والبريد وواجهات API</h4><p data-i18n="in6p">تحتاج ربطاً بنظام آخر؟ أخبرنا بمتطلباتك وسنحدد النطاق معك.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 14. REPORTS & BI ============================ -->
+<section class="section" style="background:var(--surface-2);border-block:1px solid var(--line)" id="reports">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="rp_eb">التقارير وذكاء الأعمال</span>
+      <h2 class="t-h2" data-i18n="rp_h2">قرارات مبنية على أرقام يمكنك الوثوق بها.</h2>
+      <p class="t-lead" data-i18n="rp_p">لأن كل معاملة موجودة في نظام واحد، يتفق كل تقرير مع الآخر.</p>
+    </div>
+    <div class="bento">
+      <div class="o-tile b-pl reveal">
+        <h4><span data-i18n="rp_pl">الأرباح والخسائر</span><span class="badge" data-i18n="rp_sep">سبتمبر ٢٠٢٦</span></h4>
+        <table class="pl-tbl">
+          <tr><td data-i18n="pl1">إيراد الخدمات</td><td class="r">49,860.000</td></tr>
+          <tr><td data-i18n="pl2">مبيعات الصيدلية</td><td class="r">8,070.000</td></tr>
+          <tr class="sub"><td data-i18n="pl3">إجمالي الإيراد</td><td class="r">57,930.000</td></tr>
+          <tr class="ind"><td data-i18n="pl4">تكلفة البضاعة المباعة</td><td class="r">(9,480.000)</td></tr>
+          <tr class="sub"><td data-i18n="pl5">مجمل الربح</td><td class="r">48,450.000</td></tr>
+          <tr class="ind"><td data-i18n="pl6">الرواتب</td><td class="r">(17,380.000)</td></tr>
+          <tr class="ind"><td data-i18n="pl7">الإيجار والمرافق</td><td class="r">(10,270.000)</td></tr>
+          <tr class="ind"><td data-i18n="pl8">مصروفات أخرى</td><td class="r">(2,380.000)</td></tr>
+          <tr class="tot"><td data-i18n="pl9">صافي الربح</td><td class="r">KWD 18,420.000</td></tr>
+        </table>
+      </div>
+      <div class="o-tile b-doc reveal d1">
+        <h4 data-i18n="rp_daily">المبيعات اليومية</h4>
+        <svg class="chart" viewBox="0 0 420 120" style="margin-top:12px" aria-hidden="true">
+          <g class="bars">
+            <rect x="4" y="60" width="18" height="50" rx="3" fill="var(--c3)"/><rect x="32" y="48" width="18" height="62" rx="3" fill="var(--c3)"/><rect x="60" y="56" width="18" height="54" rx="3" fill="var(--c3)"/><rect x="88" y="40" width="18" height="70" rx="3" fill="var(--c3)"/><rect x="116" y="30" width="18" height="80" rx="3" fill="var(--c3)"/><rect x="144" y="70" width="18" height="40" rx="3" fill="var(--c3)"/><rect x="172" y="46" width="18" height="64" rx="3" fill="var(--c3)"/><rect x="200" y="38" width="18" height="72" rx="3" fill="var(--c3)"/><rect x="228" y="50" width="18" height="60" rx="3" fill="var(--c3)"/><rect x="256" y="34" width="18" height="76" rx="3" fill="var(--c3)"/><rect x="284" y="26" width="18" height="84" rx="3" fill="var(--c3)"/><rect x="312" y="66" width="18" height="44" rx="3" fill="var(--c3)"/><rect x="340" y="36" width="18" height="74" rx="3" fill="var(--c3)"/><rect x="368" y="20" width="18" height="90" rx="3" fill="var(--c1)"/><rect x="396" y="44" width="18" height="66" rx="3" fill="var(--c3)" opacity=".45"/>
+          </g>
+          <line class="gl" x1="0" x2="420" y1="110" y2="110"/>
+        </svg>
+      </div>
+      <div class="o-tile b-pay reveal d2">
+        <h4 data-i18n="rp_pay">تحليل المدفوعات</h4>
+        <div class="stack-bar" style="height:18px"><i style="width:52%;background:var(--c1)"></i><i style="width:27%;background:var(--c2)"></i><i style="width:15%;background:var(--c4)"></i><i style="width:6%;background:var(--c5)"></i></div>
+        <div class="leg" style="margin-top:12px;font-size:.82rem;gap:8px 16px"><span><i style="background:var(--c1)"></i>KNET 52%</span><span><i style="background:var(--c2)"></i><span data-i18n="pm_card">بطاقة</span>&nbsp;27%</span><span><i style="background:var(--c4)"></i><span data-i18n="pm_cash">نقداً</span>&nbsp;15%</span><span><i style="background:var(--c5)"></i><span data-i18n="pm_ins">تأمين</span>&nbsp;6%</span></div>
+      </div>
+      <div class="o-tile b-daily reveal">
+        <h4 data-i18n="rp_inv">حركة المخزون</h4>
+        <table class="ui-tbl" style="font-size:.84rem;margin-top:10px">
+          <thead><tr><th data-i18n="im_item">الصنف</th><th class="r" data-i18n="im_open">الافتتاحي</th><th class="r" data-i18n="im_in">وارد</th><th class="r" data-i18n="im_out">صادر</th><th class="r" data-i18n="im_close">الختامي</th></tr></thead>
+          <tbody>
+            <tr><td data-i18n="it1">أموكسيسيلين ٥٠٠ ملغ</td><td class="r">140</td><td class="r">0</td><td class="r">128</td><td class="r"><span class="pill warn">12</span></td></tr>
+            <tr><td data-i18n="it2">خرطوشة ليدوكايين ٢٪</td><td class="r">300</td><td class="r">200</td><td class="r">164</td><td class="r">336</td></tr>
+            <tr><td data-i18n="it3">فيلر هيالورونيك ١مل</td><td class="r">24</td><td class="r">12</td><td class="r">19</td><td class="r">17</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="o-tile b-inv reveal d1">
+        <h4 data-i18n="rp_val">تقييم المخزون</h4>
+        <b style="display:block;font-size:1.7rem;font-weight:650;letter-spacing:-.03em;color:var(--ink);margin-top:10px">KWD 22,780</b>
+        <div class="t-small" data-i18n="rp_vals">بالتكلفة، كل الفروع</div>
+        <div class="stack-bar"><i style="width:43%;background:var(--c1)"></i><i style="width:31%;background:var(--c3)"></i><i style="width:26%;background:var(--c5)"></i></div>
+      </div>
+    </div>
+    <div class="rep-lib reveal">
+      <span class="chip"><svg class="ico"><use href="#i-ledger"/></svg><span data-i18n="rl1">الأرباح والخسائر</span></span>
+      <span class="chip"><svg class="ico"><use href="#i-steth"/></svg><span data-i18n="rl2">الإيراد حسب الطبيب</span></span>
+      <span class="chip"><svg class="ico"><use href="#i-clip"/></svg><span data-i18n="rl3">الإيراد حسب الخدمة</span></span>
+      <span class="chip"><svg class="ico"><use href="#i-branch"/></svg><span data-i18n="rl4">أداء الفروع</span></span>
+      <span class="chip"><svg class="ico"><use href="#i-users"/></svg><span data-i18n="rl5">إحصاءات المرضى</span></span>
+      <span class="chip"><svg class="ico"><use href="#i-box"/></svg><span data-i18n="rl6">حركة المخزون</span></span>
+      <span class="chip"><svg class="ico"><use href="#i-coins"/></svg><span data-i18n="rl7">تقييم المخزون</span></span>
+      <span class="chip"><svg class="ico"><use href="#i-payroll"/></svg><span data-i18n="rl8">تحليل الرواتب</span></span>
+      <span class="chip"><svg class="ico"><use href="#i-wallet"/></svg><span data-i18n="rl9">تحليل المصروفات</span></span>
+      <span class="chip"><svg class="ico"><use href="#i-chart"/></svg><span data-i18n="rl10">المبيعات اليومية</span></span>
+      <span class="chip"><svg class="ico"><use href="#i-card"/></svg><span data-i18n="rl11">تحليل المدفوعات</span></span>
+    </div>
+    <div class="exp-row reveal"><span data-i18n="rp_exp">كل تقرير يُصدّر إلى</span><span class="badge"><svg class="ico" style="width:14px;height:14px"><use href="#i-pdf"/></svg>PDF</span><span class="badge"><svg class="ico" style="width:14px;height:14px"><use href="#i-sheet"/></svg>Excel / CSV</span><span class="badge"><svg class="ico" style="width:14px;height:14px"><use href="#i-printer"/></svg><span data-i18n="rp_print">طباعة</span></span></div>
+  </div>
+</section>
+
+<!-- ============================ 15. WHY CTMS ============================ -->
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="wy_eb">لماذا CTMS</span>
+      <h2 class="t-h2" data-i18n="wy_h2">أربعة أسباب تختار العيادات CTMS.</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why"><span class="n">01</span><h3 data-i18n="wy1">عمليات مترابطة</h3><p data-i18n="wy1p">الاستقبال والأطباء والصيدلية والمخزون والرواتب تتشارك سجلاً واحداً. لا شيء يُدخل مرتين ولا شيء يخرج عن التزامن.</p></div>
+      <div class="why"><span class="n">02</span><h3 data-i18n="wy2">ذكاء مالي</h3><p data-i18n="wy2p">كل خدمة وبيع ومرتجع وراتب ينساب مباشرةً إلى الأرباح والخسائر — لكل طبيب وخدمة وفرع، في اليوم نفسه.</p></div>
+      <div class="why"><span class="n">03</span><h3 data-i18n="wy3">ملاءمة خليجية</h3><p data-i18n="wy3p">واجهة عربية RTL والرقم المدني ودقة الدينار وكي‑نت وممارسات الرواتب المحلية — مدمجة لا مضافة.</p></div>
+      <div class="why"><span class="n">04</span><h3 data-i18n="wy4">ملكية البيانات</h3><p data-i18n="wy4p">شغّله على خادمك أو سحابة خاصة. النسخ المشفّرة والاستعادة الكاملة تبقي سجلاتك بين يديك.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 16. CUSTOMER PROOF (placeholders) ============================ -->
+<!-- TODO: replace placeholders with verified logos, statistics and testimonials. Do not publish invented figures. -->
+<section class="section" style="padding-top:0" id="customers">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="pf_eb">العملاء</span>
+      <h2 class="t-h2" data-i18n="pf_h2">نستقبل الآن العيادات المؤسِّسة.</h2>
+      <p class="t-lead" data-i18n="pf_p">عيادات في الكويت تدير عملياتها بالفعل على CTMS.</p>
+    </div>
+    <!-- Founding clinics: drop logo files into assets/clients/ and swap the .cl-name span for <img src="../assets/clients/…" alt="…"> -->
+    <div class="proof-logos reveal" aria-label="Founding clinics using CTMS">
+      <div class="cl"><img src="../assets/clients/al-taqi-clinic.webp" alt="Al Taqi Clinic" width="1254" height="1254" loading="lazy" decoding="async"><small data-i18n="pf_tag">عيادة مؤسِّسة</small></div>
+      <div class="cl"><img src="../assets/clients/sky-skin-care.webp" alt="Sky Skin Care" width="1370" height="1149" loading="lazy" decoding="async"><small data-i18n="pf_tag">عيادة مؤسِّسة</small></div>
+      <button class="cl cl-next" type="button" data-demo data-kind="founding"><span class="cl-plus"><svg class="ico"><use href="#i-plus"/></svg></span><small data-i18n="pf_next">عيادتك التالية</small></button>
+    </div>
+    <div class="proof-stats reveal">
+      <div><b>—</b><span data-i18n="pf_s1">عيادات عاملة</span></div>
+      <div><b>—</b><span data-i18n="pf_s2">فروع مُدارة</span></div>
+      <div><b>—</b><span data-i18n="pf_s3">معاملات منجزة</span></div>
+      <div><b>—</b><span data-i18n="pf_s4">متوسط زمن الدعم</span></div>
+    </div>
+    <div class="proof-q reveal">
+      <svg class="ico"><use href="#i-quote"/></svg>
+      <p data-i18n="pf_q">ستظهر هنا شهادة من عيادة موثّقة تستخدم CTMS.</p>
+      <button class="btn btn-secondary btn-sm" type="button" data-demo data-kind="founding" data-i18n="pf_cta">انضم كعيادة مؤسِّسة</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 17. PRICING ============================ -->
+<section class="section" style="padding-top:0" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="pr_eb">الأسعار</span>
+      <h2 class="t-h2" data-i18n="pr_h2">خطط بسيطة. قدرات جادّة.</h2>
+      <p class="t-lead" data-i18n="pr_p">كل خطة تشمل العربية والإنجليزية والنسخ الاحتياطي المشفّر والصلاحيات حسب الدور والتهيئة والدعم المحلي.</p>
+    </div>
+    <div class="bill-row reveal">
+      <div class="seg" role="tablist" aria-label="Billing period" id="billSeg">
+        <button type="button" role="tab" data-mode="m" aria-selected="false" data-i18n="bill_m">شهري</button>
+        <button type="button" role="tab" data-mode="y" aria-selected="true"><span data-i18n="bill_y">سنوي</span><span class="save" data-i18n="bill_save">−٢٠٪</span></button>
+      </div>
+      <label class="sr-only" for="curSel">Currency</label>
+      <select id="curSel" class="select"></select>
+    </div>
+    <div class="plans">
+      <div class="card plan reveal">
+        <div class="pn" data-i18n="p1n">المبتدئة</div>
+        <div class="pd" data-i18n="p1d">لطبيب فردي أو عيادة جديدة.</div>
+        <div class="cost" data-m="29"><span class="cur">KWD</span><span class="amt">29</span><small data-i18n="per_mo">/ شهرياً</small></div>
+        <div class="bill"></div>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p1a">المرضى والمواعيد والوصفات</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p1b">الفوترة والإيصالات</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p1c">تقارير الإيراد اليومية</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p1e">موقع واحد · حتى ٣ مستخدمين</span></li>
+        </ul>
+        <button class="btn btn-secondary btn-block" type="button" data-demo data-kind="Starter" data-i18n="cta_demo">احجز عرضاً</button>
+      </div>
+      <div class="card plan feat reveal d1">
+        <span class="tag" data-i18n="p_pop">الأكثر اختياراً</span>
+        <div class="pn" data-i18n="p2n">العيادة</div>
+        <div class="pd" data-i18n="p2d">الحزمة الكاملة لعيادة مزدحمة بفرع واحد.</div>
+        <div class="cost" data-m="49"><span class="cur">KWD</span><span class="amt">49</span><small data-i18n="per_mo">/ شهرياً</small></div>
+        <div class="bill"></div>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2a">كل ما في المبتدئة</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2b">الصيدلية والمخزون والمشتريات</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2c">أرباح وخسائر وتقارير مالية كاملة</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2d2">صلاحيات حسب الدور</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p2e">مستخدمون بلا حدود</span></li>
+        </ul>
+        <button class="btn btn-primary btn-block" type="button" data-demo data-kind="Clinic" data-i18n="cta_demo">احجز عرضاً</button>
+      </div>
+      <div class="card plan reveal d2">
+        <div class="pn" data-i18n="p3n">متعدد الفروع</div>
+        <div class="pd" data-i18n="p3d">للمجموعات التي تدير موقعين أو أكثر.</div>
+        <div class="cost" data-m="79"><span class="cur">KWD</span><span class="amt">79</span><small data-i18n="per_mo">/ شهرياً</small></div>
+        <div class="bill"></div>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p3a">كل ما في العيادة</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p3b">مخزون وأرباح لكل فرع</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p3c">لوحة موحّدة للمالك</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p3e">صلاحيات حسب الموقع</span></li>
+        </ul>
+        <button class="btn btn-secondary btn-block" type="button" data-demo data-kind="Multi-Branch" data-i18n="cta_demo">احجز عرضاً</button>
+      </div>
+      <div class="card plan ent reveal d3">
+        <div class="pn" data-i18n="p4n">المؤسسات</div>
+        <div class="pd" data-i18n="p4d">للمراكز الطبية والمجموعات الصحية ذات الاحتياجات المعقدة.</div>
+        <div class="cost"><span class="amt" data-i18n="p4c">مخصص</span></div>
+        <div class="bill" data-i18n="p4b">عرض مصمّم لك</div>
+        <ul>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p4a">خادم خاص أو تشغيل محلي</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p4bb">نقل البيانات وتدريب الموظفين</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p4cc">دعم بأولوية</span></li>
+          <li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="p4dd">دراسة تكاملات مخصصة</span></li>
+        </ul>
+        <button class="btn btn-primary btn-block" type="button" data-demo data-kind="proposal" data-i18n="cta_proposal">اطلب عرض سعر</button>
+      </div>
+    </div>
+    <div class="card addon reveal">
+      <span class="icon-tile"><svg class="ico"><use href="#i-payroll"/></svg></span>
+      <div class="txt"><b><span data-i18n="ad_n">الرواتب</span><span class="badge brand" data-i18n="ad_t">إضافة</span></b><p data-i18n="ad_p">دورات الرواتب والبدلات والخصومات والإجازات والقسائم — تُضاف إلى أي خطة.</p></div>
+      <div class="ap" data-m="15"><span class="cur">KWD</span> <span class="amt">15</span> <small data-i18n="per_mo">/ شهرياً</small></div>
+    </div>
+    <p class="price-note" data-i18n="pr_note">الأسعار لكل عيادة بالدينار الكويتي. العملات الأخرى تقريبية. الدفع السنوي يوفّر ٢٠٪.</p>
+  </div>
+</section>
+
+<!-- ============================ 18. FAQ ============================ -->
+<section class="section" style="padding-top:0" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-side reveal">
+      <span class="eyebrow" data-i18n="fq_eb">الموارد · الأسئلة الشائعة</span>
+      <h2 class="t-h2" style="margin-top:14px" data-i18n="fq_h2">أسئلة وأجوبة.</h2>
+      <p style="margin-top:16px" data-i18n="fq_p">لم تجد ما تبحث عنه؟ فريقنا في الكويت سيشرح لك كل شيء.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+        <button class="btn btn-primary" type="button" data-demo data-i18n="cta_live">احجز عرضاً حياً</button>
+        <a class="btn btn-secondary" href="https://wa.me/96597977275" target="_blank" rel="noopener" data-i18n="fq_wa">راسلنا على واتساب</a>
+      </div>
+    </div>
+    <div class="acc reveal" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ============================ 19. FINAL CTA ============================ -->
+<section class="wrap" id="contact">
+  <div class="final reveal">
+    <span class="eyebrow" style="color:#c9b6ff" data-i18n="fc_eb">ابدأ الآن</span>
+    <h2 class="t-h2" style="margin-top:16px" data-i18n="fc_h2">شاهد عيادتك بالكامل في نظام واحد.</h2>
+    <p data-i18n="fc_p">اكتشف كيف يربط CTMS مرضاك وأطباءك والاستقبال والمخزون والمالية والإدارة.</p>
+    <div class="ctas">
+      <button class="btn btn-light btn-lg" type="button" data-demo><span data-i18n="cta_live">احجز عرضاً حياً</span><svg class="ico arr"><use href="#i-arrow"/></svg></button>
+      <button class="btn btn-outline-light btn-lg" type="button" data-demo data-kind="proposal" data-i18n="cta_proposal">اطلب عرض سعر</button>
+    </div>
+    <div class="contact">
+      <a href="mailto:info@appscrafter.com"><svg class="ico"><use href="#i-mail"/></svg>info@appscrafter.com</a>
+      <a href="tel:+96597977275" dir="ltr"><svg class="ico"><use href="#i-phone"/></svg>+965 9797 7275</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================ 20. FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg><span class="bt">CTMS<small data-i18n="ft_full">نظام الإدارة الشاملة للعيادات</small></span></a>
+        <p data-i18n="ft_tag">نظام تشغيل العيادات في الكويت والخليج — المرضى والعمليات والمالية في منصة واحدة.</p>
+      </div>
+      <div class="foot-col"><h5 data-i18n="nav_platform">المنصة</h5><a href="#platform" data-i18n="ft_wf">سير العمل المترابط</a><a href="#owner" data-i18n="ft_owner">لوحة المالك</a><a href="#reports" data-i18n="ft_reports">التقارير وذكاء الأعمال</a><a href="#deployment" data-i18n="ft_dep">التشغيل</a></div>
+      <div class="foot-col"><h5 data-i18n="nav_modules">الوحدات</h5><a href="#modules" data-i18n="m_appt">المواعيد</a><a href="#modules" data-i18n="m_emr">المرضى والسجل الطبي</a><a href="#modules" data-i18n="m_pharm">الصيدلية</a><a href="#modules" data-i18n="m_fin">المالية</a><a href="#modules" data-i18n="m_pay">الرواتب</a></div>
+      <div class="foot-col"><h5 data-i18n="nav_solutions">الحلول</h5><a href="#roles" data-i18n="ft_roles">حسب الدور</a><a href="#gulf" data-i18n="ft_gulf">عيادات الخليج</a><a href="#security" data-i18n="nav_security">الأمان</a><a href="#integrations" data-i18n="nav_integrations">التكاملات</a><a href="#pricing" data-i18n="nav_pricing">الأسعار</a></div>
+      <div class="foot-col"><h5 data-i18n="ft_res">الموارد</h5><a href="#faq" data-i18n="ft_faq">الأسئلة الشائعة</a><a href="../design-system.html" data-i18n="ft_ds">نظام التصميم</a><a href="https://wa.me/96597977275" target="_blank" rel="noopener" data-i18n="ft_support">الدعم</a></div>
+      <div class="foot-col"><h5 data-i18n="ft_company">الشركة</h5><a href="#why" data-i18n="ft_about">عن CTMS</a><a href="#contact" data-i18n="ft_contact">تواصل معنا</a><a href="mailto:info@appscrafter.com">info@appscrafter.com</a><a href="tel:+96597977275" dir="ltr" style="text-align:start">+965 9797 7275</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr">2026</span> <span data-i18n="ft_copy">CTMS — نظام الإدارة الشاملة للعيادات</span> · <span class="powered"><span data-i18n="ft_pow">بدعم من</span> <svg class="ac-logo" viewBox="0 0 774 190" role="img" aria-label="AppsCrafter"><path d="M4 148 C34 126 74 130 116 150 C86 168 40 170 4 154 Z" fill="#c3e8f9" opacity=".65"/><rect x="16" y="19" width="106" height="152" rx="24" fill="currentColor"/><rect x="52" y="34" width="34" height="7" rx="3.5" fill="#3a3a3a"/><path d="M69 55 L104 157" fill="none" stroke="#1596d6" stroke-width="21" stroke-linecap="round"/><path d="M69 55 L34 157" fill="none" stroke="#4fc1ef" stroke-width="21" stroke-linecap="round"/><path d="M46 123 L92 123" fill="none" stroke="#1596d6" stroke-width="18" stroke-linecap="round"/><text x="132" y="137"><tspan fill="currentColor">pps</tspan><tspan fill="#f5871f">Crafter</tspan></text></svg></span></span>
+      <nav aria-label="Legal"><a href="../privacy.html" data-i18n="ft_priv">سياسة الخصوصية</a><a href="../terms.html" data-i18n="ft_terms">الشروط</a><a href="https://wa.me/96597977275" target="_blank" rel="noopener" data-i18n="ft_support">الدعم</a></nav>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/96597977275?text=Hi%2C%20I'd%20like%20a%20demo%20of%20CTMS." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg><span data-i18n="wa">تواصل معنا</span></a>
+
+<!-- ============================ DEMO MODAL ============================ -->
+<div class="modal" id="demoModal" aria-hidden="true">
+  <div class="modal-scrim" data-close-modal></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mdTitle">
+    <div class="modal-head">
+      <div><span class="eyebrow" id="mdEb" data-i18n="md_eb">عرض حي</span><h3 class="t-h3" style="margin-top:8px" id="mdTitle" data-i18n="md_h">شاهد CTMS على عيادة مثل عيادتك.</h3><p class="t-small" style="margin:8px 0 0" data-i18n="md_p">جولة لمدة ٣٠ دقيقة مصمّمة لأقسامك. نرد خلال يوم عمل واحد.</p></div>
+      <button class="modal-x" type="button" data-close-modal aria-label="Close"><svg class="ico"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <form id="demoForm" novalidate>
+        <div class="form-grid" id="formFields">
+          <input type="hidden" name="request" id="f-kind" value="Demo">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+          <div class="field"><label for="f-name" data-i18n="f_name">الاسم الكامل</label><input class="input" id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-clinic" data-i18n="f_clinic">اسم العيادة / المجموعة</label><input class="input" id="f-clinic" name="clinic" autocomplete="organization" required></div>
+          <div class="field"><label for="f-email" data-i18n="f_email">البريد الإلكتروني للعمل</label><input class="input" id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone"><span data-i18n="f_phone">الهاتف / واتساب</span> <span class="opt" data-i18n="f_opt">(اختياري)</span></label><input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel" dir="ltr"></div>
+          <div class="field"><label for="f-branches" data-i18n="f_branches">عدد الفروع</label><select class="select" id="f-branches" name="branches"><option value="1">1</option><option value="2-3">2–3</option><option value="4-9">4–9</option><option value="10+">10+</option></select></div>
+          <div class="field"><label for="f-role" data-i18n="f_role">دورك</label><select class="select" id="f-role" name="role"><option value="Owner" data-i18n="fr1">المالك / المدير</option><option value="Manager" data-i18n="fr2">مدير العيادة</option><option value="Doctor" data-i18n="fr3">طبيب</option><option value="Finance" data-i18n="fr4">المالية</option><option value="Other" data-i18n="fr5">أخرى</option></select></div>
+          <div class="field full"><label for="f-msg"><span data-i18n="f_msg">ما الذي تود رؤيته؟</span> <span class="opt" data-i18n="f_opt">(اختياري)</span></label><textarea class="textarea" id="f-msg" name="message"></textarea></div>
+          <div class="full"><button class="btn btn-primary btn-block btn-lg" type="submit" data-i18n="f_submit">اطلب العرض الحي</button><p class="form-note" style="margin:10px 0 0;text-align:center" data-i18n="f_note">نستخدم بياناتك فقط لترتيب العرض.</p></div>
+        </div>
+        <div class="form-ok" id="formOk" role="status">
+          <div class="ck"><svg class="ico"><use href="#i-check"/></svg></div>
+          <h3 class="t-h3" data-i18n="ok_h">تم استلام طلبك.</h3>
+          <p data-i18n="ok_p">شكراً لك — سيتواصل فريقنا معك خلال يوم عمل واحد لتحديد موعد الجلسة.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

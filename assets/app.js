@@ -401,12 +401,19 @@ function applyLang(lang,first){
   root.setAttribute('lang',lang);root.setAttribute('dir',ar?'rtl':'ltr');
   $$('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');var v=ar?(AR[k]||EN[k]):EN[k];if(v!=null&&el.textContent!==v)el.textContent=v;});
   $$('[data-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===lang?'true':'false');});
-  document.title=ar?'CTMS — نظام الإدارة الشاملة للعيادات':'CTMS — Clinic Top Management System';
+  if(!root.getAttribute('data-page-lang'))document.title=ar?'CTMS — نظام الإدارة الشاملة للعيادات':'CTMS — Clinic Top Management System';
   refreshP();refreshD();
   renderWF();renderMX();renderRO();renderFAQ();renderPricing();updatePlayBtn();
   if(!first){store.set('ctms-lang',lang);}
   observeReveal();
 }
-$$('[data-lang]').forEach(function(b){b.addEventListener('click',function(){if(b.getAttribute('data-lang')!==LANG)applyLang(b.getAttribute('data-lang'));});});
+// English lives at / and Arabic at /ar/ (separate URLs so search engines index both).
+$$('[data-lang]').forEach(function(b){b.addEventListener('click',function(){
+  var to=b.getAttribute('data-lang');if(to===LANG)return;
+  store.set('ctms-lang',to);
+  var page=root.getAttribute('data-page-lang');
+  if(page){location.href=(to==='ar'?'ar/':'../')+location.hash;return;}
+  applyLang(to);
+});});
 applyLang(LANG,true);
 })();
