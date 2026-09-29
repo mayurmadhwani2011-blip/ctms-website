@@ -375,6 +375,15 @@ html[lang="ar"] .cl small{letter-spacing:0}
 @media (max-width:1100px){.plans{grid-template-columns:1fr 1fr}}
 @media (max-width:600px){.plans{grid-template-columns:1fr}}
 
+/* ---------- Kuwait block ---------- */
+.kw{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.kw .t-body{margin:14px 0 0}
+.kw-list{list-style:none;padding:0;margin:14px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+.kw-list li{display:flex;gap:8px;align-items:baseline;color:var(--ink-2);font-size:.94rem}
+.kw-list li::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--brand);flex:none;transform:translateY(-2px)}
+@media (max-width:860px){.kw{grid-template-columns:1fr}}
+@media (max-width:420px){.kw-list{grid-template-columns:1fr}}
+
 /* ---------- FAQ ---------- */
 .faq-grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(24px,5vw,72px);align-items:start}
 .faq-side{position:sticky;top:110px}
