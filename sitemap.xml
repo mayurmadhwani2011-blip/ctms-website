@@ -16,6 +16,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url><loc>https://ctms.website/payroll/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ctms.website/privacy.html</loc><priority>0.3</priority></url>
   <url><loc>https://ctms.website/terms.html</loc><priority>0.3</priority></url>
 </urlset>
