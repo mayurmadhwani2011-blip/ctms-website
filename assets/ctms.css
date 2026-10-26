@@ -355,3 +355,36 @@ html[lang="ar"] .ui{font-size:12.5px}
 .tg.on{background:var(--brand)}
 .tg.on::after{inset-inline-start:12px}
 @media (max-width:720px){.ui-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.ui-row,.ui-row.eq,.ui-row.r3{grid-template-columns:1fr}.ui-body{grid-template-columns:1fr}.ui-side{display:none}.ui-search{display:none}.ui-main{padding:12px}}
+
+/* ---------- Product UI kit: readability pass (laptop & desktop) ----------
+   The mock screens were drawn at real-app density (10–12px), which reads as "shrunk"
+   inside a 1100px frame. On wider screens scale type and controls up ~15%. */
+@media (min-width:900px){
+  .ui{font-size:14px}
+  .ui-top{height:52px;padding-inline:16px;gap:14px}
+  .ui-top .ui-logo{font-size:14.5px}.ui-top .ui-logo svg{width:24px;height:24px}
+  .ui-branch,.ui-search{height:32px;font-size:12.5px}
+  .ui-av{width:32px;height:32px;font-size:11.5px}
+  .ui-body{grid-template-columns:58px 1fr}
+  .ui-side i{width:36px;height:36px}.ui-side i svg{width:18px;height:18px}
+  .ui-main{padding:20px;gap:14px}
+  .ui-h b{font-size:17px}.ui-h small{font-size:12.5px}
+  .ui-card{padding:14px}
+  .ui-card h5{font-size:13px;margin-bottom:10px}
+  .ui-kpis{gap:12px}
+  .ui-kpi{padding:12px 14px}
+  .ui-kpi span{font-size:12px}.ui-kpi b{font-size:20px;margin-top:4px}.ui-kpi em{font-size:11.5px}
+  .ui-tbl{font-size:13px}.ui-tbl th{font-size:11.5px;padding:8px 10px}.ui-tbl td{padding:9px 10px}
+  .pill{height:23px;font-size:11.5px;padding-inline:9px}
+  .ui-li{padding:9px 4px}
+  .ui-li .av{width:28px;height:28px;font-size:10.5px}
+  .ui-li .tx b{font-size:13px}.ui-li .tx small{font-size:11.5px}
+  .ui-hb{font-size:12.5px;grid-template-columns:104px 1fr 70px}
+  .ui-bar{height:7px}
+  .ui-btn{height:30px;font-size:12px;padding-inline:12px}
+  .ui-field span{font-size:11px}.ui-field div{height:32px;font-size:13px}
+  .chart text{font-size:10.5px}
+  .leg{font-size:12px}
+  .ui-cal{font-size:12px}.ui-cal .hd{padding:8px}.ui-cal .tm,.ui-cal .cl{height:38px}.ui-cal .ev{font-size:11px;padding:4px 7px}
+  .ui-perm{font-size:12.5px}.ui-perm>div{padding:8px 10px}.ui-perm .ph{font-size:11px}
+}

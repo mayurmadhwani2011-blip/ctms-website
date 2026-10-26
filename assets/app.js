@@ -34,7 +34,8 @@ $$('[data-close-menu]').forEach(function(el){el.addEventListener('click',functio
 var navLinks=$$('.nav-links a');
 if('IntersectionObserver' in window){
   var secIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id='#'+e.target.id;navLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')===id);});}});},{rootMargin:'-45% 0px -50% 0px'});
-  navLinks.forEach(function(a){var s=$(a.getAttribute('href'));if(s)secIO.observe(s);});
+  // watch every top-level section, so scrolling into one with no menu item clears the highlight
+  $$('main > section[id], main > div[id]').forEach(function(s){secIO.observe(s);});
 }
 
 /* =============================== Reveal =============================== */

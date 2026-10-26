@@ -170,12 +170,12 @@ html[lang="ar"] .mx-benefit b{letter-spacing:0}
 /* ---------- New in CTMS ---------- */
 .nw-hero{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .nw-card{overflow:hidden;display:flex;flex-direction:column;padding:0}
-.nw-vis{height:300px;background:linear-gradient(180deg,var(--brand-soft),var(--surface-2));border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:center;padding:14px 16px 0;overflow:hidden}
+.nw-vis{height:330px;background:linear-gradient(180deg,var(--brand-soft),var(--surface-2));border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:center;padding:14px 16px 0;overflow:hidden}
 .nw-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
 .nw-body .badge{align-self:flex-start}
 .nw-body p{margin:0;color:var(--muted);font-size:.93rem}
 .nw-body .nw-note{margin-top:auto;padding-top:6px;font-size:.8rem;color:var(--faint)}
-.phone{width:210px;height:286px;border-radius:30px 30px 0 0;border:7px solid var(--ink);border-bottom:0;background:var(--surface);box-shadow:var(--shadow-lg);overflow:hidden;font-size:11px;color:var(--ink-2)}
+.phone{width:236px;height:316px;border-radius:30px 30px 0 0;border:7px solid var(--ink);border-bottom:0;background:var(--surface);box-shadow:var(--shadow-lg);overflow:hidden;font-size:12px;color:var(--ink-2)}
 .ph-bar{display:flex;align-items:center;gap:7px;padding:12px 12px 10px;border-bottom:1px solid var(--line-2)}
 .ph-bar svg{width:20px;height:20px;border-radius:6px;flex:none}
 .ph-bar b{font-size:11.5px;color:var(--ink);font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -367,9 +367,9 @@ html[dir="rtl"] .why{padding:28px 0 8px 24px}
 @media (max-width:560px){.why-grid{grid-template-columns:1fr}.why+.why{border-inline-start:0;padding-inline-start:0}}
 
 /* ---------- Proof (placeholders) ---------- */
-.proof-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:900px;margin-inline:auto}
-.cl{height:144px;border-radius:18px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-xs);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px}
-.cl img{height:92px;max-width:80%;width:auto;object-fit:contain;border-radius:10px}
+.proof-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1000px;margin-inline:auto}
+.cl{height:200px;border-radius:18px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-xs);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px}
+.cl img{height:140px;max-width:80%;width:auto;object-fit:contain;border-radius:10px}
 /* client logos ship on white backgrounds: blend into the light card, sit on a white chip in dark mode */
 :root:not([data-theme="dark"]) .cl img{mix-blend-mode:multiply}
 :root[data-theme="dark"] .cl img{background:#fff;padding:4px 10px}
@@ -382,7 +382,7 @@ html[lang="ar"] .cl small{letter-spacing:0}
 .cl-next small{color:var(--muted)}
 .cl-plus{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--brand-soft);color:var(--brand)}
 .cl-plus svg{width:18px;height:18px}
-@media (max-width:600px){.proof-logos{grid-template-columns:1fr 1fr}.cl-next{grid-column:1/-1;height:88px}}
+@media (max-width:600px){.proof-logos{grid-template-columns:1fr 1fr}.cl{height:150px}.cl img{height:100px}.cl-next{grid-column:1/-1;height:88px}}
 .proof-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}
 .proof-stats div{padding:22px;border-radius:16px;border:1px solid var(--line);background:var(--surface)}
 .proof-stats b{display:block;font-size:1.8rem;font-weight:650;color:var(--line-strong);letter-spacing:-.03em;line-height:1}
