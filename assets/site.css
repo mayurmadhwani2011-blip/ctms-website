@@ -519,3 +519,6 @@ html[lang="ar"] .nw-more-lbl{letter-spacing:0}
 @media (max-width:980px){.bento2{grid-template-columns:1fr 1fr}.bx-wide{grid-column:1/-1}}
 @media (max-width:620px){.bento2{grid-template-columns:1fr}.bx{min-height:0}.flow span+span{margin-inline-start:0}.flow span+span::before{display:none}.flow{gap:8px}}
 @media (max-width:1020px){.foot-grid{grid-template-columns:1fr 1fr 1fr}.foot-brand{grid-column:1/-1}}
+.flow.rep span+span{margin-inline-start:0}
+.flow.rep span+span::before{display:none}
+.flow.rep{gap:8px}

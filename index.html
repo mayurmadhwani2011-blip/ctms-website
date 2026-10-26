@@ -31,8 +31,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/ctms.css?v=202610261927">
-<link rel="stylesheet" href="assets/site.css?v=202610261927">
+<link rel="stylesheet" href="assets/ctms.css?v=202610261931">
+<link rel="stylesheet" href="assets/site.css?v=202610261931">
 <script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('ctms-theme');if(t)document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('ctms-lang')==='ar'&&!/[?&]lang=en/.test(location.search))location.replace('ar/'+location.hash);}catch(e){}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CTMS — Clinic Top Management System","applicationCategory":"BusinessApplication","applicationSubCategory":"Clinic management software","operatingSystem":"Windows, Web browser","inLanguage":["en","ar"],"description":"Clinic operating system for Kuwait and the GCC: appointments, patient records, billing, pharmacy, inventory, payroll, finance and multi-branch reporting.","url":"https://ctms.website/","offers":{"@type":"Offer","priceCurrency":"KWD","price":"29","availability":"https://schema.org/InStock"},"publisher":{"@type":"Organization","name":"Appscrafter","email":"info@appscrafter.com","telephone":"+965 9797 7275","areaServed":["KW","SA","AE","QA","BH","OM"]}}
@@ -114,8 +114,10 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#modules" data-i18n="nav_product">Product</a>
+      <a href="#platform" data-i18n="nav_platform">Platform</a>
       <a href="#new" data-i18n="nav_new">What's new</a>
       <a href="#why" data-i18n="nav_why">Why CTMS</a>
+      <a href="#security" data-i18n="nav_security">Security</a>
       <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
       <a href="#faq" data-i18n="nav_faq">FAQ</a>
     </nav>
@@ -142,8 +144,10 @@
     </div>
     <nav class="mnav-links" aria-label="Mobile">
       <a href="#modules" data-close-menu><span data-i18n="nav_product">Product</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a href="#platform" data-close-menu><span data-i18n="nav_platform">Platform</span><svg class="ico"><use href="#i-arrow"/></svg></a>
       <a href="#new" data-close-menu><span data-i18n="nav_new">What's new</span><svg class="ico"><use href="#i-arrow"/></svg></a>
       <a href="#why" data-close-menu><span data-i18n="nav_why">Why CTMS</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a href="#security" data-close-menu><span data-i18n="nav_security">Security</span><svg class="ico"><use href="#i-arrow"/></svg></a>
       <a href="#pricing" data-close-menu><span data-i18n="nav_pricing">Pricing</span><svg class="ico"><use href="#i-arrow"/></svg></a>
       <a href="#faq" data-close-menu><span data-i18n="nav_faq">FAQ</span><svg class="ico"><use href="#i-arrow"/></svg></a>
     </nav>
@@ -266,6 +270,35 @@
   </div>
 </section>
 
+<!-- ============================ 5. CONNECTED WORKFLOW ============================ -->
+<section class="section dark-sec" id="platform">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="wf_eb">Connected clinic workflow</span>
+      <h2 class="t-h2" data-i18n="wf_h2">One visit. Every ledger updated.</h2>
+      <p class="t-lead" data-i18n="wf_p">Follow a single patient visit. Each step is recorded once — and CTMS automatically updates the clinical, operational and financial records that depend on it.</p>
+    </div>
+    <div class="wf">
+      <ol class="wf-steps reveal" id="wfSteps"><span class="wf-prog" id="wfProg" aria-hidden="true"></span></ol>
+      <div class="wf-panel reveal d1">
+        <div class="wf-now" aria-live="polite">
+          <div class="k" id="wfK">STEP 01 / 10</div>
+          <h3 id="wfT">Appointment</h3>
+          <p id="wfD"></p>
+          <div class="wf-ctrl">
+            <button class="iconbtn" type="button" id="wfPlay" aria-label="Pause walkthrough"><svg class="ico"><use href="#i-pause"/></svg></button>
+            <div class="wf-bar"><i id="wfBar"></i></div>
+          </div>
+        </div>
+        <div class="ledger">
+          <div class="ledger-h"><b data-i18n="lg_h">Records updated by this visit</b><span>V-20931 · KWD 45.000</span></div>
+          <div id="ledger"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ NEW IN CTMS (Oct 2026 releases) ============================ -->
 <section class="section" style="padding-top:0" id="new">
   <div class="wrap">
@@ -358,6 +391,149 @@
   </div>
 </section>
 
+<!-- ============================ 7. OWNER DASHBOARD ============================ -->
+<section class="section" style="background:var(--surface-2);border-block:1px solid var(--line)" id="owner">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="ow_eb">For clinic owners</span>
+      <h2 class="t-h2" data-i18n="ow_h2">Know exactly how your clinic is performing.</h2>
+      <p class="t-lead" data-i18n="ow_p">Revenue, profit, doctors, services, branches and cash — updated as the day happens, not at month-end.</p>
+    </div>
+    <div class="owner reveal">
+      <div class="o-tile o-kpi hl span3"><h4 data-i18n="ow_k1">Today's Revenue</h4><b><small>KWD</small>1,284.500</b><div class="sub"><span class="delta">▲ 12.4%</span><span data-i18n="ow_vs">vs last week</span></div></div>
+      <div class="o-tile o-kpi span3"><h4 data-i18n="ow_k2">Monthly Revenue</h4><b><small>KWD</small>57,930</b><div class="sub"><span class="delta">▲ 8.1%</span><span data-i18n="ow_mtd">month to date</span></div></div>
+      <div class="o-tile o-kpi span3"><h4 data-i18n="ow_k3">Net Profit</h4><b><small>KWD</small>18,420</b><div class="sub"><span class="delta">▲ 5.6%</span><span data-i18n="ow_mtd">month to date</span></div></div>
+      <div class="o-tile o-kpi span3"><h4 data-i18n="ow_k4">Profit Margin</h4><b>31.8%</b><div class="sub"><div class="ui-bar" style="flex:1"><i style="width:31.8%"></i></div></div></div>
+
+      <div class="o-tile span7">
+        <h4><span data-i18n="ow_doc">Revenue by Doctor</span><span class="badge" data-i18n="ow_this">This month</span></h4>
+        <div class="hbars">
+          <div class="hbar"><span data-i18n="doc1">Dr. Ahmad</span><div class="tr" data-tip="KWD 16,240 · 412 visits"><i style="width:100%"></i></div><b>16,240</b></div>
+          <div class="hbar"><span data-i18n="doc2">Dr. Noura</span><div class="tr" data-tip="KWD 13,880 · 298 visits"><i style="width:85%"></i></div><b>13,880</b></div>
+          <div class="hbar"><span data-i18n="doc4">Dr. Mariam</span><div class="tr" data-tip="KWD 11,310 · 264 visits"><i style="width:70%"></i></div><b>11,310</b></div>
+          <div class="hbar"><span data-i18n="doc3">Dr. Faisal</span><div class="tr" data-tip="KWD 9,150 · 231 visits"><i style="width:56%"></i></div><b>9,150</b></div>
+          <div class="hbar"><span data-i18n="doc5">Dr. Hessa</span><div class="tr" data-tip="KWD 7,350 · 188 visits"><i style="width:45%"></i></div><b>7,350</b></div>
+        </div>
+      </div>
+      <div class="o-tile span5">
+        <h4 data-i18n="ow_svc">Revenue by Service</h4>
+        <div class="donut-wrap">
+          <svg viewBox="0 0 42 42" role="img" aria-label="Revenue by service donut chart">
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--surface-3)" stroke-width="5"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--c1)" stroke-width="5" stroke-dasharray="38 62" stroke-dashoffset="25"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--c2)" stroke-width="5" stroke-dasharray="24 76" stroke-dashoffset="87"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--c3)" stroke-width="5" stroke-dasharray="18 82" stroke-dashoffset="63"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--c4)" stroke-width="5" stroke-dasharray="12 88" stroke-dashoffset="45"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="var(--c5)" stroke-width="5" stroke-dasharray="8 92" stroke-dashoffset="33"/>
+          </svg>
+          <div class="donut-leg">
+            <div><i style="background:var(--c1)"></i><span data-i18n="sv1">Consultations</span><b>38%</b></div>
+            <div><i style="background:var(--c2)"></i><span data-i18n="sv2">Dental</span><b>24%</b></div>
+            <div><i style="background:var(--c3)"></i><span data-i18n="sv3">Derma &amp; laser</span><b>18%</b></div>
+            <div><i style="background:var(--c4)"></i><span data-i18n="sv4">Pharmacy</span><b>12%</b></div>
+            <div><i style="background:var(--c5)"></i><span data-i18n="sv5">Lab &amp; other</span><b>8%</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="o-tile span6">
+        <h4><span data-i18n="ow_branch">Branch Comparison</span><span class="leg"><span><i style="background:var(--c1)"></i><span data-i18n="ow_rev">Revenue</span></span><span><i style="background:var(--c5)"></i><span data-i18n="ow_exp">Expenses</span></span></span></h4>
+        <div class="gbar">
+          <div class="g"><i style="height:92%" data-tip="Revenue KWD 24,610"></i><i class="b" style="height:60%;transition-delay:.1s" data-tip="Expenses KWD 16,020"></i><span data-i18n="d_branch1">Salmiya</span></div>
+          <div class="g"><i style="height:70%;transition-delay:.15s" data-tip="Revenue KWD 18,340"></i><i class="b" style="height:48%;transition-delay:.2s" data-tip="Expenses KWD 12,870"></i><span data-i18n="br2">Hawally</span></div>
+          <div class="g"><i style="height:52%;transition-delay:.25s" data-tip="Revenue KWD 14,980"></i><i class="b" style="height:40%;transition-delay:.3s" data-tip="Expenses KWD 10,620"></i><span data-i18n="br3">Jahra</span></div>
+        </div>
+      </div>
+      <div class="o-tile span6">
+        <h4><span data-i18n="ow_expenses">Expenses</span><b style="color:var(--ink);font-size:1rem">KWD 39,510</b></h4>
+        <div class="stack-bar"><i style="width:44%;background:var(--c2)"></i><i style="width:24%;background:var(--c1)"></i><i style="width:17%;background:var(--c3)"></i><i style="width:9%;background:var(--c4)"></i><i style="width:6%;background:var(--c5)"></i></div>
+        <div class="donut-leg" style="grid-template-columns:1fr 1fr;margin-top:16px;gap:10px 20px">
+          <div><i style="background:var(--c2)"></i><span data-i18n="ex1">Payroll</span><b>44%</b></div>
+          <div><i style="background:var(--c1)"></i><span data-i18n="ex2">Cost of goods</span><b>24%</b></div>
+          <div><i style="background:var(--c3)"></i><span data-i18n="ex3">Rent</span><b>17%</b></div>
+          <div><i style="background:var(--c4)"></i><span data-i18n="ex4">Utilities</span><b>9%</b></div>
+          <div><i style="background:var(--c5)"></i><span data-i18n="ex5">Other</span><b>6%</b></div>
+        </div>
+      </div>
+
+      <div class="o-mini">
+        <div class="o-tile o-kpi"><h4 data-i18n="ow_m1">Outstanding Receivables</h4><b><small>KWD</small>3,215</b><div class="sub"><span class="badge warn" data-i18n="ow_m1s">41 invoices</span></div></div>
+        <div class="o-tile o-kpi"><h4 data-i18n="ow_m2">Inventory Value</h4><b><small>KWD</small>22,780</b><div class="sub" data-i18n="ow_m2s">At cost · 3 branches</div></div>
+        <div class="o-tile o-kpi"><h4 data-i18n="ow_m3">Payroll Cost</h4><b><small>KWD</small>17,380</b><div class="sub" data-i18n="ow_m3s">Current cycle</div></div>
+        <div class="o-tile o-kpi"><h4 data-i18n="ow_m4">Appointment Conversion</h4><b>86%</b><div class="sub" data-i18n="ow_m4s">Booked → attended</div></div>
+        <div class="o-tile o-kpi"><h4 data-i18n="ow_m5">Patient Visits</h4><b>1,393</b><div class="mini-mini" aria-hidden="true"><i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:84%"></i><i style="height:100%"></i></div></div>
+      </div>
+    </div>
+    <p class="t-small reveal" style="margin-top:16px;text-align:center" data-i18n="demo_note">Illustrative demo data. No real patient or clinic information is shown on this website.</p>
+  </div>
+</section>
+
+<!-- ============================ 8. ROLES ============================ -->
+<section class="section" id="roles">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="ro_eb">Solutions by role</span>
+      <h2 class="t-h2" data-i18n="ro_h2">The right workspace for every person in the clinic.</h2>
+      <p class="t-lead" data-i18n="ro_p">Everyone signs in to the same system — and sees only what their role needs.</p>
+    </div>
+    <div class="pilltabs reveal" role="tablist" aria-label="Roles" id="roTabs"></div>
+    <div class="roles reveal" id="roPanel" role="tabpanel" tabindex="0"></div>
+  </div>
+</section>
+
+<!-- ============================ 10. GULF ============================ -->
+<section class="section gulf" id="gulf">
+  <div class="wrap gulf-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="gu_eb">Local fit</span>
+      <h2 class="t-h2" style="margin-top:14px" data-i18n="gu_h2">Clinic software built for Kuwait and the Gulf.</h2>
+      <p class="t-lead" style="margin-top:18px" data-i18n="gu_p">Not a translated foreign product. CTMS is designed around how clinics in Kuwait and the GCC actually register patients, bill, pay staff and report.</p>
+      <div class="gulf-feats">
+        <div><svg class="ico"><use href="#i-globe"/></svg><span><b data-i18n="gu1">Arabic + English</b><small data-i18n="gu1s">Switch per user, instantly</small></span></div>
+        <div><svg class="ico"><use href="#i-layers"/></svg><span><b data-i18n="gu2">Full RTL interface</b><small data-i18n="gu2s">Screens, receipts and reports</small></span></div>
+        <div><svg class="ico"><use href="#i-id"/></svg><span><b data-i18n="gu3">Civil ID support</b><small data-i18n="gu3s">Duplicate detection on registration</small></span></div>
+        <div><svg class="ico"><use href="#i-coins"/></svg><span><b data-i18n="gu4">KWD billing</b><small data-i18n="gu4s">Three-decimal fils precision</small></span></div>
+        <div><svg class="ico"><use href="#i-card"/></svg><span><b data-i18n="gu5">KNET, card &amp; cash</b><small data-i18n="gu5s">Split payments on one invoice</small></span></div>
+        <div><svg class="ico"><use href="#i-branch"/></svg><span><b data-i18n="gu6">Multi-branch operations</b><small data-i18n="gu6s">Across governorates and borders</small></span></div>
+        <div><svg class="ico"><use href="#i-payroll"/></svg><span><b data-i18n="gu7">Local payroll practice</b><small data-i18n="gu7s">Custom cycles, allowances, deductions</small></span></div>
+        <div><svg class="ico"><use href="#i-users"/></svg><span><b data-i18n="gu8">Local implementation &amp; support</b><small data-i18n="gu8s">Kuwait-based team, on-site onboarding</small></span></div>
+      </div>
+    </div>
+    <div class="rtl-demo reveal d1" lang="ar" dir="rtl">
+      <div class="ui" role="img" aria-label="Arabic right-to-left invoice screen in CTMS (demo data)">
+        <div class="ui-top"><span class="ui-logo"><svg><use href="#logo"/></svg>CTMS</span><span class="ui-branch"><svg class="ico"><use href="#i-pin"/></svg>فرع السالمية</span><span class="ui-search"><svg class="ico"><use href="#i-search"/></svg>ابحث بالاسم أو الرقم المدني…</span></div>
+        <div class="ui-main">
+          <div class="ui-h"><div><b>فاتورة ضريبية مبسطة</b><small>رقم <span class="receipt-num">INV-2026-04812</span> · ٢٣ سبتمبر ٢٠٢٦</small></div><span class="pill ok">مدفوعة</span></div>
+          <div class="ui-grid2">
+            <div class="ui-field"><span>المريض</span><div>فاطمة العنزي</div></div>
+            <div class="ui-field"><span>الرقم المدني</span><div class="receipt-num">2890•••••412</div></div>
+            <div class="ui-field"><span>الطبيب</span><div>د. أحمد الرشيد</div></div>
+            <div class="ui-field"><span>العيادة</span><div>الطب العام</div></div>
+          </div>
+          <div class="ui-card" style="padding:4px">
+            <table class="ui-tbl">
+              <thead><tr><th>الخدمة</th><th class="r">الكمية</th><th class="r">المبلغ (د.ك)</th></tr></thead>
+              <tbody>
+                <tr><td>استشارة طبية</td><td class="r">١</td><td class="r receipt-num">25.000</td></tr>
+                <tr><td>أموكسيسيلين ٥٠٠ ملغ</td><td class="r">١</td><td class="r receipt-num">4.750</td></tr>
+                <tr><td>تحليل دم شامل</td><td class="r">١</td><td class="r receipt-num">15.250</td></tr>
+                <tr class="strong"><td>الإجمالي</td><td></td><td class="r receipt-num">45.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ui-row eq">
+            <div class="ui-card"><h5>طرق الدفع</h5>
+              <div class="ui-li"><span class="tx"><b>كي‑نت</b></span><span class="amt receipt-num">30.000</span></div>
+              <div class="ui-li"><span class="tx"><b>نقداً</b></span><span class="amt receipt-num">15.000</span></div>
+            </div>
+            <div class="ui-card" style="display:flex;flex-direction:column;gap:8px;justify-content:center"><span class="ui-btn" style="justify-content:center">طباعة الإيصال</span><span class="ui-btn sec" style="justify-content:center">إرسال عبر واتساب</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ WHY CTMS (bento) ============================ -->
 <section class="section" style="padding-top:0" id="why">
   <div class="wrap">
@@ -367,14 +543,15 @@
     </div>
     <div class="bento2">
       <article class="bx bx-wide reveal">
-        <h3 data-i18n="bt1">Every visit flows straight to your P&amp;L</h3>
-        <p data-i18n="bt1p">Book, treat, bill and dispense once — revenue, stock and profit update by themselves.</p>
-        <div class="flow" aria-hidden="true">
-          <span><svg class="ico"><use href="#i-cal"/></svg><b data-i18n="fl_a">Appointment</b></span>
-          <span><svg class="ico"><use href="#i-steth"/></svg><b data-i18n="fl_b">Visit</b></span>
-          <span><svg class="ico"><use href="#i-receipt"/></svg><b data-i18n="fl_c">Invoice</b></span>
-          <span><svg class="ico"><use href="#i-box"/></svg><b data-i18n="fl_d">Stock</b></span>
-          <span class="end"><svg class="ico"><use href="#i-trend"/></svg><b data-i18n="fl_e">Profit &amp; Loss</b></span>
+        <h3 data-i18n="br1">Reports that always agree</h3>
+        <p data-i18n="br1p">Every report reads the same live data — export any of them to PDF or Excel in one click.</p>
+        <div class="flow rep" aria-hidden="true">
+          <span><svg class="ico"><use href="#i-ledger"/></svg><b data-i18n="rl1">Profit &amp; Loss</b></span>
+          <span><svg class="ico"><use href="#i-steth"/></svg><b data-i18n="rl2">Revenue by Doctor</b></span>
+          <span><svg class="ico"><use href="#i-coins"/></svg><b data-i18n="rl7">Stock Valuation</b></span>
+          <span><svg class="ico"><use href="#i-payroll"/></svg><b data-i18n="rl8">Payroll Analysis</b></span>
+          <span><svg class="ico"><use href="#i-chart"/></svg><b data-i18n="rl10">Daily Sales</b></span>
+          <span><svg class="ico"><use href="#i-card"/></svg><b data-i18n="rl11">Payment Analysis</b></span>
         </div>
       </article>
       <article class="bx bx-brand reveal d1">
@@ -401,6 +578,132 @@
         <h3 data-i18n="bt5">The right access for everyone</h3>
         <p data-i18n="bt5p">Permissions per role, screen, report and branch — with a full activity log.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 11. SECURITY ============================ -->
+<section class="section" id="security">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="reveal">
+        <span class="eyebrow" data-i18n="se_eb">Security &amp; data ownership</span>
+        <h2 class="t-h2" style="margin-top:14px" data-i18n="se_h2">Your data. Your servers. Your rules.</h2>
+        <p class="t-lead" style="margin-top:18px" data-i18n="se_p">CTMS is engineered so that clinic data stays controlled, recoverable and accountable — whether it runs in your building or in the cloud.</p>
+        <div class="ui audit" role="img" aria-label="CTMS activity log showing recent user actions (demo data)">
+          <div class="ui-top"><span class="ui-logo"><svg><use href="#logo"/></svg><span data-i18n="se_log">Activity log</span></span><span class="ui-search"><svg class="ico"><use href="#i-search"/></svg><span data-i18n="se_filter">Filter by user, branch, action…</span></span></div>
+          <div class="ui-main" style="gap:0;padding:8px 14px">
+            <div class="ui-li"><span class="tm">09:42:18</span><span class="tx"><b data-i18n="au1">Invoice INV-04812 refunded (partial)</b><small data-i18n="au1s">Reem · Front desk · Salmiya</small></span><span class="pill warn" data-i18n="au_fin">Finance</span></div>
+            <div class="ui-li"><span class="tm">09:37:05</span><span class="tx"><b data-i18n="au2">Role “Pharmacist” permissions changed</b><small data-i18n="au2s">Admin · Head office</small></span><span class="pill info" data-i18n="au_acc">Access</span></div>
+            <div class="ui-li"><span class="tm">09:30:00</span><span class="tx"><b data-i18n="au3">Encrypted backup completed · verified</b><small data-i18n="au3s">System · scheduled</small></span><span class="pill ok" data-i18n="au_sys">System</span></div>
+            <div class="ui-li"><span class="tm">09:12:47</span><span class="tx"><b data-i18n="au4">Patient record viewed — P-10432</b><small data-i18n="au4s">Dr. Ahmad · Hawally</small></span><span class="pill" data-i18n="au_emr">EMR</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <div class="sec-list">
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-key"/></svg></span><b data-i18n="se1">Role-based access control</b><small data-i18n="se1s">Granular permissions down to individual screens and reports.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-history"/></svg></span><b data-i18n="se2">Audit logs</b><small data-i18n="se2s">Sensitive actions recorded with user, time and location.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-lock"/></svg></span><b data-i18n="se3">Encrypted backups</b><small data-i18n="se3s">Backups are encrypted before they are stored.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-clock"/></svg></span><b data-i18n="se4">Automatic backups</b><small data-i18n="se4s">Scheduled snapshots with no staff action required.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-shield"/></svg></span><b data-i18n="se5">Safe updates</b><small data-i18n="se5s">A safety snapshot is taken before every upgrade.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-refresh"/></svg></span><b data-i18n="se6">Data restore</b><small data-i18n="se6s">Restore from verified snapshots when you need to.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-eye"/></svg></span><b data-i18n="se7">User activity tracking</b><small data-i18n="se7s">See who did what, and when, across the clinic.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-pin"/></svg></span><b data-i18n="se8">Location-level permissions</b><small data-i18n="se8s">Limit each user to the branches they work in.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-cloud"/></svg></span><b data-i18n="se9">Private server deployment</b><small data-i18n="se9s">A dedicated environment that is yours alone.</small></div>
+          <div class="sec-item"><span class="icon-tile"><svg class="ico"><use href="#i-server"/></svg></span><b data-i18n="se10">On-premise deployment</b><small data-i18n="se10s">Run CTMS entirely on hardware inside your clinic.</small></div>
+        </div>
+        <p class="sec-note"><svg class="ico"><use href="#i-shield"/></svg><span data-i18n="se_note">CTMS provides technical controls that support your data-protection obligations. We do not claim third-party certifications we have not obtained — ask us for our current security documentation.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 12. DEPLOYMENT ============================ -->
+<section class="section" style="padding-top:0" id="deployment">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="dp_eb">Deployment</span>
+      <h2 class="t-h2" data-i18n="dp_h2">Deployed the way your clinic operates.</h2>
+    </div>
+    <div class="dep-grid">
+      <article class="card dep reveal">
+        <div class="dep-vis" aria-hidden="true">
+          <svg viewBox="0 0 260 140">
+            <rect class="st" x="8" y="8" width="244" height="124" rx="16" stroke-dasharray="4 4"/>
+            <text x="20" y="26" data-i18n="dv_clinic">Your clinic</text>
+            <rect class="sb" x="104" y="44" width="52" height="56" rx="10"/>
+            <g transform="translate(118 58)"><path class="ico-s" d="M2 4h20v8H2zM2 16h20v8H2zM6 8h.01M6 20h.01" stroke="var(--brand)"/></g>
+            <path class="ln" d="M104 72H62M156 72h42M130 100v18"/>
+            <path class="fl" d="M104 72H62M156 72h42M130 100v18"/>
+            <rect class="st" x="30" y="58" width="32" height="26" rx="6"/><rect class="st" x="198" y="58" width="32" height="26" rx="6"/><rect class="st" x="114" y="112" width="32" height="14" rx="4"/>
+            <text x="130" y="38" text-anchor="middle" data-i18n="dv_server">CTMS server</text>
+          </svg>
+        </div>
+        <div class="dep-body">
+          <span class="k">01</span>
+          <h3 class="t-h4" data-i18n="dp1">On-Premise</h3>
+          <p data-i18n="dp1p">CTMS runs as a managed service on a server or PC inside your clinic. Staff open it from any browser on your network.</p>
+          <ul><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp1a">Keeps working when the internet is down</span></li><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp1b">Data never leaves your premises</span></li></ul>
+        </div>
+      </article>
+      <article class="card dep reveal d1">
+        <div class="dep-vis" aria-hidden="true">
+          <svg viewBox="0 0 260 140">
+            <path class="sb" d="M96 66h68a18 18 0 0 0 2-35.8A26 26 0 0 0 116 26a20 20 0 0 0-20 40z"/>
+            <text x="130" y="52" text-anchor="middle" style="fill:var(--brand)">CTMS</text>
+            <path class="ln" d="M130 66v18M130 84H48v22M130 84h82v22M130 84v22"/>
+            <path class="fl" d="M130 66v18M130 84H48v22M130 84h82v22M130 84v22"/>
+            <rect class="st" x="28" y="106" width="40" height="26" rx="6"/><rect class="st" x="110" y="106" width="40" height="26" rx="6"/><rect class="st" x="192" y="106" width="40" height="26" rx="6"/>
+            <text x="48" y="100" text-anchor="middle" data-i18n="dv_b1">Branch</text><text x="212" y="100" text-anchor="middle" data-i18n="dv_mob">Owner</text>
+          </svg>
+        </div>
+        <div class="dep-body">
+          <span class="k">02</span>
+          <h3 class="t-h4" data-i18n="dp2">Cloud</h3>
+          <p data-i18n="dp2p">We host and maintain CTMS on a private server for you. Access it securely from any location, with no hardware to manage.</p>
+          <ul><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp2a">Private server — not shared tenancy</span></li><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp2b">Updates and backups managed for you</span></li></ul>
+        </div>
+      </article>
+      <article class="card dep reveal d2">
+        <div class="dep-vis" aria-hidden="true">
+          <svg viewBox="0 0 260 140">
+            <path class="sb" d="M104 48h52a14 14 0 0 0 1.5-27.9A20 20 0 0 0 119 17a15.5 15.5 0 0 0-15 31z"/>
+            <text x="130" y="36" text-anchor="middle" style="fill:var(--brand)" data-i18n="dv_owner">Owner view</text>
+            <rect class="st" x="16" y="84" width="96" height="46" rx="10" stroke-dasharray="4 4"/><rect class="st" x="148" y="84" width="96" height="46" rx="10" stroke-dasharray="4 4"/>
+            <rect class="sb" x="30" y="96" width="26" height="22" rx="5"/><rect class="sb" x="162" y="96" width="26" height="22" rx="5"/>
+            <text x="64" y="111" data-i18n="dv_b1">Branch</text><text x="196" y="111" data-i18n="dv_b2">Branch</text>
+            <path class="ln" d="M64 84V66h132v18M130 48v18"/>
+            <path class="fl" d="M64 84V66h132v18M130 48v18"/>
+          </svg>
+        </div>
+        <div class="dep-body">
+          <span class="k">03</span>
+          <h3 class="t-h4" data-i18n="dp3">Hybrid / Multi-Location</h3>
+          <p data-i18n="dp3p">Combine local installations at each site with central access for management. We design the architecture around your branches and connectivity.</p>
+          <ul><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp3a">Local speed and resilience per branch</span></li><li><svg class="ico"><use href="#i-check"/></svg><span data-i18n="dp3b">Consolidated reporting for owners</span></li></ul>
+        </div>
+      </article>
+    </div>
+    <div class="offline reveal"><svg class="ico"><use href="#i-wifioff"/></svg><p><b data-i18n="off_b">Internet down? The front desk keeps working.</b> <span data-i18n="off_p">With on-premise and hybrid deployments, CTMS continues to run locally when connectivity is unavailable — booking, billing and dispensing carry on as normal.</span></p></div>
+  </div>
+</section>
+
+<!-- ============================ 13. INTEGRATIONS ============================ -->
+<section class="section" style="padding-top:0" id="integrations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="in_eb">Integrations</span>
+      <h2 class="t-h2" data-i18n="in_h2">Works with the tools your clinic already uses.</h2>
+      <p class="t-lead" data-i18n="in_p">Only what CTMS supports today — no logo wall of maybes.</p>
+    </div>
+    <div class="int-grid">
+      <div class="card int reveal"><span class="logo" style="color:#1FA855"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#i-wa"/></svg></span><div><h4 data-i18n="in1">WhatsApp</h4><p data-i18n="in1p">Appointment reminders and patient notifications sent from CTMS.</p></div></div>
+      <div class="card int reveal d1"><span class="logo"><svg class="ico"><use href="#i-card"/></svg></span><div><h4 data-i18n="in2">KNET, card &amp; cash</h4><p data-i18n="in2p">Configurable payment methods with split payments and daily reconciliation.</p></div></div>
+      <div class="card int reveal d2"><span class="logo"><svg class="ico"><use href="#i-printer"/></svg></span><div><h4 data-i18n="in3">Thermal receipt printers</h4><p data-i18n="in3p">Print receipts on 80 mm thermal printers, with configurable layout.</p></div></div>
+      <div class="card int reveal"><span class="logo"><svg class="ico"><use href="#i-pdf"/></svg></span><div><h4 data-i18n="in4">PDF</h4><p data-i18n="in4p">Invoices, prescriptions, payslips and reports as clean, printable PDFs.</p></div></div>
+      <div class="card int reveal d1"><span class="logo"><svg class="ico"><use href="#i-sheet"/></svg></span><div><h4 data-i18n="in5">Excel / CSV</h4><p data-i18n="in5p">Export reports and patient lists; import existing patient data from spreadsheets.</p></div></div>
+      <div class="card int ask reveal d2"><span class="logo"><svg class="ico"><use href="#i-plug"/></svg></span><div><h4 data-i18n="in6">Accounting, email &amp; APIs</h4><p data-i18n="in6p">Need a connection to another system? Tell us your requirements and we'll scope it with you.</p></div></div>
     </div>
   </div>
 </section>
@@ -528,8 +831,8 @@
         <a class="brand" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg><span class="bt">CTMS<small data-i18n="ft_full">Clinic Top Management System</small></span></a>
         <p data-i18n="ft_tag">The clinic operating system for Kuwait and the GCC — patients, operations and finance in one platform.</p>
       </div>
-      <div class="foot-col"><h5 data-i18n="nav_product">Product</h5><a href="#modules" data-i18n="ft_modules">Modules</a><a href="#new" data-i18n="nav_new">What's new</a><a href="#pricing" data-i18n="nav_pricing">Pricing</a><a href="payroll/" data-i18n="ft_payroll">CTMS Payroll</a></div>
-      <div class="foot-col"><h5 data-i18n="ft_company">Company</h5><a href="#why" data-i18n="nav_why">Why CTMS</a><a href="#faq" data-i18n="nav_faq">FAQ</a><a href="https://wa.me/96597977275" target="_blank" rel="noopener" data-i18n="ft_support">Support</a></div>
+      <div class="foot-col"><h5 data-i18n="nav_product">Product</h5><a href="#modules" data-i18n="ft_modules">Modules</a><a href="#platform" data-i18n="ft_wf">Connected workflow</a><a href="#owner" data-i18n="ft_owner">Owner dashboard</a><a href="#new" data-i18n="nav_new">What's new</a><a href="#pricing" data-i18n="nav_pricing">Pricing</a><a href="payroll/" data-i18n="ft_payroll">CTMS Payroll</a></div>
+      <div class="foot-col"><h5 data-i18n="ft_company">Company</h5><a href="#why" data-i18n="nav_why">Why CTMS</a><a href="#security" data-i18n="nav_security">Security</a><a href="#integrations" data-i18n="nav_integrations">Integrations</a><a href="#faq" data-i18n="nav_faq">FAQ</a><a href="https://wa.me/96597977275" target="_blank" rel="noopener" data-i18n="ft_support">Support</a></div>
       <div class="foot-col"><h5 data-i18n="ft_contact">Contact</h5><a href="mailto:info@appscrafter.com">info@appscrafter.com</a><a href="tel:+96597977275" dir="ltr" style="text-align:start">+965 9797 7275</a></div>
     </div>
     <div class="foot-bottom">
@@ -573,6 +876,6 @@
   </div>
 </div>
 
-<script src="assets/app.js?v=202610261927" defer></script>
+<script src="assets/app.js?v=202610261931" defer></script>
 </body>
 </html>

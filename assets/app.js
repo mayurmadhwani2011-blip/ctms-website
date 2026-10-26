@@ -261,7 +261,7 @@ var FAQ=[
  [{en:'Does CTMS support multiple payment methods?',ar:'هل يدعم CTMS طرق دفع متعددة؟'},{en:'Yes. Record KNET, card, cash, insurance and other methods you configure — including split payments on a single invoice.',ar:'نعم. سجّل كي‑نت والبطاقة والنقد والتأمين وأي طرق أخرى تضيفها — بما فيها تقسيم الدفع على فاتورة واحدة.'}],
  [{en:'How long does implementation take?',ar:'كم تستغرق عملية التطبيق؟'},{en:'It depends on the number of branches and the data being migrated. We agree a timeline with you during the demo, and our team handles setup, migration and staff training.',ar:'يعتمد ذلك على عدد الفروع والبيانات المنقولة. نتفق معك على جدول زمني أثناء العرض، ويتولى فريقنا الإعداد والنقل وتدريب الموظفين.'}]
 ];
-var FAQ_SHOW=[0,1,2,3,9,14];
+var FAQ_SHOW=[0,1,2,3,4,5,6,8,9,14];
 function faqList(){return FAQ_SHOW.map(function(i){return FAQ[i];}).filter(Boolean);}
 function renderFAQ(){
   var el=$('#faqList'),open=$$('details[open]',el).map(function(d){return d.dataset.i;});
@@ -393,7 +393,7 @@ p4n:'المؤسسات',p4d:'للمراكز الطبية والمجموعات ا�
 ad_n:'الرواتب',ad_t:'إضافة',ad_link:'متوفر أيضاً بشكل مستقل لأي شركة: CTMS Payroll ←',ft_payroll:'CTMS Payroll',ad_p:'دورات الرواتب والبدلات والخصومات والإجازات والقسائم — تُضاف إلى أي خطة.',pr_note:'الأسعار لكل عيادة بالدينار الكويتي. العملات الأخرى تقريبية. الدفع السنوي يوفّر ٢٠٪.',
 nav_product:'المنتج',nav_new:'الجديد',nav_why:'لماذا CTMS',nav_faq:'الأسئلة الشائعة',ft_modules:'الوحدات',
 lg_lbl:'تثق به عياداتنا المؤسِّسة في الكويت',nw_also:'جديد أيضاً',
-bt_h2:'نظام واحد. لا شيء يضيع.',bt1:'كل زيارة تصل مباشرةً إلى أرباحك وخسائرك',bt1p:'احجز وعالج وأصدر الفاتورة واصرف مرة واحدة — ويتحدّث الإيراد والمخزون والربح تلقائياً.',
+bt_h2:'نظام واحد. لا شيء يضيع.',br1:'تقارير تتفق دائماً',br1p:'كل التقارير تقرأ البيانات المباشرة نفسها — صدّر أياً منها إلى PDF أو Excel بنقرة واحدة.',bt1:'كل زيارة تصل مباشرةً إلى أرباحك وخسائرك',bt1p:'احجز وعالج وأصدر الفاتورة واصرف مرة واحدة — ويتحدّث الإيراد والمخزون والربح تلقائياً.',
 fl_a:'الموعد',fl_b:'الزيارة',fl_c:'الفاتورة',fl_d:'المخزون',fl_e:'الأرباح والخسائر',
 bt2:'برنامج عيادات مصمّم للكويت',bt2a:'عربي وإنجليزي، واجهة RTL كاملة',bt2b:'التسجيل بالرقم المدني',bt2c:'فوترة بالدينار · كي‑نت · نقداً',bt2d:'إعداد ودعم محلي',
 bt3:'كل الفروع في رؤية واحدة',bt3p:'لكل فرع مخزونه ودفاتره، وترى أنت المجموعة كاملة.',
