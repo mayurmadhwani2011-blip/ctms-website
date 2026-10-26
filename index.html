@@ -31,8 +31,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/ctms.css?v=202610261931">
-<link rel="stylesheet" href="assets/site.css?v=202610261931">
+<link rel="stylesheet" href="assets/ctms.css?v=202610261935">
+<link rel="stylesheet" href="assets/site.css?v=202610261935">
 <script>document.documentElement.classList.remove('no-js');try{var t=localStorage.getItem('ctms-theme');if(t)document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('ctms-lang')==='ar'&&!/[?&]lang=en/.test(location.search))location.replace('ar/'+location.hash);}catch(e){}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CTMS — Clinic Top Management System","applicationCategory":"BusinessApplication","applicationSubCategory":"Clinic management software","operatingSystem":"Windows, Web browser","inLanguage":["en","ar"],"description":"Clinic operating system for Kuwait and the GCC: appointments, patient records, billing, pharmacy, inventory, payroll, finance and multi-branch reporting.","url":"https://ctms.website/","offers":{"@type":"Offer","priceCurrency":"KWD","price":"29","availability":"https://schema.org/InStock"},"publisher":{"@type":"Organization","name":"Appscrafter","email":"info@appscrafter.com","telephone":"+965 9797 7275","areaServed":["KW","SA","AE","QA","BH","OM"]}}
@@ -248,11 +248,6 @@
         </div>
         <div class="float f6"><div class="fl-h"><span class="fl-ic warn"><svg class="ico"><use href="#i-box"/></svg></span><span data-i18n="fl4">Low Stock</span></div><b style="font-size:14px" data-i18n="fl4b">Amoxicillin 500mg</b><div class="fl-sub"><span class="pill warn" data-i18n="fl4s">12 left · reorder</span></div></div>
       </div>
-    </div>
-    <div class="logos reveal">
-      <span data-i18n="lg_lbl">Trusted by founding clinics in Kuwait</span>
-      <img src="assets/clients/al-taqi-clinic.webp" alt="Al Taqi Clinic" width="1254" height="1254" loading="lazy" decoding="async">
-      <img src="assets/clients/sky-skin-care.webp" alt="Sky Skin Care" width="1370" height="1149" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -708,6 +703,35 @@
   </div>
 </section>
 
+<!-- ============================ 16. CUSTOMER PROOF (placeholders) ============================ -->
+<!-- TODO: replace placeholders with verified logos, statistics and testimonials. Do not publish invented figures. -->
+<section class="section" style="padding-top:0" id="customers">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="pf_eb">Customers</span>
+      <h2 class="t-h2" data-i18n="pf_h2">Now onboarding founding clinics.</h2>
+      <p class="t-lead" data-i18n="pf_p">Clinics in Kuwait already running their operations on CTMS.</p>
+    </div>
+    <!-- Founding clinics: drop logo files into assets/clients/ and swap the .cl-name span for <img src="assets/clients/…" alt="…"> -->
+    <div class="proof-logos reveal" aria-label="Founding clinics using CTMS">
+      <div class="cl"><img src="assets/clients/al-taqi-clinic.webp" alt="Al Taqi Clinic" width="1254" height="1254" loading="lazy" decoding="async"><small data-i18n="pf_tag">Founding clinic</small></div>
+      <div class="cl"><img src="assets/clients/sky-skin-care.webp" alt="Sky Skin Care" width="1370" height="1149" loading="lazy" decoding="async"><small data-i18n="pf_tag">Founding clinic</small></div>
+      <button class="cl cl-next" type="button" data-demo data-kind="founding"><span class="cl-plus"><svg class="ico"><use href="#i-plus"/></svg></span><small data-i18n="pf_next">Your clinic next</small></button>
+    </div>
+    <div class="proof-stats reveal">
+      <div><b>—</b><span data-i18n="pf_s1">Clinics live</span></div>
+      <div><b>—</b><span data-i18n="pf_s2">Branches managed</span></div>
+      <div><b>—</b><span data-i18n="pf_s3">Transactions processed</span></div>
+      <div><b>—</b><span data-i18n="pf_s4">Avg. support response</span></div>
+    </div>
+    <div class="proof-q reveal">
+      <svg class="ico"><use href="#i-quote"/></svg>
+      <p data-i18n="pf_q">A testimonial from a verified CTMS clinic will appear here.</p>
+      <button class="btn btn-secondary btn-sm" type="button" data-demo data-kind="founding" data-i18n="pf_cta">Become a founding clinic</button>
+    </div>
+  </div>
+</section>
+
 <!-- ============================ 17. PRICING ============================ -->
 <section class="section" style="padding-top:0" id="pricing">
   <div class="wrap">
@@ -876,6 +900,6 @@
   </div>
 </div>
 
-<script src="assets/app.js?v=202610261931" defer></script>
+<script src="assets/app.js?v=202610261935" defer></script>
 </body>
 </html>
