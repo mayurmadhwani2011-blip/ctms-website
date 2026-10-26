@@ -60,8 +60,9 @@ var WF=[
  {ic:'ledger',n:{en:'Accounting',ar:'المحاسبة'},d:{en:'Revenue, cost of goods and payment method totals post automatically to the branch books.',ar:'تُرحّل الإيرادات وتكلفة البضاعة وإجماليات طرق الدفع تلقائياً إلى دفاتر الفرع.'},r:{en:'Revenue & COGS',ar:'الإيراد وتكلفة البضاعة'},rs:{en:'Posted to Salmiya branch',ar:'رُحّلت إلى فرع السالمية'},v:'+45.000'},
  {ic:'trend',n:{en:'Profit & Loss',ar:'الأرباح والخسائر'},d:{en:"The owner's P&L, doctor revenue and branch comparison reflect the visit immediately — no month-end reconciliation.",ar:'تعكس الأرباح والخسائر وإيرادات الطبيب ومقارنة الفروع الزيارة فوراً — دون تسوية نهاية الشهر.'},r:{en:'P&L & owner reports',ar:'الأرباح وتقارير المالك'},rs:{en:'Doctor · service · branch updated',ar:'الطبيب · الخدمة · الفرع محدّثة'},v:'LIVE'}
 ];
+var HAS_WF=!!document.getElementById('wfSteps'),HAS_RO=!!document.getElementById('roTabs');
 var wfI=0,wfTimer=null,wfPlaying=!reduce,wfStarted=false,STEP_MS=3600,wfT0=0,wfRaf=0;
-function renderWF(){
+function renderWF(){if(!HAS_WF)return;
   var ol=$('#wfSteps'),prog=$('#wfProg');
   ol.innerHTML='';ol.appendChild(prog);
   WF.forEach(function(s,i){
@@ -98,14 +99,14 @@ function wfTick(now){
   }
   wfRaf=requestAnimationFrame(wfTick);
 }
-function updatePlayBtn(){var b=$('#wfPlay');b.innerHTML=ic(wfPlaying?'pause':'play');b.setAttribute('aria-label',wfPlaying?L('Pause walkthrough','إيقاف مؤقت'):L('Play walkthrough','تشغيل'));}
-$('#wfPlay').addEventListener('click',function(){wfPlaying=!wfPlaying;if(wfPlaying)wfT0=performance.now();updatePlayBtn();});
-if('IntersectionObserver' in window){
+function updatePlayBtn(){if(!HAS_WF)return;var b=$('#wfPlay');b.innerHTML=ic(wfPlaying?'pause':'play');b.setAttribute('aria-label',wfPlaying?L('Pause walkthrough','إيقاف مؤقت'):L('Play walkthrough','تشغيل'));}
+HAS_WF&&$('#wfPlay').addEventListener('click',function(){wfPlaying=!wfPlaying;if(wfPlaying)wfT0=performance.now();updatePlayBtn();});
+if(HAS_WF&&'IntersectionObserver' in window){
   new IntersectionObserver(function(es){es.forEach(function(e){
     if(e.isIntersecting&&!wfStarted){wfStarted=true;wfT0=performance.now();wfRaf=requestAnimationFrame(wfTick);}
   });},{threshold:.35}).observe($('#platform'));
 }
-window.addEventListener('resize',function(){goWF(wfI,true);});
+HAS_WF&&window.addEventListener('resize',function(){goWF(wfI,true);});
 
 /* =============================== Mock screen builders =============================== */
 function top(title,branch){return '<div class="ui-top"><span class="ui-logo"><svg><use href="#logo"/></svg>'+title+'</span>'+(branch?'<span class="ui-branch">'+ic('pin')+branch+'</span>':'')+'<span class="ui-search">'+ic('search')+L('Search…','بحث…')+'</span><span class="ui-av">SA</span></div>';}
@@ -205,7 +206,7 @@ function renderMX(){
 function selMX(i){mxI=i;$$('#mxTabs [role=tab]').forEach(function(b,j){b.setAttribute('aria-selected',j===i?'true':'false');b.tabIndex=j===i?0:-1;});paintMX(true);var b=$$('#mxTabs [role=tab]')[i];if(b&&b.scrollIntoView&&window.innerWidth<900)b.scrollIntoView({block:'nearest',inline:'center',behavior:reduce?'auto':'smooth'});}
 function paintMX(anim){
   var m=MODS[mxI],p=$('#mxPanel');p.setAttribute('aria-labelledby','mx-t-'+m.k);
-  p.innerHTML='<div class="mx-copy"><h3>'+T(m.n)+'</h3><p>'+T(m.d)+'</p><ul class="mx-caps">'+T(m.c).map(function(c){return '<li>'+ic('check')+'<span>'+c+'</span></li>';}).join('')+'</ul><div class="mx-benefit">'+ic('trend')+'<span><b>'+L('Business impact','الأثر على العمل')+'</b>'+T(m.b)+'</span></div></div><div class="mx-screen">'+SCREENS[m.k]()+'</div>';
+  p.innerHTML='<div class="mx-copy"><h3>'+T(m.n)+'</h3><p>'+T(m.d)+'</p><ul class="mx-caps">'+T(m.c).slice(0,3).map(function(c){return '<li>'+ic('check')+'<span>'+c+'</span></li>';}).join('')+'</ul></div><div class="mx-screen">'+SCREENS[m.k]()+'</div>';
   if(anim){p.classList.remove('enter');void p.offsetWidth;p.classList.add('enter');}
 }
 tabsA11y($('#mxTabs'),selMX);
@@ -220,7 +221,7 @@ var ROLES=[
  {k:'hr',ic:'payroll',n:{en:'HR / Payroll',ar:'الموارد البشرية / الرواتب'},q:{en:'"Is this cycle\'s payroll right — leave, allowances and deductions included?"',ar:'«هل رواتب هذه الدورة صحيحة — بما فيها الإجازات والبدلات والخصومات؟»'},g:{en:['Staff records','Salary cycles','Leave','Allowances & deductions','Payslips'],ar:['سجلات الموظفين','دورات الرواتب','الإجازات','البدلات والخصومات','قسائم الرواتب']},mods:['users','payroll'],kp:[[{en:'Employees',ar:'الموظفون'},'64'],[{en:'Cycle',ar:'الدورة'},'21–20'],[{en:'On leave',ar:'في إجازة'},'3']]}
 ];
 var roI=0;
-function renderRO(){
+function renderRO(){if(!HAS_RO)return;
   var t=$('#roTabs');t.innerHTML='';
   ROLES.forEach(function(r,i){
     var b=document.createElement('button');b.type='button';b.className='pilltab';b.setAttribute('role','tab');b.id='ro-t-'+r.k;b.setAttribute('aria-controls','roPanel');
@@ -240,7 +241,7 @@ function paintRO(anim){
   if(anim){p.classList.remove('enter');void p.offsetWidth;p.classList.add('enter');}
   bindDemo(p);
 }
-tabsA11y($('#roTabs'),selRO);
+HAS_RO&&tabsA11y($('#roTabs'),selRO);
 
 /* =============================== FAQ =============================== */
 var FAQ=[
@@ -260,11 +261,13 @@ var FAQ=[
  [{en:'Does CTMS support multiple payment methods?',ar:'هل يدعم CTMS طرق دفع متعددة؟'},{en:'Yes. Record KNET, card, cash, insurance and other methods you configure — including split payments on a single invoice.',ar:'نعم. سجّل كي‑نت والبطاقة والنقد والتأمين وأي طرق أخرى تضيفها — بما فيها تقسيم الدفع على فاتورة واحدة.'}],
  [{en:'How long does implementation take?',ar:'كم تستغرق عملية التطبيق؟'},{en:'It depends on the number of branches and the data being migrated. We agree a timeline with you during the demo, and our team handles setup, migration and staff training.',ar:'يعتمد ذلك على عدد الفروع والبيانات المنقولة. نتفق معك على جدول زمني أثناء العرض، ويتولى فريقنا الإعداد والنقل وتدريب الموظفين.'}]
 ];
+var FAQ_SHOW=[0,1,2,3,9,14];
+function faqList(){return FAQ_SHOW.map(function(i){return FAQ[i];}).filter(Boolean);}
 function renderFAQ(){
   var el=$('#faqList'),open=$$('details[open]',el).map(function(d){return d.dataset.i;});
-  el.innerHTML=FAQ.map(function(f,i){return '<details class="acc-item" data-i="'+i+'"'+(open.indexOf(String(i))>-1?' open':'')+'><summary><span>'+T(f[0])+'</span><span class="pm">'+ic('plus')+'</span></summary><div class="acc-body">'+T(f[1])+'</div></details>';}).join('');
+  el.innerHTML=faqList().map(function(f,i){return '<details class="acc-item" data-i="'+i+'"'+(open.indexOf(String(i))>-1?' open':'')+'><summary><span>'+T(f[0])+'</span><span class="pm">'+ic('plus')+'</span></summary><div class="acc-body">'+T(f[1])+'</div></details>';}).join('');
 }
-(function(){var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(function(f){return {'@type':'Question',name:f[0].en,acceptedAnswer:{'@type':'Answer',text:f[1].en}};})});document.head.appendChild(s);})();
+(function(){var s=document.createElement('script');s.type='application/ld+json';s.textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqList().map(function(f){return {'@type':'Question',name:f[0].en,acceptedAnswer:{'@type':'Answer',text:f[1].en}};})});document.head.appendChild(s);})();
 
 /* =============================== Pricing =============================== */
 var CUR={KWD:{sym:'KWD',rate:1,dec:0,step:1,name:'Kuwait — KWD'},USD:{sym:'$',rate:3.26,dec:0,step:1,name:'US Dollar — $'},EUR:{sym:'€',rate:3.0,dec:0,step:1,name:'Euro — €'},GBP:{sym:'£',rate:2.56,dec:0,step:1,name:'British Pound — £'},SAR:{sym:'SAR',rate:12.2,dec:0,step:5,name:'Saudi Riyal — SAR'},AED:{sym:'AED',rate:11.98,dec:0,step:5,name:'UAE Dirham — AED'},QAR:{sym:'QAR',rate:11.87,dec:0,step:5,name:'Qatari Riyal — QAR'},BHD:{sym:'BHD',rate:1.23,dec:1,step:0.5,name:'Bahraini Dinar — BHD'},OMR:{sym:'OMR',rate:1.25,dec:1,step:0.5,name:'Omani Rial — OMR'},EGP:{sym:'EGP',rate:160,dec:0,step:50,name:'Egyptian Pound — EGP'},INR:{sym:'₹',rate:285,dec:0,step:50,name:'Indian Rupee — ₹'}};
@@ -388,6 +391,14 @@ p_pop:'الأكثر اختياراً',p2n:'العيادة',p2d:'الحزمة ا�
 p3n:'متعدد الفروع',p3d:'للمجموعات التي تدير موقعين أو أكثر.',p3a:'كل ما في العيادة',p3b:'مخزون وأرباح لكل فرع',p3c:'لوحة موحّدة للمالك',p3e:'صلاحيات حسب الموقع',
 p4n:'المؤسسات',p4d:'للمراكز الطبية والمجموعات الصحية ذات الاحتياجات المعقدة.',p4c:'مخصص',p4b:'عرض مصمّم لك',p4a:'خادم خاص أو تشغيل محلي',p4bb:'نقل البيانات وتدريب الموظفين',p4cc:'دعم بأولوية',p4dd:'دراسة تكاملات مخصصة',
 ad_n:'الرواتب',ad_t:'إضافة',ad_link:'متوفر أيضاً بشكل مستقل لأي شركة: CTMS Payroll ←',ft_payroll:'CTMS Payroll',ad_p:'دورات الرواتب والبدلات والخصومات والإجازات والقسائم — تُضاف إلى أي خطة.',pr_note:'الأسعار لكل عيادة بالدينار الكويتي. العملات الأخرى تقريبية. الدفع السنوي يوفّر ٢٠٪.',
+nav_product:'المنتج',nav_new:'الجديد',nav_why:'لماذا CTMS',nav_faq:'الأسئلة الشائعة',ft_modules:'الوحدات',
+lg_lbl:'تثق به عياداتنا المؤسِّسة في الكويت',nw_also:'جديد أيضاً',
+bt_h2:'نظام واحد. لا شيء يضيع.',bt1:'كل زيارة تصل مباشرةً إلى أرباحك وخسائرك',bt1p:'احجز وعالج وأصدر الفاتورة واصرف مرة واحدة — ويتحدّث الإيراد والمخزون والربح تلقائياً.',
+fl_a:'الموعد',fl_b:'الزيارة',fl_c:'الفاتورة',fl_d:'المخزون',fl_e:'الأرباح والخسائر',
+bt2:'برنامج عيادات مصمّم للكويت',bt2a:'عربي وإنجليزي، واجهة RTL كاملة',bt2b:'التسجيل بالرقم المدني',bt2c:'فوترة بالدينار · كي‑نت · نقداً',bt2d:'إعداد ودعم محلي',
+bt3:'كل الفروع في رؤية واحدة',bt3p:'لكل فرع مخزونه ودفاتره، وترى أنت المجموعة كاملة.',
+bt4:'بياناتك بطريقتك',bt4p:'على خادمك الخاص أو سحابة خاصة. يعمل دون إنترنت. نسخ احتياطي مشفّر وتلقائي.',
+bt5:'الصلاحية المناسبة لكل شخص',bt5p:'صلاحيات حسب الدور والشاشة والتقرير والفرع — مع سجل نشاط كامل.',
 nw_eb:'جديد في CTMS',nw_h2:'أُطلق حديثاً: المزيد للمرضى والأطباء والاستقبال.',nw_p:'يصدر CTMS تحسينات كل شهر. هذا ما أُضيف مؤخراً.',
 nw_tag_pat:'للمرضى',nw_tag_doc:'للأطباء',nw_tag_cli:'سريري',nw_opt:'ميزة اختيارية — تُفعّل من الإعدادات.',nw_opt_s:'اختيارية',
 nb_clinic:'احجز موعداً',nb_doc:'الطبيب',nb_day:'الخميس ٣٠ أكتوبر',nb_name:'اسمك',nb_send:'إرسال الطلب',nb_h:'الحجز الإلكتروني',nb_p:'يختار المريض الطبيب وموعداً متاحاً من هاتفه. يؤكد الاستقبال كل طلب بنقرة واحدة، ويُسجّل المرضى الجدد تلقائياً.',nb_n:'متاح مع التشغيل السحابي.',
@@ -403,7 +414,7 @@ nw7:'الملف الطبي PDF',nw7p:'اطبع أو صدّر الملف الطب
 nw8:'تحميل المستهلكات على الطبيب',nw8p:'سجّل المواد المستخدمة في الإجراء وحمّل تكلفتها على الطبيب المسؤول.',
 nw9:'يعمل على الهاتف والجهاز اللوحي',nw9p:'كل شاشات CTMS تتكيّف الآن مع الهواتف والأجهزة اللوحية، ليعمل الفريق من أي جهاز.',
 kw_eb:'برنامج عيادات في الكويت',kw_h2:'برنامج إدارة عيادات صُنع في الكويت لعيادات الكويت.',kw_p1:'طوّرت Appscrafter نظام CTMS في الكويت، وعياداتنا المؤسِّسة — عيادة التقي وسكاي لرعاية البشرة — في الكويت أيضاً. يتعامل مع التفاصيل التي تحتاجها العيادات المحلية — التسجيل بالرقم المدني، والفوترة بالدينار الكويتي بثلاث خانات عشرية، والدفع عبر كي‑نت والنقد والبطاقة، وواجهة عربية وإنجليزية، ودورات رواتب تطابق طريقة الدفع في عيادات الكويت.',kw_p2:'نقوم بالتثبيت ونقل بياناتك وتدريب فريقك في الموقع، وندعمك محلياً بالعربية والإنجليزية.',kw_for:'مصمّم لـ',kw_t1:'العيادات العامة وطب الأسرة',kw_t2:'عيادات الأسنان',kw_t3:'عيادات الجلدية والليزر والتجميل',kw_t4:'المجمّعات والمراكز الطبية',kw_t5:'مراكز العلاج الطبيعي',kw_t6:'المجموعات الصحية متعددة الفروع',kw_areas:'نخدم العيادات في مدينة الكويت وحولي والسالمية والفروانية والجهراء والأحمدي ومبارك الكبير — وفي دول الخليج.',
-fq_eb:'الموارد · الأسئلة الشائعة',fq_h2:'أسئلة وأجوبة.',fq_p:'لم تجد ما تبحث عنه؟ فريقنا في الكويت سيشرح لك كل شيء.',fq_wa:'راسلنا على واتساب',
+fq_eb:'الأسئلة الشائعة',fq_h2:'أسئلة وأجوبة.',fq_p:'لم تجد ما تبحث عنه؟ فريقنا في الكويت سيشرح لك كل شيء.',fq_wa:'راسلنا على واتساب',
 fc_eb:'ابدأ الآن',fc_h2:'شاهد عيادتك بالكامل في نظام واحد.',fc_p:'اكتشف كيف يربط CTMS مرضاك وأطباءك والاستقبال والمخزون والمالية والإدارة.',
 ft_full:'نظام الإدارة الشاملة للعيادات',ft_tag:'نظام تشغيل العيادات في الكويت والخليج — المرضى والعمليات والمالية في منصة واحدة.',ft_wf:'سير العمل المترابط',ft_owner:'لوحة المالك',ft_reports:'التقارير وذكاء الأعمال',ft_dep:'التشغيل',
 m_appt:'المواعيد',m_emr:'المرضى والسجل الطبي',m_pharm:'الصيدلية',m_fin:'المالية',m_pay:'الرواتب',ft_roles:'حسب الدور',ft_gulf:'عيادات الخليج',ft_res:'الموارد',ft_faq:'الأسئلة الشائعة',ft_ds:'نظام التصميم',ft_support:'الدعم',ft_company:'الشركة',ft_about:'عن CTMS',ft_contact:'تواصل معنا',

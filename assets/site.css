@@ -41,12 +41,7 @@ html[lang="ar"] .hero-tag .flag{letter-spacing:0}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .stage-floats-m{display:contents}
 /* below 1400px there is no room beside the dashboard: show key cards in a row underneath instead */
-@media (max-width:1400px){
-  .float{display:none}
-  .float.f1,.float.f4,.float.f6{display:block;position:relative;inset:auto;min-width:0;animation:none}
-  .stage-floats-m{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
-}
-@media (max-width:760px){.float.f6{display:none}.stage-floats-m{grid-template-columns:1fr 1fr;gap:10px}}
+@media (max-width:1400px){.float{display:none}}
 .hero-ui .ui-main{grid-template-columns:1fr}
 .mini-mini{display:flex;gap:3px;align-items:flex-end;height:18px;margin-top:6px}
 .mini-mini i{flex:1;background:var(--brand);border-radius:2px;opacity:.85}
@@ -456,7 +451,7 @@ html[lang="ar"] .cl small{letter-spacing:0}
 
 /* ---------- Footer ---------- */
 .footer{padding:clamp(56px,7vw,88px) 0 32px;border-top:1px solid var(--line);margin-top:var(--sec)}
-.foot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(5,minmax(0,1fr));gap:32px}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:40px}
 .foot-brand p{color:var(--muted);font-size:.92rem;margin:16px 0 0;max-width:34ch}
 .foot-col h5{margin:0 0 14px;font-size:.8rem;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:.07em}
 html[lang="ar"] .foot-col h5{letter-spacing:0}
@@ -482,3 +477,45 @@ html[lang="ar"] .foot-col h5{letter-spacing:0}
 .form-ok .ck{width:56px;height:56px;border-radius:50%;background:var(--ok-soft);color:var(--ok);display:grid;place-items:center;margin:0 auto 16px}
 .form-ok .ck svg{width:26px;height:26px}
 .form-ok p{color:var(--muted)}
+
+/* =====================================================================
+   Minimal layout (2026-10-27): logo strip, compact What's-new row, Why bento
+   ===================================================================== */
+:root{--sec:clamp(88px,11vw,148px)}
+.sec-head h2{max-width:20ch}
+.sec-head.center h2{margin-inline:auto}
+.logos{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:clamp(40px,6vw,64px)}
+.logos span{font-size:.85rem;color:var(--faint);font-weight:500}
+.logos img{height:76px;width:auto;border-radius:10px;opacity:.9;transition:opacity .2s}
+.logos img:hover{opacity:1}
+:root:not([data-theme="dark"]) .logos img{mix-blend-mode:multiply}
+:root[data-theme="dark"] .logos img{background:#fff;padding:3px 8px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logos img{mix-blend-mode:normal;background:#fff;padding:3px 8px}}
+.nw-more{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:22px}
+.nw-more-lbl{font-size:.8rem;font-weight:600;color:var(--faint);text-transform:uppercase;letter-spacing:.08em;margin-inline-end:6px}
+html[lang="ar"] .nw-more-lbl{letter-spacing:0}
+.nw-more .chip{padding:7px 12px;font-size:.86rem}
+.nw-card,.bx{transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.nw-card:hover,.bx:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.bento2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.bx{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:12px;min-height:220px}
+.bx h3{font-size:clamp(1.15rem,1.6vw,1.4rem);letter-spacing:-.02em;line-height:1.2}
+.bx p{margin:0;color:var(--muted);font-size:.95rem}
+.bx .icon-tile{margin-bottom:6px}
+.bx-wide{grid-column:span 2;background:linear-gradient(160deg,var(--surface) 40%,var(--brand-soft))}
+.bx-brand{background:var(--grad);border-color:transparent;color:#fff}
+.bx-brand h3{color:#fff}
+.bx-brand ul{list-style:none;padding:0;margin:4px 0 0;display:grid;gap:10px;font-size:.95rem;color:#f1ecff}
+.bx-brand li{display:flex;gap:10px;align-items:center}
+.bx-brand li::before{content:"";width:6px;height:6px;border-radius:2px;background:#fff;flex:none}
+.flow{display:flex;align-items:center;gap:0;margin-top:auto;padding-top:18px;flex-wrap:wrap;row-gap:12px}
+.flow span{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:99px;background:var(--surface);border:1px solid var(--line);font-size:.86rem;color:var(--ink-2);box-shadow:var(--shadow-xs)}
+.flow span b{font-weight:600}
+.flow span svg{width:16px;height:16px;color:var(--brand)}
+.flow span+span{margin-inline-start:22px;position:relative}
+.flow span+span::before{content:"";position:absolute;inset-inline-start:-21px;top:50%;width:20px;height:2px;background:var(--grad);border-radius:2px}
+.flow .end{background:var(--grad);color:#fff;border-color:transparent}
+.flow .end svg{color:#fff}
+@media (max-width:980px){.bento2{grid-template-columns:1fr 1fr}.bx-wide{grid-column:1/-1}}
+@media (max-width:620px){.bento2{grid-template-columns:1fr}.bx{min-height:0}.flow span+span{margin-inline-start:0}.flow span+span::before{display:none}.flow{gap:8px}}
+@media (max-width:1020px){.foot-grid{grid-template-columns:1fr 1fr 1fr}.foot-brand{grid-column:1/-1}}
