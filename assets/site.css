@@ -481,7 +481,12 @@ html[lang="ar"] .foot-col h5{letter-spacing:0}
 /* =====================================================================
    Minimal layout (2026-10-27): logo strip, compact What's-new row, Why bento
    ===================================================================== */
-:root{--sec:clamp(88px,11vw,148px)}
+:root{--sec:clamp(40px,5vw,68px)}
+.sec-head{margin-bottom:clamp(28px,3.5vw,44px)}
+.sec-head p{margin-top:14px}
+.hero{padding-bottom:clamp(24px,4vw,48px)}
+.stage{margin-top:clamp(36px,5vw,56px)}
+.footer{margin-top:clamp(48px,6vw,80px)}
 .sec-head h2{max-width:20ch}
 .sec-head.center h2{margin-inline:auto}
 .logos{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:clamp(40px,6vw,64px)}
